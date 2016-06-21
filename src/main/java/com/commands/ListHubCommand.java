@@ -8,8 +8,7 @@ public class ListHubCommand implements Command{
     public void execute() {
 
         System.out.println("Listing Hubs");
-        Hub hubs = new Hub();
-        hubs.listHubs();
+        Hub.listHubs();
 
 
     }

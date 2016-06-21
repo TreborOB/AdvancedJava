@@ -7,16 +7,15 @@ import com.main.Node;
 
 import java.util.Scanner;
 
-public class DeleteNodeCommand {
+public class DeleteNodeCommand implements Command{
 
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public void execute() {
 
         Node node = new Node();
         node.listNodes();
-
 
 
         System.out.println("");

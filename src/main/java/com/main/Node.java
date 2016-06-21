@@ -7,12 +7,15 @@ import java.util.Set;
 
 public class Node extends Base{
 
-    private Set<Node> nodes = new HashSet<Node>();
+    private static Set<Node> nodes = new HashSet<Node>();
 
-    String parent;
+
+    private String parent;
+
 
     public Node(){
-        populateNodes();
+        //populateNodes();
+
     }
 
     public Node(String parent, String name){
@@ -47,9 +50,9 @@ public class Node extends Base{
 
 
     //Displaying the list of nodes
-    public void listNodes() {
+    public static void listNodes() {
         for (Node n : nodes) {
-            System.out.println("Node name: " + n.getName() + " " + "Parent: " + n.getParent());
+            System.out.println("Parent name: " +n.getParent() +" Node name: " + n.getName());
         }
     }
 
@@ -61,7 +64,7 @@ public class Node extends Base{
 
         for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
             Node n = i.next();
-            if (n.getNodes().equals(name)) {
+            if (n.getName().equals(name)) {
                 i.remove();
             }
         }
@@ -71,9 +74,16 @@ public class Node extends Base{
 
 
 
+    public int nodeSize(){
+        int setSize = nodes.size();
+        return setSize;
+    }
+
+
+
 
     //Pre-populating the carrier list
-    public void populateNodes() {
+    public static void populateNodes() {
 
         Node n1 = new Node("Hub1", "Node1");
         Node n2 = new Node("Hub2", "Node2");

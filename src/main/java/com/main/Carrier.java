@@ -8,11 +8,11 @@ import java.util.Set;
 public class Carrier extends Base{
 
 
-    private Set<Carrier> carriers = new HashSet<Carrier>();
+    private static Set<Carrier> carriers = new HashSet<Carrier>();
 
 
     public Carrier(){
-        populateCarriers();
+        //populateCarriers();
     }
 
     public Carrier(String name){
@@ -20,13 +20,21 @@ public class Carrier extends Base{
     }
 
 
+    public static Set<Carrier> getCarriers() {
+        return carriers;
+    }
+
+    public void setCarriers(Set<Carrier> carriers) {
+        this.carriers = carriers;
+    }
+
     public void addCarrier(Carrier carrier){
         carriers.add(carrier);
     }
 
 
     //Displaying the list of carriers
-    public void listCarriers() {
+    public static void listCarriers() {
         for (Carrier c : carriers) {
             System.out.println(c.getName());
         }
@@ -49,9 +57,15 @@ public class Carrier extends Base{
     }
 
 
+    public int carrierSize(){
+        int setSize = carriers.size();
+        return setSize;
+    }
+
+
 
     //Pre-populating the carrier list
-    public void populateCarriers() {
+    static void populateCarriers() {
 
         Carrier c1 = new Carrier("Three");
         Carrier c2 = new Carrier("Vodafone");

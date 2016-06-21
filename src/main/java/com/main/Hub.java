@@ -11,11 +11,11 @@ public class Hub extends Base{
     private String unitAvailability;
     private String parentNetwork;
 
-    private Set<Hub> hub = new HashSet<Hub>();
+    private static Set<Hub> hub = new HashSet<Hub>();
 
 
     public Hub(){
-        populateHub();
+        //populateHub();
     }
 
     public Hub(String name, String parentNetwork, String unitAvailability){
@@ -56,7 +56,7 @@ public class Hub extends Base{
     }
 
     //Displaying the list of nodes
-    public void listHubs() {
+    public static void listHubs() {
         for (Hub h : hub) {
             System.out.println("Hub name: " + h.getName() + " " + "Parent: " + h.getParentNetwork());
         }
@@ -70,7 +70,7 @@ public class Hub extends Base{
 
         for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
             Hub h = i.next();
-            if (h.getHub().equals(name)) {
+            if (h.getName().equals(name)) {
                 i.remove();
             }
         }
@@ -79,9 +79,16 @@ public class Hub extends Base{
     }
 
 
+    public int hubSize(){
+        int setSize = hub.size();
+        return setSize;
+    }
+
+
+
 
     //Pre-populating the carrier list
-    public void populateHub() {
+    public static void populateHub() {
 
         Hub h1 = new Hub("Hub1", "Tesco", "available");
         Hub h2 = new Hub("Hub2", "Vodafone", "available");
