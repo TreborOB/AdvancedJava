@@ -1,7 +1,7 @@
 package com.commands;
 
 
-import com.main.Main;
+import com.main.Carrier;
 
 import java.util.Scanner;
 
@@ -12,13 +12,13 @@ public class DeleteCarrierCommand implements Command{
 
     public void execute() {
 
-        Main main = new Main();
-        main.listCarriers();
+        Carrier carrier = new Carrier();
+        carrier.listCarriers();
 
         System.out.println("");
         System.out.print("Please enter the name of the carrier you would like to delete: ");
         String name = sc.next();
 
-        main.deleteCarrier(name);
+       carrier.deleteCarrier(name);
     }
 }

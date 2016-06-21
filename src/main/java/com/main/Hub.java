@@ -2,6 +2,7 @@ package com.main;
 
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class Hub extends Base{
@@ -10,7 +11,12 @@ public class Hub extends Base{
     private String unitAvailability;
     private String parentNetwork;
 
-    private Set<Node> nodes = new HashSet<Node>();
+    private Set<Hub> hub = new HashSet<Hub>();
+
+
+    public Hub(){
+        populateHub();
+    }
 
     public Hub(String name, String parentNetwork, String unitAvailability){
         super(name);
@@ -19,5 +25,74 @@ public class Hub extends Base{
     }
 
 
+    public String getUnitAvailability() {
+        return unitAvailability;
+    }
+
+    public void setUnitAvailability(String unitAvailability) {
+        this.unitAvailability = unitAvailability;
+    }
+
+    public String getParentNetwork() {
+        return parentNetwork;
+    }
+
+    public void setParentNetwork(String parentNetwork) {
+        this.parentNetwork = parentNetwork;
+    }
+
+
+    public void addHub(Hub hubIn){
+        hub.add(hubIn);
+    }
+
+
+    public Set<Hub> getHub() {
+        return hub;
+    }
+
+    public void setHub(Set<Hub> hub) {
+        this.hub = hub;
+    }
+
+    //Displaying the list of nodes
+    public void listHubs() {
+        for (Hub h : hub) {
+            System.out.println("Hub name: " + h.getName() + " " + "Parent: " + h.getParentNetwork());
+        }
+    }
+
+
+    //Deleting a specified node
+    public void deleteHub(String name){
+
+        listHubs();
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getHub().equals(name)) {
+                i.remove();
+            }
+        }
+        System.out.print(hub.size());
+
+    }
+
+
+
+    //Pre-populating the carrier list
+    public void populateHub() {
+
+        Hub h1 = new Hub("Hub1", "Tesco", "available");
+        Hub h2 = new Hub("Hub2", "Vodafone", "available");
+        Hub h3 = new Hub("Hub3", "Tesco", "available");
+        Hub h4 = new Hub("Hub4", "Meteor", "available");
+
+
+        hub.add(h1);
+        hub.add(h2);
+        hub.add(h3);
+        hub.add(h4);
+    }
 
 }

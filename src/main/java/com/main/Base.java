@@ -8,6 +8,9 @@ public class Base {
 
     public Base(String name){
         this.name = name;
+    }
+
+    public Base(){
 
     }
 

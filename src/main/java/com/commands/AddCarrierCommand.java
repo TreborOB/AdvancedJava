@@ -3,7 +3,7 @@ package com.commands;
 
 
 import com.main.Carrier;
-import com.main.Main;
+
 
 import java.util.Scanner;
 
@@ -20,9 +20,9 @@ public class AddCarrierCommand implements Command{
 
 
     public void createCarrier(String name){
-        Main main = new Main();
+
         Carrier carrier = new Carrier(name);
-        main.addCarrier(carrier);
+        carrier.addCarrier(carrier);
     }
 
 

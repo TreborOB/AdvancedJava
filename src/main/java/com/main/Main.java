@@ -7,35 +7,47 @@ import java.util.*;
 public class Main {
 
 
-    static Set<Carrier> carriers = new HashSet<Carrier>();
-
-
     public static void main(String[] args){
-
-        populateCarriers();
 
         Scanner scan = new Scanner(System.in);
 
         Map<String, Command> commands = new HashMap<String, Command>();
 
 
-
         Command addCarrier               = new AddCarrierCommand();
         Command listCarriers             = new ListCarrierCommand();
         Command deleteCarrier            = new DeleteCarrierCommand();
+
         Command ListEntireNetworkCommand = new ListEntireNetworkCommand();
+
         Command addHub                   = new AddHubCommand();
+        Command listHubs                 = new ListHubCommand();
+        Command deleteHub                = new DeleteHubCommand();
+
+
+        Command addNode                  = new AddNodeCommand();
+        Command listNodes                = new ListNodeCommand();
+        Command deleteNode               = new DeleteHubCommand();
 
 
         commands.put("addCarrier",  addCarrier);
         commands.put("listCarriers",  listCarriers);
         commands.put("deleteCarrier",  deleteCarrier);
+
         commands.put("ListEntireNetwork",  ListEntireNetworkCommand);
+
         commands.put("addHub",  addHub);
+        commands.put("listHubs",  listHubs);
+        commands.put("deleteHub",  deleteHub);
 
 
 
-        String s;
+        commands.put("addNode",  addNode);
+        commands.put("listNodes",  listNodes);
+        commands.put("deleteNode",  deleteNode);
+
+
+        String choice;
 
         do {
             System.out.println("");
@@ -44,77 +56,34 @@ public class Main {
             System.out.println("addCarrier");
             System.out.println("listCarriers");
             System.out.println("deleteCarrier");
+            System.out.println("");
+
+
             System.out.println("ListEntireNetwork");
+            System.out.println("");
 
             System.out.println("");
             System.out.println("addHub");
+            System.out.println("listHubs");
+            System.out.println("deleteHub");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("addNode");
+            System.out.println("listNodes");
+            System.out.println("deleteNode");
             System.out.println("");
 
             System.out.println("");
             System.out.println("Exit");
             System.out.println("");
-            System.out.print("Enter a command: "); //Ask the user for a command
-            s = scan.next();
+            System.out.print("Enter a command: ");
+            choice = scan.next();
 
-            commands.get(s).execute();
+            commands.get(choice).execute();
 
-        }while(!s.equals("Exit"));
-
-
-    }
-
-
-    //Adding a carrier
-    public void addCarrier(Carrier c){
-        carriers.add(c);
-        //listCarriers();
-    }
-
-
-
-
-    //Displaying the list of carriers
-    public void listCarriers() {
-        for (Carrier c : carriers) {
-            System.out.println(c.getName());
-        }
-    }
-
-
-
-
-    //Deleting the specified carrier
-    public void deleteCarrier(String name){
-
-        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
-            Carrier c = i.next();
-            if (c.getName().equals(name)) {
-                i.remove();
-            }
-        }
-        System.out.print(carriers.size());
+        }while(!choice.equals("Exit"));
 
     }
-
-
-
-    //Pre-populating the carrier list
-    public static void populateCarriers() {
-
-        Carrier c1 = new Carrier("Three");
-        Carrier c2 = new Carrier("Vodafone");
-        Carrier c3 = new Carrier("Meteor");
-        Carrier c4 = new Carrier("Tesco");
-
-        carriers.add(c1);
-        carriers.add(c2);
-        carriers.add(c3);
-        carriers.add(c4);
-
-        System.out.print(carriers.size());
-    }
-
-
-
 
 }
