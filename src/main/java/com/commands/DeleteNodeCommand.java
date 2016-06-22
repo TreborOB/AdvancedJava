@@ -1,37 +1,34 @@
 package com.commands;
 
 
-
-
-import com.main.Node;
+import com.main.Hub;
 
 import java.util.Scanner;
 
 public class DeleteNodeCommand implements Command{
 
+    Scanner scan = new Scanner(System.in);
+    String nodeToDelete;
 
-    private Scanner sc = new Scanner(System.in);
-    Node node;
-    String name;
+    Hub h = new Hub();
 
-    public void execute() {
 
-        node = new Node();
-        node.listNodes();
+    public void execute(){
 
+
+        System.out.println("");
+        System.out.println("Delete Node");
+        System.out.println("");
+
+        h.listAllNodes();
 
         System.out.println("");
 
 
-        do{
-        System.out.print("Please enter the name of the node you would like to delete: ");
-        name = sc.next();
-        }while(!node.containsName(name));
-
-
-        node.deleteNode(name);
+        System.out.print("Which node would you like to delete?: ");
+        nodeToDelete = scan.nextLine();
+        System.out.println("");
 
 
     }
-
 }

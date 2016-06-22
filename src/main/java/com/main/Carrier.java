@@ -1,18 +1,19 @@
 package com.main;
 
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.HashMap;
 
 public class Carrier extends Base{
 
 
-    static Set<Carrier> carriers = new HashSet<Carrier>();
+    String name;
+
+
+    public static HashMap<String, Hub> map = new HashMap<String, Hub>();
 
 
     public Carrier(){
-        //populateCarriers();
+
     }
 
     public Carrier(String name){
@@ -20,100 +21,48 @@ public class Carrier extends Base{
     }
 
 
-    public static Set<Carrier> getCarriers() {
-        return carriers;
+    @Override
+    public String getName() {
+        return name;
     }
 
-    public void setCarriers(Set<Carrier> carriers) {
-        this.carriers = carriers;
-    }
-
-    public void addCarrier(Carrier carrier){
-        carriers.add(carrier);
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
 
-    //Displays the list of carriers
-    public static void listCarriers() {
-        for (Carrier c : carriers) {
-            System.out.println(c.getName());
+    public void deleteCarrier(String key){
+        map.remove(key);
+
+    }
+
+
+    public void listAllCarriers(){
+        for ( String key : map.keySet() ) {
+            System.out.println( key );
         }
     }
 
 
+    public boolean keyExists(String value) {
+        if (map.containsKey(value)) {
+            return true;
 
-
-    //Deleting a specified carrier
-    public void deleteCarrier(String name){
-
-        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
-            Carrier c = i.next();
-            if (c.getName().equals(name)) {
-                i.remove();
-            }
+        } else {
+            return false;
         }
-
-
     }
 
 
-    public int carrierSize(){
-        int setSize = carriers.size();
-        return setSize;
+    public static void populateMap(){
+
+        Hub hub1 = new Hub();
+        Hub hub2 = new Hub();
+
+        map.put("Vodafone", hub1);
+        map.put("Three", hub2);
     }
-
-
-
-    //Pre-populating the carrier list
-    static void populateCarriers() {
-
-        Carrier c1 = new Carrier("Three");
-        Carrier c2 = new Carrier("Vodafone");
-        Carrier c3 = new Carrier("Meteor");
-        Carrier c4 = new Carrier("Tesco");
-
-        carriers.add(c1);
-        carriers.add(c2);
-        carriers.add(c3);
-        carriers.add(c4);
-
-    }
-
-
-
-    //Checks to see if the carrier name is already in the set
-    public boolean contains(String name) {
-
-
-        boolean hasCarrier = false;
-
-        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
-            Carrier c = i.next();
-            if (c.getName().equalsIgnoreCase(name)) {
-                hasCarrier = true;
-            }
-        }
-        return hasCarrier;
-    }
-
-
-
-    public boolean containsUnique(String name) {
-
-
-        boolean hasHub = false;
-
-        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
-            Carrier c = i.next();
-            if (c.getName().equals(name)) {
-                hasHub = true;
-            }
-        }
-        return hasHub;
-    }
-
-
-
 
 
 
