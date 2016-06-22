@@ -7,7 +7,7 @@ public class ListHubCommand implements Command{
 
     public void execute() {
 
-        System.out.println("Listing Hubs");
+        System.out.println("");
         Hub.listHubs();
 
 

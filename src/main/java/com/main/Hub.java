@@ -11,7 +11,9 @@ public class Hub extends Base{
     private String unitAvailability;
     private String parentNetwork;
 
-    private static Set<Hub> hub = new HashSet<Hub>();
+
+
+    static Set<Hub> hub = new HashSet<Hub>();
 
 
     public Hub(){
@@ -23,6 +25,7 @@ public class Hub extends Base{
         this.unitAvailability = unitAvailability;
         this.parentNetwork = parentNetwork;
     }
+
 
 
     public String getUnitAvailability() {
@@ -41,10 +44,10 @@ public class Hub extends Base{
         this.parentNetwork = parentNetwork;
     }
 
-
     public void addHub(Hub hubIn){
         hub.add(hubIn);
     }
+
 
 
     public Set<Hub> getHub() {
@@ -55,7 +58,9 @@ public class Hub extends Base{
         this.hub = hub;
     }
 
-    //Displaying the list of nodes
+
+
+    //Displaying the list of hubs
     public static void listHubs() {
         for (Hub h : hub) {
             System.out.println("Hub name: " + h.getName() + " " + "Parent: " + h.getParentNetwork());
@@ -63,10 +68,10 @@ public class Hub extends Base{
     }
 
 
+
     //Deleting a specified node
     public void deleteHub(String name){
 
-        listHubs();
 
         for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
             Hub h = i.next();
@@ -74,7 +79,23 @@ public class Hub extends Base{
                 i.remove();
             }
         }
-        System.out.print(hub.size());
+
+    }
+
+
+
+    //Deleting a specified node
+    public void deleteHubParent(String name){
+
+        listHubs();
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getParentNetwork().equals(name)) {
+                i.remove();
+            }
+        }
+
 
     }
 
@@ -90,10 +111,10 @@ public class Hub extends Base{
     //Pre-populating the carrier list
     public static void populateHub() {
 
-        Hub h1 = new Hub("Hub1", "Tesco", "available");
+        Hub h1 = new Hub("Hub1", "Three", "available");
         Hub h2 = new Hub("Hub2", "Vodafone", "available");
-        Hub h3 = new Hub("Hub3", "Tesco", "available");
-        Hub h4 = new Hub("Hub4", "Meteor", "available");
+        Hub h3 = new Hub("Hub3", "Meteor", "available");
+        Hub h4 = new Hub("Hub4", "Tesco", "available");
 
 
         hub.add(h1);
@@ -101,5 +122,91 @@ public class Hub extends Base{
         hub.add(h3);
         hub.add(h4);
     }
+
+
+
+    //Replaces the name of the parentCarrier
+    public void replaceName(String carrierName, String newName){
+
+        Hub h1 = new Hub();
+
+        String hubName = "";
+
+
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getParentNetwork().equalsIgnoreCase(carrierName)) {
+                h1 = h;
+                hubName = h.getName();
+                i.remove();
+            }
+        }
+
+        h1.setName(newName);
+        h1.setParentNetwork(parentNetwork);
+
+        hub.add(h1);
+    }
+
+
+
+    //Checks to see if the hub name is already in the set
+    public boolean contains(String name) {
+
+        boolean hasCarrier = false;
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getParentNetwork().equalsIgnoreCase(name)) {
+                hasCarrier = true;
+            }
+        }
+        return hasCarrier;
+    }
+
+
+
+    //Checks to see if the hub name is already in the set
+    public boolean containsName(String name) {
+
+        boolean hasCarrier = false;
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getName().equalsIgnoreCase(name)) {
+                hasCarrier = true;
+            }
+        }
+        return hasCarrier;
+    }
+
+
+    public boolean containsUnique(String name) {
+
+
+        boolean hasNode = false;
+
+        for (Iterator<Hub> i = hub.iterator(); i.hasNext();) {
+            Hub h = i.next();
+            if (h.getName().equals(name)) {
+                hasNode = true;
+            }
+        }
+        return hasNode;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

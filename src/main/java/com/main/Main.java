@@ -94,9 +94,12 @@ public class Main {
             System.out.print("Enter a command: ");
             choice = scan.next();
 
+
             commands.get(choice).execute();
 
         }while(!choice.equals("Exit"));
+
+
 
     }
 }

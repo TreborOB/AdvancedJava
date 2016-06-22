@@ -32,7 +32,7 @@ public class AddNodeCommand implements Command{
         do {
             System.out.print("Choose a hub to associate the node with: ");
             parentHub = sc.next();
-        }while (!contains(parentHub));
+        }while (!node.contains(parentHub));
 
 
         System.out.println("");
@@ -40,7 +40,13 @@ public class AddNodeCommand implements Command{
         do {
         System.out.print("Name of the node: ");
         nodeName = sc.next();
-        }while (containsUnique(nodeName)) ;
+        }while (node.containsUnique(nodeName)) ;
+
+
+
+        String s = hub.getParentNetwork();
+
+
 
         Node node = new Node(parentHub, nodeName);
         node.addNode(node);
@@ -48,39 +54,4 @@ public class AddNodeCommand implements Command{
         System.out.print(node.nodeSize());
     }
 
-
-
-
-
-    //Checks to see if the carrier name is already in the set
-    private boolean contains(String name) {
-
-        Set<Hub> hubSet = hub.getHub();
-        boolean hasHub = false;
-
-        for (Iterator<Hub> i = hubSet.iterator(); i.hasNext();) {
-            Hub h = i.next();
-            if (h.getName().equalsIgnoreCase(name)) {
-                hasHub = true;
-            }
-        }
-        return hasHub;
-    }
-
-
-
-
-    private boolean containsUnique(String name) {
-
-        Set<Node> nodeSet = node.getNodes();
-        boolean hasNode = false;
-
-        for (Iterator<Node> i = nodeSet.iterator(); i.hasNext();) {
-            Node n = i.next();
-            if (n.getParent().equalsIgnoreCase(parentHub) && n.getName().equalsIgnoreCase(nodeName)) {
-                hasNode = true;
-            }
-        }
-        return hasNode;
-    }
 }

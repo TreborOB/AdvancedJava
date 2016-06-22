@@ -7,10 +7,12 @@ import java.util.Set;
 
 public class Node extends Base{
 
-    private static Set<Node> nodes = new HashSet<Node>();
+    static Set<Node> nodes = new HashSet<Node>();
 
 
     private String parent;
+
+    Hub hub = new Hub();
 
 
     public Node(){
@@ -22,6 +24,10 @@ public class Node extends Base{
         super(name);
         this.parent = parent;
 
+    }
+
+    public Set<Node> getNode() {
+        return nodes;
     }
 
 
@@ -57,29 +63,11 @@ public class Node extends Base{
     }
 
 
-    //Deleting a specified node
-    public void deleteNode(String name){
-
-        listNodes();
-
-        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
-            Node n = i.next();
-            if (n.getName().equals(name)) {
-                i.remove();
-            }
-        }
-        System.out.print(nodes.size());
-
-    }
-
-
 
     public int nodeSize(){
         int setSize = nodes.size();
         return setSize;
     }
-
-
 
 
     //Pre-populating the carrier list
@@ -96,5 +84,112 @@ public class Node extends Base{
         nodes.add(n4);
 
     }
+
+    //Deleting a specified node
+    public void deleteNode(String name){
+
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node n = i.next();
+            if (n.getName().equals(name)) {
+                i.remove();
+            }
+        }
+
+
+    }
+
+
+
+    //Deleting a specified node
+    public void deleteNodeParent(String name){
+
+        listNodes();
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node n = i.next();
+            if (n.getParent().equals(name)) {
+                i.remove();
+            }
+        }
+
+
+        System.out.print(nodes.size());
+
+    }
+
+
+    //Replaces the name of the parentCarrier
+    public void replaceName(String parentName, String newName){
+
+        Node n1 = new Node();
+
+        String nodeName = "";
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node n = i.next();
+            if (n.getParent().equalsIgnoreCase(parentName)) {
+                n1 = n;
+                nodeName = n.getName();
+                i.remove();
+            }
+        }
+
+        n1.setName(nodeName);
+        n1.setParent(newName);
+
+        nodes.add(n1);
+
+    }
+
+
+
+
+    //Checks to see if the nodes name is already in the set
+    public boolean contains(String name) {
+
+        boolean hasNode = false;
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node h = i.next();
+            if (h.getParent().equalsIgnoreCase(name)) {
+                hasNode = true;
+            }
+        }
+        return hasNode;
+    }
+
+
+    //Checks to see if the nodes name is already in the set
+    public boolean containsName(String name) {
+
+        boolean hasNode = false;
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node h = i.next();
+            if (h.getName().equalsIgnoreCase(name)) {
+                hasNode = true;
+            }
+        }
+        return hasNode;
+    }
+
+
+
+    public boolean containsUnique(String name) {
+
+        boolean hasNode = false;
+
+        for (Iterator<Node> i = nodes.iterator(); i.hasNext();) {
+            Node n = i.next();
+            if (n.getParent().equalsIgnoreCase(name) && n.getName().equalsIgnoreCase(name)) {
+                hasNode = true;
+            }
+        }
+        return hasNode;
+    }
+
+
+
 
 }

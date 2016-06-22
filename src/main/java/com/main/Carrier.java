@@ -8,7 +8,7 @@ import java.util.Set;
 public class Carrier extends Base{
 
 
-    private static Set<Carrier> carriers = new HashSet<Carrier>();
+    static Set<Carrier> carriers = new HashSet<Carrier>();
 
 
     public Carrier(){
@@ -33,7 +33,7 @@ public class Carrier extends Base{
     }
 
 
-    //Displaying the list of carriers
+    //Displays the list of carriers
     public static void listCarriers() {
         for (Carrier c : carriers) {
             System.out.println(c.getName());
@@ -52,7 +52,7 @@ public class Carrier extends Base{
                 i.remove();
             }
         }
-        System.out.print(carriers.size());
+
 
     }
 
@@ -78,6 +78,44 @@ public class Carrier extends Base{
         carriers.add(c4);
 
     }
+
+
+
+    //Checks to see if the carrier name is already in the set
+    public boolean contains(String name) {
+
+
+        boolean hasCarrier = false;
+
+        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
+            Carrier c = i.next();
+            if (c.getName().equalsIgnoreCase(name)) {
+                hasCarrier = true;
+            }
+        }
+        return hasCarrier;
+    }
+
+
+
+    public boolean containsUnique(String name) {
+
+
+        boolean hasHub = false;
+
+        for (Iterator<Carrier> i = carriers.iterator(); i.hasNext();) {
+            Carrier c = i.next();
+            if (c.getName().equals(name)) {
+                hasHub = true;
+            }
+        }
+        return hasHub;
+    }
+
+
+
+
+
 
 }
 

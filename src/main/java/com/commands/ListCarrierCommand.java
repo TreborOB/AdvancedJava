@@ -8,7 +8,7 @@ public class ListCarrierCommand implements Command{
 
     public void execute() {
 
-        System.out.println("Listing Carriers");
+        System.out.println("");
         Carrier.listCarriers();
     }
 }

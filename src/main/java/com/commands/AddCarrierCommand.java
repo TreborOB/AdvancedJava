@@ -26,7 +26,7 @@ public class AddCarrierCommand implements Command{
         do{
             System.out.print("Please enter the name of the carrier: ");
             name = sc.next();
-        }while (contains(name)) ;
+        }while (carriers.contains(name)) ;
 
         createCarrier(name);
     }
@@ -43,20 +43,7 @@ public class AddCarrierCommand implements Command{
 
 
 
-     //Checks to see if the carrier name is already in the set
-     private boolean contains(String name) {
 
-        Set<Carrier> carrierSet = carriers.getCarriers();
-        boolean hasCarrier = false;
-
-        for (Iterator<Carrier> i = carrierSet.iterator(); i.hasNext();) {
-            Carrier c = i.next();
-            if (c.getName().equalsIgnoreCase(name)) {
-                hasCarrier = true;
-            }
-        }
-        return hasCarrier;
-    }
 
 
 

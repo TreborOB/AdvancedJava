@@ -7,7 +7,7 @@ public class ListNodeCommand implements Command{
 
     public void execute() {
 
-        System.out.println("Listing Nodes");
+        System.out.println("");
         Node.listNodes();
 
     }

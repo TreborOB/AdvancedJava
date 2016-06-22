@@ -2,6 +2,7 @@ package com.commands;
 
 
 import com.main.Carrier;
+import com.main.Hub;
 
 import java.util.Iterator;
 import java.util.Scanner;
@@ -13,7 +14,10 @@ public class RenameCarrierCommand implements Command{
     private Scanner sc = new Scanner(System.in);
     private Carrier carriers;
 
+
     private String carrierName;
+    private String newName;
+    Hub hub = new Hub();
 
     public void execute() {
 
@@ -24,15 +28,30 @@ public class RenameCarrierCommand implements Command{
         carriers.listCarriers();
         System.out.println("");
 
+
+
+        do{
         System.out.print("Choose the carrier you would like to rename: ");
         carrierName = sc.next();
+        }while (!carriers.contains(carrierName));
 
-        replaceName(carrierName);
+
+        System.out.println("");
+
+
+
+       do {
+         System.out.print("Enter the new name for the carrier : ");
+         newName = sc.next();
+       }while(carriers.containsUnique(newName));
+
+
+        replaceName(carrierName, newName);
 
     }
 
 
-    private void replaceName(String name){
+    private void replaceName(String carrierName, String newName){
 
         Set<Carrier> carrierSet = carriers.getCarriers();
 
@@ -40,15 +59,34 @@ public class RenameCarrierCommand implements Command{
 
         for (Iterator<Carrier> i = carrierSet.iterator(); i.hasNext();) {
             Carrier c = i.next();
-            if (c.getName().equalsIgnoreCase(name)) {
+            if (c.getName().equalsIgnoreCase(carrierName)) {
                 c1 = c;
                 i.remove();
-
             }
         }
 
-         System.out.print(c1.getName());
+         c1.setName(newName);
+
+         carrierSet.add(c1);
+
+         carriers.setCarriers(carrierSet);
+
+         replaceHubParent(carrierName, newName);
     }
+
+
+
+
+    public void replaceHubParent(String carrierName, String newName){
+
+        hub.replaceName(carrierName, newName);
+
+    }
+
+
+
+
+
 
 
 
