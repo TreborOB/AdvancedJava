@@ -2,33 +2,40 @@ package com.commands;
 
 
 import com.main.Carrier;
-import com.main.Hub;
+import com.main.Network;
 
 import java.util.Scanner;
 
 public class AddCarrierCommand implements Command{
 
     Scanner sc = new Scanner(System.in);
-    String carrierName;
-    Carrier c = new Carrier();
+    Carrier c;
+    private String carrierName;
 
-        public void execute(){
+    public void execute(){
 
             System.out.println("");
             System.out.print("Add Carrier");
             System.out.println("");
 
-            do {
+
+
+        do {
             System.out.print("Enter the carrier name: ");
             carrierName = sc.nextLine();
+        }while(Network.carrierMap.containsKey(carrierName));
+
+
             System.out.println("");
-            }while(c.keyExists(carrierName));
 
-
-            Hub hub = new Hub();
-            Carrier.map.put(carrierName, hub);
-
+            addCarrier(carrierName);
         }
+
+
+     private void addCarrier(String carrierName){
+           Carrier c = new Carrier(carrierName);
+           Network.carrierMap.put(c.getName(), c);
+       }
 
 
     }

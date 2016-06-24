@@ -1,16 +1,29 @@
 package com.commands;
 
 
+
 import com.main.Carrier;
+import com.main.Network;
+
+import java.util.Map;
 
 public class ListAllCarriersCommand implements Command{
 
     public void execute(){
 
         System.out.println("");
+        listAllCarriers();
+        System.out.println("");
 
-        Carrier c = new Carrier();
-        c.listAllCarriers();
+    }
 
+    public void listAllCarriers(){
+        if(Network.carrierMap.size() == 0){
+            System.out.println("No hubs exist");
+        }else{
+            for (Map.Entry<String, Carrier> entry: Network.carrierMap.entrySet()) {
+                System.out.println(entry.getKey() + " " + entry.getValue().getName());
+            }
+        }
     }
 }

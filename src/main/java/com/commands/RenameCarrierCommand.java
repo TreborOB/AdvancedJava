@@ -3,35 +3,39 @@ package com.commands;
 
 import com.main.Carrier;
 import com.main.Hub;
+import com.main.Network;
 
 import java.util.Scanner;
 
 public class RenameCarrierCommand implements Command{
 
     Scanner scan = new Scanner(System.in);
-    String carrier;
-    Carrier c = new Carrier();
+    private String carrierToRename;
+    private String newCarrierName;
+
 
     public void execute(){
 
         System.out.println("Rename Carrier");
         System.out.println("");
 
-
-        do {
-            System.out.print("Enter the name of the carrier you want to rename: ");
-            carrier = scan.nextLine();
-            System.out.println("");
-        }while(!c.keyExists(carrier));
-
-        System.out.print("Enter a new name for the carrier:");
-        String newCarrierName =  scan.nextLine();
+        System.out.print("Enter the name of the carrier you want to rename: ");
+        carrierToRename = scan.nextLine();
         System.out.println("");
 
 
-        Hub newHub = Carrier.map.remove(carrier);
-        Carrier.map.put(newCarrierName, newHub);
+        System.out.print("Enter a new name for the carrier: ");
+        newCarrierName =  scan.nextLine();
+        System.out.println("");
+
+        renameCarrier(carrierToRename, newCarrierName);
+    }
 
 
+
+    public void renameCarrier(String carrier, String newCarrierName){
+
+        Carrier c = Network.carrierMap.remove(carrier);
+        Network.carrierMap.put(newCarrierName, c);
     }
 }
