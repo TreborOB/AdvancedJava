@@ -13,21 +13,17 @@ public class AddNodeCommand implements Command{
 
 
     Scanner sc = new Scanner(System.in);
-    private String nodeName;
-    private String hubName;
-    private String carrierName;
-    private int nodeID;
 
-    Hub h = new Hub();
 
 
     public void execute() {
+
 
         System.out.println("");
         System.out.print("Add Node");
         System.out.println("");
 
-
+        String carrierName;
         do {
             System.out.print("Which carrier would you like to associate the node with?: ");
             carrierName = sc.nextLine();
@@ -36,7 +32,7 @@ public class AddNodeCommand implements Command{
 
         System.out.println("");
 
-
+        String hubName;
         do {
             System.out.print("Which hub would you like to associate the node with?: ");
             hubName = sc.nextLine();
@@ -45,7 +41,7 @@ public class AddNodeCommand implements Command{
 
         System.out.println("");
 
-
+        String nodeName;
         do {
             System.out.print("Enter the name of the node: ");
             nodeName = sc.nextLine();
@@ -54,17 +50,15 @@ public class AddNodeCommand implements Command{
 
         System.out.println("");
 
+
+        int nodeID;
         do {
             System.out.print("Enter an id for the node (the id must be an int value): ");
             nodeID = sc.nextInt();
-        }while (!checkID(nodeID)) ;
+        }while (!checkID(carrierName, hubName, nodeID)) ;
 
 
-            Carrier c = Network.carrierMap.get(carrierName);
-
-            Node node = new Node(nodeName, nodeID);
-
-            c.hubs.get(hubName).nodes.put(node.getName(), node);
+           addNode(carrierName, hubName, nodeName, nodeID);
 
         }
 
@@ -72,8 +66,20 @@ public class AddNodeCommand implements Command{
 
 
 
+    private void addNode(String carrierName, String hubName, String nodeName, int nodeID) {
 
-    public boolean checkID(int id) {
+        Carrier c = Network.carrierMap.get(carrierName);
+
+        Node node = new Node(nodeName, nodeID);
+
+        c.hubs.get(hubName).nodes.put(node.getName(), node);
+
+    }
+
+
+
+
+    private boolean checkID(String carrierName, String hubName, int nodeID) {
 
         boolean idCheck = true;
 

@@ -4,28 +4,26 @@ package com.tests;
 import com.main.Carrier;
 import com.main.Hub;
 import com.main.Network;
-import com.main.Node;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class DeleteNodeCommandTest {
+public class DeleteHubCommandTest {
+
 
     @Test
     public void deleteHubTest(){
 
         Carrier c = new Carrier("Vodafone");
         Hub h = new Hub("Hub1", 1);
-        Node n = new Node("Node1", 2);
-
 
         Network.carrierMap.put(c.getName(), c);
         Network.carrierMap.get(c.getName()).hubs.put(h.getName(), h);
-        Network.carrierMap.get(c.getName()).hubs.get(h.getName()).nodes.put(n.getName(), n);
 
-        Network.carrierMap.get(c.getName()).hubs.get(h.getName()).nodes.remove(n.getName());
+        Network.carrierMap.get(c.getName()).hubs.remove(h.getName());
 
-        Assert.assertTrue(Network.carrierMap.get(c.getName()).hubs.get(h.getName()).nodes.size() == 0);
+        Assert.assertTrue(Network.carrierMap.get(c.getName()).hubs.size() == 0);
 
     }
+
 
 }

@@ -5,15 +5,21 @@ import java.util.Date;
 
 public class Alarm {
 
-
-
     private String alarmType;
     private String alarmRemedy;
     private Date alarmReceivedDate;
 
 
-    public Alarm(){
+    public Alarm()
+    {
 
+    }
+
+
+    public Alarm(String alarmType, String alarmRemedy, Date alarmReceivedDate){
+        this.alarmType = alarmType;
+        this.alarmRemedy = alarmRemedy;
+        this.alarmReceivedDate = alarmReceivedDate;
 
     }
 

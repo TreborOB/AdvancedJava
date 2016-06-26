@@ -2,10 +2,10 @@ package com.main;
 
 import com.commands.*;
 
+
 import java.util.*;
 
 public class Main {
-
 
 
 
@@ -16,7 +16,6 @@ public class Main {
 
         Hub h1 = new Hub("Hub1", 1);
         Hub h2 = new Hub("Hub2", 2);
-
 
         Node n1 = new Node("Node1", 1);
         Node n2 = new Node("Node2", 2);
@@ -32,7 +31,6 @@ public class Main {
 
         Network.carrierMap.get(c1.getName()).hubs.get(h1.getName()).nodes.put(n1.getName(), n1);
         Network.carrierMap.get(c2.getName()).hubs.get(h2.getName()).nodes.put(n2.getName(), n2);
-
 
 
         Scanner scan = new Scanner(System.in);
@@ -58,6 +56,8 @@ public class Main {
         Command renameNode        = new RenameNodeCommand();
         Command listAllNodes      = new ListAllNodesCommand();
 
+        Command createAlarm       = new CreateAlarmCommand();
+
 
         commands.put("listNetwork",  listEntireNetwork);
 
@@ -76,7 +76,7 @@ public class Main {
         commands.put("renameNode",  renameNode);
         commands.put("listNodes",  listAllNodes);
 
-
+        commands.put("createAlarm",  createAlarm);
 
         String choice;
 
@@ -103,7 +103,9 @@ public class Main {
             System.out.println("deleteNode");
             System.out.println("renameNode");
             System.out.println("listNodes");
-
+            System.out.println("");
+            System.out.println("");
+            System.out.println("createAlarm");
 
             System.out.println("");
             System.out.print("Enter a command: ");

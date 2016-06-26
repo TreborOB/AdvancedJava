@@ -17,11 +17,10 @@ public class DeleteCarrierCommand implements Command {
 
         System.out.println("");
 
-        System.out.println("");
-
 
         ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
         listCarriers.listAllCarriers();
+        System.out.println("");
 
         do {
             System.out.print("Enter the name of the carrier you would like to delete: ");

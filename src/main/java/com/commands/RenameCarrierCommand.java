@@ -2,7 +2,6 @@ package com.commands;
 
 
 import com.main.Carrier;
-import com.main.Hub;
 import com.main.Network;
 
 import java.util.Scanner;
@@ -33,7 +32,7 @@ public class RenameCarrierCommand implements Command{
 
 
 
-    public void renameCarrier(String carrier, String newCarrierName){
+    private void renameCarrier(String carrier, String newCarrierName){
 
         Carrier c = Network.carrierMap.remove(carrier);
         Network.carrierMap.put(newCarrierName, c);

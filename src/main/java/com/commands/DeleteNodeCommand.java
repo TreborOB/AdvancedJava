@@ -1,7 +1,6 @@
 package com.commands;
 
 
-import com.main.Hub;
 import com.main.Network;
 
 import java.util.Scanner;
@@ -9,9 +8,7 @@ import java.util.Scanner;
 public class DeleteNodeCommand implements Command{
 
     Scanner scan = new Scanner(System.in);
-    private String carrier;
-    private String hub;
-    private String nodeToDelete;
+
 
 
     public void execute(){
@@ -22,10 +19,10 @@ public class DeleteNodeCommand implements Command{
         System.out.println("");
 
 
-
         System.out.println("");
 
 
+        String carrier;
         do {
             System.out.print("Enter a carrier: ");
             carrier = scan.nextLine();
@@ -34,6 +31,7 @@ public class DeleteNodeCommand implements Command{
         System.out.println("");
 
 
+        String hub;
         do{
         System.out.print("Enter a hub: ");
         hub = scan.nextLine();
@@ -41,6 +39,7 @@ public class DeleteNodeCommand implements Command{
         } while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
 
+        String nodeToDelete;
         do {
             System.out.print("Which node would you like to delete?: ");
             nodeToDelete = scan.nextLine();

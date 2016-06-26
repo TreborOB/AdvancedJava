@@ -22,7 +22,7 @@ public class ListAllCarriersCommand implements Command{
             System.out.println("No hubs exist");
         }else{
             for (Map.Entry<String, Carrier> entry: Network.carrierMap.entrySet()) {
-                System.out.println(entry.getKey() + " " + entry.getValue().getName());
+                System.out.println(entry.getKey());
             }
         }
     }

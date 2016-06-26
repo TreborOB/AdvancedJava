@@ -1,10 +1,8 @@
 package com.commands;
 
 
-import com.main.Carrier;
 import com.main.Hub;
 import com.main.Network;
-import com.main.Node;
 
 import java.util.Scanner;
 
@@ -15,8 +13,6 @@ public class RenameHubCommand implements Command{
     String carrier;
     String hub;
 
-
-    Hub h = new Hub();
 
     public void execute(){
 

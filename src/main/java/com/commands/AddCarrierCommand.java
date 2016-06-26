@@ -8,23 +8,27 @@ import java.util.Scanner;
 
 public class AddCarrierCommand implements Command{
 
-    Scanner sc = new Scanner(System.in);
-    Carrier c;
-    private String carrierName;
+    private Scanner scan = new Scanner(System.in);
+
+
 
     public void execute(){
 
-            System.out.println("");
-            System.out.print("Add Carrier");
-            System.out.println("");
 
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
 
+        System.out.println("");
+        System.out.println("Current carriers");
+        System.out.println("");
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
+        String carrierName;
 
         do {
-            System.out.print("Enter the carrier name: ");
-            carrierName = sc.nextLine();
+            System.out.print("Enter the new carriers name: ");
+            carrierName = scan.nextLine();
         }while(Network.carrierMap.containsKey(carrierName));
-
 
             System.out.println("");
 

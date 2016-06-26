@@ -13,7 +13,7 @@
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
         </dependency>
-    </dependencies>
 
+    </dependencies>
 
 </project>

@@ -1,8 +1,6 @@
 package com.commands;
 
 
-import com.main.Carrier;
-import com.main.Hub;
 import com.main.Network;
 import com.main.Node;
 
@@ -10,10 +8,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ListAllNodesCommand implements Command {
-
-
-    private String parentCarrier;
-    private String parentHub;
 
 
     Scanner scan = new Scanner(System.in);
@@ -25,6 +19,8 @@ public class ListAllNodesCommand implements Command {
         System.out.print("List All Nodes");
         System.out.println("");
 
+        String parentCarrier;
+        String parentHub;
 
         do {
             System.out.println("Choose a carrier");
@@ -39,18 +35,18 @@ public class ListAllNodesCommand implements Command {
 
 
         System.out.println("");
-        listAllNodes();
+        listAllNodes(parentCarrier, parentHub);
     }
 
 
 
-    public void listAllNodes(){
+    public void listAllNodes(String parentCarrier, String parentHub){
         if (Network.carrierMap.get(parentCarrier).hubs.get(parentHub).nodes.size() == 0) {
             System.out.println("No nodes exist");
         }
         {
             for (Map.Entry<String, Node> entry: Network.carrierMap.get(parentCarrier).hubs.get(parentHub).nodes.entrySet()) {
-                System.out.println(entry.getKey() + " " + entry.getValue().getName() + " " + entry.getValue().getId());
+                System.out.println("Hub name: "  + parentHub + "\n" + "Node name: " + entry.getValue().getName() + "\n" + "ID: " + entry.getValue().getId());
             }
 
         }
