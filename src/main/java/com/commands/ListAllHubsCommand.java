@@ -20,7 +20,7 @@ public class ListAllHubsCommand implements Command{
 
         String parentCarrier;
         do {
-            System.out.println("Which carriers hubs would you like to view?");
+            System.out.print("Which carriers hubs would you like to view?: ");
             parentCarrier = scan.nextLine();
         }while(!Network.carrierMap.containsKey(parentCarrier));
 
@@ -37,6 +37,7 @@ public class ListAllHubsCommand implements Command{
             }{
                 for (Map.Entry<String, Hub> entry: Network.carrierMap.get(parentCarrier).hubs.entrySet()) {
                     System.out.println("Hub name: " + entry.getKey() + "\n" + "ID: " + entry.getValue().getId());
+                    System.out.println("");
                 }
     }
 

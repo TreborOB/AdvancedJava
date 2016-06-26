@@ -1,18 +1,16 @@
 package com.commands;
 
 
-import com.main.Carrier;
-import com.main.Hub;
-import com.main.Network;
-import com.main.Node;
+import com.main.*;
 
+import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
 
 public class AddNodeCommand implements Command{
 
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
 
 
@@ -70,7 +68,11 @@ public class AddNodeCommand implements Command{
 
         Carrier c = Network.carrierMap.get(carrierName);
 
-        Node node = new Node(nodeName, nodeID);
+        Date date = new Date();
+
+        Alarm alarm = new Alarm("Default alarm", "Default remedy", date);
+
+        Node node = new Node(nodeName, nodeID, alarm);
 
         c.hubs.get(hubName).nodes.put(node.getName(), node);
 
@@ -87,7 +89,7 @@ public class AddNodeCommand implements Command{
 
 
             if (entry.getValue().getId() == nodeID) {
-                System.out.println("ID is not unique please choose another");
+                System.out.println("ID " + nodeID + " is not unique please choose another");
                 System.out.println("");
                 idCheck = false;
             } else {

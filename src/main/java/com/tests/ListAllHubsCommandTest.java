@@ -1,6 +1,7 @@
 package com.tests;
 
 
+import com.main.Alarm;
 import com.main.Carrier;
 import com.main.Hub;
 import com.main.Network;
@@ -15,8 +16,11 @@ public class ListAllHubsCommandTest {
     @Test
     public void listAllHubsTest(){
 
+
+        Alarm alarm = new Alarm();
+
         Carrier c = new Carrier("Vodafone");
-        Hub h = new Hub("Hub1", 1);
+        Hub h = new Hub("Hub1", 1, alarm);
 
         Network.carrierMap.put(c.getName(), c);
         Network.carrierMap.put(c.getName(), c).hubs.put(h.getName(), h);

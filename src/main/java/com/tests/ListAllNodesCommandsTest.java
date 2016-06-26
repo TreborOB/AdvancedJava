@@ -1,10 +1,7 @@
 package com.tests;
 
 
-import com.main.Carrier;
-import com.main.Hub;
-import com.main.Network;
-import com.main.Node;
+import com.main.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,8 +14,12 @@ public class ListAllNodesCommandsTest {
     @Test
     public void listAllNodesTest(){
 
+
+        Alarm alarm = new Alarm();
+
+
         Carrier c = new Carrier("Vodafone");
-        Hub h = new Hub("Hub1", 1);
+        Hub h = new Hub("Hub1", 1, alarm);
         Node n = new Node();
 
         Network.carrierMap.put(c.getName(), c);

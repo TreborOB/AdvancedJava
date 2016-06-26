@@ -11,14 +11,22 @@ public class Main {
 
     public static void main(String[] args){
 
+        Date date = new Date();
+
+        Alarm alarm1 = new Alarm("Dark fibre", "Dark fibre remedy", date);
+        Alarm alarm2 = new Alarm("Dark fibre", "Dark fibre remedy", date);
+        Alarm alarm3 = new Alarm("Dark fibre", "Dark fibre remedy", date);
+        Alarm alarm4 = new Alarm("Dark fibre", "Dark fibre remedy", date);
+
+
         Carrier c1 = new Carrier("Vodafone");
         Carrier c2 = new Carrier("Three");
 
-        Hub h1 = new Hub("Hub1", 1);
-        Hub h2 = new Hub("Hub2", 2);
+        Hub h1 = new Hub("Hub1", 1, alarm1);
+        Hub h2 = new Hub("Hub2", 2, alarm2);
 
-        Node n1 = new Node("Node1", 1);
-        Node n2 = new Node("Node2", 2);
+        Node n1 = new Node("Node1", 1, alarm3);
+        Node n2 = new Node("Node2", 2, alarm4);
 
 
         Network.carrierMap.put(c1.getName(), c1);
@@ -84,7 +92,7 @@ public class Main {
             System.out.println("");
             System.out.println("DAS network manager");
             System.out.println("--------------------");
-            System.out.println("listEntireNetwork");
+            System.out.println("listNetwork");
             System.out.println("");
 
             System.out.println("addCarrier");

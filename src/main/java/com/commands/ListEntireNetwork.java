@@ -21,7 +21,7 @@ public class ListEntireNetwork implements Command{
     }
 
 
-    public void listNetwork(){
+    private void listNetwork(){
 
 
         String hubs;
@@ -36,17 +36,23 @@ public class ListEntireNetwork implements Command{
                 hubs = entry.getKey();
 
                 for (Map.Entry<String, Hub> entryHub: Network.carrierMap.get(hubs).hubs.entrySet()) {
+                    System.out.println("");
                     System.out.println("Hub name: " + entryHub.getKey());
+                    System.out.println("Hub alarms: " + entryHub.getValue().getAlarm().getAlarmType());
                     nodes = entryHub.getKey();
 
                     for (Map.Entry<String, Node> entryNode: Network.carrierMap.get(hubs).hubs.get(nodes).nodes.entrySet()) {
+                        System.out.println("");
                         System.out.println("Node name: " + entryNode.getKey());
-
+                        System.out.println("Node alarms: " + entryNode.getValue().getAlarm().getAlarmType());
                     }
 
                 }
 
+
+                System.out.println("------------------------");
                 System.out.println("");
+
             }
 
 
