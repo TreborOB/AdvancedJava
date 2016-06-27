@@ -9,7 +9,7 @@ import com.main.Node;
 import java.util.Map;
 import java.util.Scanner;
 
-public class StatusOfNode implements Command{
+public class StatusOfNodeCommand implements Command{
 
 
     private Scanner scan = new Scanner(System.in);

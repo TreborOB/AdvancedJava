@@ -5,7 +5,7 @@ import com.main.Network;
 
 import java.util.Scanner;
 
-public class StatusOfCarrier implements Command{
+public class StatusOfCarrierCommand implements Command{
 
 
     private Scanner scan = new Scanner(System.in);
@@ -14,7 +14,6 @@ public class StatusOfCarrier implements Command{
     public void execute() {
 
         String carrier;
-
 
         do {
             System.out.println("");

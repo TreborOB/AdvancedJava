@@ -8,7 +8,7 @@ import com.main.Network;
 import java.util.Map;
 import java.util.Scanner;
 
-public class StatusOfHub implements Command{
+public class StatusOfHubCommand implements Command{
 
 
 
@@ -43,7 +43,6 @@ public class StatusOfHub implements Command{
         }else {
             System.out.println("");
             System.out.print("Invalid selection");
-
         }
     }
 
@@ -54,6 +53,7 @@ public class StatusOfHub implements Command{
 
            String hubName;
            Hub hub;
+           String availableUnavailable;
 
            do {
                System.out.println("");
@@ -62,25 +62,31 @@ public class StatusOfHub implements Command{
            }while(!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
 
 
+
+           for(int i = 0; i < Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.size(); i++) {
+               System.out.println("");
+
+               if (Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.get(i).getAlarmType().equalsIgnoreCase("Unit unavailable")) {
+                    availableUnavailable = "Unit unavailable";
+               } else {
+                    availableUnavailable = "Unit available";
+
+               }
+
                for (Map.Entry<String, Hub> entry: Network.carrierMap.get(carrier).hubs.entrySet()) {
                    if(entry.getValue().getName().equals(hubName)) {
-
 
                        hub = entry.getValue();
                        System.out.println("");
                        System.out.println("Hub name: " + hub.getName());
                        System.out.println("Hub id: " + hub.getId());
-                   }
+                       System.out.println("Hub status: " + availableUnavailable);
 
-
-
-
-
+                   }//Unit available
            }
-
-
-
+        }
        }
+
 
 
 

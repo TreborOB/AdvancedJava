@@ -3,7 +3,6 @@ package com.commands;
 
 import com.main.*;
 
-import java.util.Date;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -67,8 +66,6 @@ public class AddNodeCommand implements Command{
     private void addNode(String carrierName, String hubName, String nodeName, int nodeID) {
 
         Carrier c = Network.carrierMap.get(carrierName);
-
-        Date date = new Date();
 
         Node node = new Node(nodeName, nodeID);
 

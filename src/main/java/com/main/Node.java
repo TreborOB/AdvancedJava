@@ -41,4 +41,12 @@ public class Node{
         this.id = id;
     }
 
+
+    public List<Alarm> getHubAlarms() {
+        return hubAlarms;
+    }
+
+    public void setHubAlarms(List<Alarm> hubAlarms) {
+        this.hubAlarms = hubAlarms;
+    }
 }
