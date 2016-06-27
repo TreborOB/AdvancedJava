@@ -14,12 +14,8 @@ public class ListAllNodesCommandsTest {
     @Test
     public void listAllNodesTest(){
 
-
-        Alarm alarm = new Alarm();
-
-
         Carrier c = new Carrier("Vodafone");
-        Hub h = new Hub("Hub1", 1, alarm);
+        Hub h = new Hub("Hub1", 1);
         Node n = new Node();
 
         Network.carrierMap.put(c.getName(), c);

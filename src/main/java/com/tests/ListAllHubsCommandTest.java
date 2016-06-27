@@ -16,11 +16,8 @@ public class ListAllHubsCommandTest {
     @Test
     public void listAllHubsTest(){
 
-
-        Alarm alarm = new Alarm();
-
         Carrier c = new Carrier("Vodafone");
-        Hub h = new Hub("Hub1", 1, alarm);
+        Hub h = new Hub("Hub1", 1);
 
         Network.carrierMap.put(c.getName(), c);
         Network.carrierMap.put(c.getName(), c).hubs.put(h.getName(), h);

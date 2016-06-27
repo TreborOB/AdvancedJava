@@ -101,16 +101,12 @@ public class CreateAlarmCommand implements Command {
         createNodeAlarm(carrier, chosenHub, chosenNode);
     }
 
-
     private void createHubAlarm(String carrier, String chosenHub) {
-
-
-
 
         Alarm hubAlarm;
         hubAlarm = createAlarm();
 
-        Network.carrierMap.get(carrier).hubs.get(chosenHub).setAlarm(hubAlarm);
+        Network.carrierMap.get(carrier).hubs.get(chosenHub).hubAlarms.add(hubAlarm);
 
     }
 
@@ -120,10 +116,9 @@ public class CreateAlarmCommand implements Command {
         Alarm nodeAlarm;
         nodeAlarm = createAlarm();
 
-        Network.carrierMap.get(carrier).hubs.get(chosenHub).setAlarm(nodeAlarm);
+        Network.carrierMap.get(carrier).hubs.get(chosenHub).hubAlarms.add(nodeAlarm);
 
     }
-
 
 
     private Alarm createAlarm() {

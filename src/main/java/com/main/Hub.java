@@ -1,7 +1,9 @@
 package com.main;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class Hub{
@@ -9,18 +11,17 @@ public class Hub{
 
     private String name;
     private int id;
-    private Alarm alarm;
 
+    public List<Alarm> hubAlarms = new ArrayList<>();
     public HashMap<String, Node> nodes = new HashMap<>();
 
 
     public Hub(){
     }
 
-    public Hub(String name, int id, Alarm alarm){
+    public Hub(String name, int id){
         this.name = name;
         this.id = id;
-        this.alarm = alarm;
 
     }
 
@@ -41,12 +42,5 @@ public class Hub{
         this.id = id;
     }
 
-    public Alarm getAlarm() {
-        return alarm;
-    }
-
-    public void setAlarm(Alarm alarm) {
-        this.alarm = alarm;
-    }
 }
 

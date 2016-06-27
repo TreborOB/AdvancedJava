@@ -13,20 +13,14 @@ public class Main {
 
         Date date = new Date();
 
-        Alarm alarm1 = new Alarm("Dark fibre", "Dark fibre remedy", date);
-        Alarm alarm2 = new Alarm("Dark fibre", "Dark fibre remedy", date);
-        Alarm alarm3 = new Alarm("Dark fibre", "Dark fibre remedy", date);
-        Alarm alarm4 = new Alarm("Dark fibre", "Dark fibre remedy", date);
-
-
         Carrier c1 = new Carrier("Vodafone");
         Carrier c2 = new Carrier("Three");
 
-        Hub h1 = new Hub("Hub1", 1, alarm1);
-        Hub h2 = new Hub("Hub2", 2, alarm2);
+        Hub h1 = new Hub("Hub1", 1);
+        Hub h2 = new Hub("Hub2", 2);
 
-        Node n1 = new Node("Node1", 1, alarm3);
-        Node n2 = new Node("Node2", 2, alarm4);
+        Node n1 = new Node("Node1", 1);
+        Node n2 = new Node("Node2", 2);
 
 
         Network.carrierMap.put(c1.getName(), c1);
@@ -47,42 +41,52 @@ public class Main {
 
 
         Command listEntireNetwork = new ListEntireNetwork();
+        Command statusOfNetwork   = new StatusOfNetworkCommand();
+
 
         Command addCarrier        = new AddCarrierCommand();
         Command deleteCarrier     = new DeleteCarrierCommand();
         Command renameCarrier     = new RenameCarrierCommand();
         Command listAllCarriers   = new ListAllCarriersCommand();
+        Command statusOfCarrier   = new StatusOfCarrier();
 
         Command addHub            = new AddHubCommand();
         Command deleteHub         = new DeleteHubCommand();
         Command renameHub         = new RenameHubCommand();
         Command listAllHubs       = new ListAllHubsCommand();
+        Command statusOfHub       = new StatusOfHub();
 
 
         Command addNode           = new AddNodeCommand();
         Command deleteNode        = new DeleteNodeCommand();
         Command renameNode        = new RenameNodeCommand();
         Command listAllNodes      = new ListAllNodesCommand();
+        Command statusOfNode      = new StatusOfNode();
 
         Command createAlarm       = new CreateAlarmCommand();
 
 
         commands.put("listNetwork",  listEntireNetwork);
+        commands.put("networkStatus",  statusOfNetwork);
 
         commands.put("addCarrier",  addCarrier);
         commands.put("deleteCarrier",  deleteCarrier);
         commands.put("renameCarrier",  renameCarrier);
         commands.put("listCarriers",  listAllCarriers);
+        commands.put("carrierStatus",  statusOfCarrier);
 
         commands.put("addHub",  addHub);
         commands.put("deleteHub",  deleteHub);
         commands.put("renameHub",  renameHub);
         commands.put("listHubs",  listAllHubs);
+        commands.put("hubStatus",  statusOfHub);
+
 
         commands.put("addNode",  addNode);
         commands.put("deleteNode",  deleteNode);
         commands.put("renameNode",  renameNode);
         commands.put("listNodes",  listAllNodes);
+        commands.put("nodeStatus",  statusOfNode);
 
         commands.put("createAlarm",  createAlarm);
 
@@ -93,12 +97,14 @@ public class Main {
             System.out.println("DAS network manager");
             System.out.println("--------------------");
             System.out.println("listNetwork");
+            System.out.println("networkStatus");
             System.out.println("");
 
             System.out.println("addCarrier");
             System.out.println("deleteCarrier");
             System.out.println("renameCarrier");
             System.out.println("listCarriers");
+            System.out.println("carrierStatus");
             System.out.println("");
             System.out.println("");
             System.out.println("addHub");

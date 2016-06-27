@@ -20,8 +20,8 @@ public class Alarm {
         this.alarmType = alarmType;
         this.alarmRemedy = alarmRemedy;
         this.alarmReceivedDate = alarmReceivedDate;
-
     }
+
 
 
     public String getAlarmType() {

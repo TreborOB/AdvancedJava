@@ -70,9 +70,7 @@ public class AddNodeCommand implements Command{
 
         Date date = new Date();
 
-        Alarm alarm = new Alarm("Default alarm", "Default remedy", date);
-
-        Node node = new Node(nodeName, nodeID, alarm);
+        Node node = new Node(nodeName, nodeID);
 
         c.hubs.get(hubName).nodes.put(node.getName(), node);
 
