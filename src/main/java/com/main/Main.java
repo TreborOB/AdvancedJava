@@ -20,7 +20,7 @@ public class Main {
         Map<String, Command> commands = new HashMap<>();
 
 
-        Command listEntireNetwork = new ListEntireNetwork();
+        Command listEntireNetwork = new ListEntireNetworkCommand();
         Command statusOfNetwork   = new StatusOfNetworkCommand();
 
 
@@ -44,9 +44,14 @@ public class Main {
         Command statusOfNode      = new StatusOfNodeCommand();
 
         Command createAlarm       = new CreateAlarmCommand();
-        Command clearAlarm  = new ClearAlarmCommand();
-
+        Command clearAlarm        = new ClearAlarmCommand();
         SuggestedRemediesCommand suggestedRemedies = new SuggestedRemediesCommand();
+
+        Command importFromJson   = new ImportFromJson();
+        Command exportFromJson   = new ExportToJson();
+
+
+
 
         commands.put("listNetwork",  listEntireNetwork);
         commands.put("networkStatus",  statusOfNetwork);
@@ -75,6 +80,9 @@ public class Main {
         commands.put("remedies",  suggestedRemedies);
 
 
+        commands.put("import",  importFromJson);
+        commands.put("export",  exportFromJson);
+
 
         String choice;
 
@@ -97,17 +105,23 @@ public class Main {
             System.out.println("deleteHub");
             System.out.println("renameHub");
             System.out.println("listHubs");
+            System.out.println("hubStatus");
             System.out.println("");
             System.out.println("");
             System.out.println("addNode");
             System.out.println("deleteNode");
             System.out.println("renameNode");
             System.out.println("listNodes");
+            System.out.println("nodeStatus");
             System.out.println("");
             System.out.println("");
             System.out.println("createAlarm");
             System.out.println("clearAlarm");
             System.out.println("remedies");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("import");
+            System.out.println("export");
 
 
             System.out.println("");
@@ -149,12 +163,25 @@ public class Main {
         Alarm alarm2 = new Alarm("Dark fibre", "Dark fibre remedy", date);
         Alarm alarm3 = new Alarm("Unit unavailable", "Unit unavailable remedy", date);
         Alarm alarm4 = new Alarm("Optical loss", "Optical loss remedy", date);
+        Alarm alarm5 = new Alarm("Unit unavailable", "Unit unavailable remedy", date);
+        Alarm alarm6 = new Alarm("Optical loss", "Optical loss remedy", date);
+
 
         h1.hubAlarms.add(alarm1);
         h1.hubAlarms.add(alarm2);
+        h1.hubAlarms.add(alarm5);
 
         h2.hubAlarms.add(alarm3);
         h2.hubAlarms.add(alarm4);
+        h2.hubAlarms.add(alarm6);
+
+        n1.nodeAlarms.add(alarm1);
+        n1.nodeAlarms.add(alarm2);
+        n1.nodeAlarms.add(alarm3);
+
+        n2.nodeAlarms.add(alarm4);
+        n2.nodeAlarms.add(alarm5);
+        n2.nodeAlarms.add(alarm6);
 
 
         Network.carrierMap.put(c1.getName(), c1);

@@ -17,22 +17,32 @@ public class RenameHubCommand implements Command{
     public void execute(){
 
 
-        System.out.println("Rename Hub");
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
         System.out.println("");
 
 
+        do {
         System.out.print("Enter a carrier: ");
         carrier = scan.nextLine();
         System.out.println("");
+        }while(!Network.carrierMap.containsKey(carrier));
 
 
-        System.out.print("Enter the name of the hub you want to rename: ");
-        hub = scan.nextLine();
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrier);
         System.out.println("");
 
 
+        do{
+        System.out.print("Enter the name of the hub you want to rename: ");
+        hub = scan.nextLine();
+        System.out.println("");
+        } while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
-        System.out.print("Enter a new name for the hub:");
+
+
+        System.out.print("Enter a new name for the hub: ");
         String newHubName =  scan.nextLine();
         System.out.println("");
 
@@ -47,7 +57,6 @@ public class RenameHubCommand implements Command{
 
 
             Hub b = Network.carrierMap.get(carrier).hubs.remove(hub);
-
 
             Network.carrierMap.get(carrier).hubs.put(newHubName, b);
 

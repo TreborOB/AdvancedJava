@@ -49,5 +49,9 @@ public class Hub{
     public void setHubAlarms(List<Alarm> hubAlarms) {
         this.hubAlarms = hubAlarms;
     }
+
+    public int returnHubAlarmSize(){
+        return hubAlarms.size();
+    }
 }
 

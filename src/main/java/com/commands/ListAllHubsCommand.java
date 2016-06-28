@@ -17,6 +17,10 @@ public class ListAllHubsCommand implements Command{
     public void execute(){
 
         System.out.println("");
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
 
         String parentCarrier;
         do {

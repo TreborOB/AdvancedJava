@@ -11,8 +11,6 @@ public class AddNodeCommand implements Command{
 
     private Scanner sc = new Scanner(System.in);
 
-
-
     public void execute() {
 
 
@@ -28,6 +26,12 @@ public class AddNodeCommand implements Command{
 
 
         System.out.println("");
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrierName);
+        System.out.println("");
+
+
 
         String hubName;
         do {

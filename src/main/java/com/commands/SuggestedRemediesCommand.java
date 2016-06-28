@@ -15,6 +15,10 @@ public class SuggestedRemediesCommand implements Command{
 
         System.out.println("");
 
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
         String carrierName;
         do {
             System.out.print("Choose a carrier: ");
@@ -95,8 +99,8 @@ public class SuggestedRemediesCommand implements Command{
            for(int i = 0; i < Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.size(); i++)
            {
                System.out.println("");
-               System.out.println("Alarm: " + Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).hubAlarms.get(i).getAlarmType() + "\n" +
-                                  "Remedy: " + Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).hubAlarms.get(i).getAlarmRemedy());
+               System.out.println("Alarm: " + Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.get(i).getAlarmType() + "\n" +
+                                  "Remedy: " + Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.get(i).getAlarmRemedy());
            }
 
 

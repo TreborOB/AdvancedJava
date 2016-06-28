@@ -11,7 +11,7 @@ public class Node{
     private int id;
 
 
-    public List<Alarm> hubAlarms = new ArrayList<>();
+    public List<Alarm> nodeAlarms = new ArrayList<>();
 
 
     public Node(){
@@ -41,12 +41,15 @@ public class Node{
         this.id = id;
     }
 
-
-    public List<Alarm> getHubAlarms() {
-        return hubAlarms;
+    public List<Alarm> getNodeAlarms() {
+        return nodeAlarms;
     }
 
-    public void setHubAlarms(List<Alarm> hubAlarms) {
-        this.hubAlarms = hubAlarms;
+    public void setNodeAlarms(List<Alarm> hubAlarms) {
+        this.nodeAlarms = hubAlarms;
+    }
+
+    public int returnNodeAlarmsSize(){
+        return nodeAlarms.size();
     }
 }

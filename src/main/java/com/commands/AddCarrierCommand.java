@@ -19,7 +19,7 @@ public class AddCarrierCommand implements Command{
 
         System.out.println("");
         System.out.println("Current carriers");
-        System.out.println("");
+        System.out.println("----------------");
         listCarriers.listAllCarriers();
         System.out.println("");
 

@@ -8,7 +8,7 @@ import com.main.Node;
 
 import java.util.Map;
 
-public class ListEntireNetwork implements Command{
+public class ListEntireNetworkCommand implements Command{
 
 
     public void execute(){

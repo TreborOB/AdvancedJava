@@ -20,12 +20,21 @@ public class CreateAlarmCommand implements Command {
         System.out.println("Create an alarm");
         System.out.println("---------------");
 
+        System.out.println("");
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
+
         String carrierName;
 
         do {
             System.out.println("");
             System.out.print("Please choose a carrier: ");
             carrierName = scan.nextLine();
+
+
+
         } while (!Network.carrierMap.containsKey(carrierName));
 
         System.out.println("");
@@ -54,6 +63,13 @@ public class CreateAlarmCommand implements Command {
         listHubs.listAllHubs(carrier);
 
 
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrier);
+        System.out.println("");
+
+
+
         String chosenHub;
         do {
             System.out.print("Choose a hub: ");
@@ -75,6 +91,12 @@ public class CreateAlarmCommand implements Command {
         listHubs.listAllHubs(carrier);
 
         System.out.println("");
+
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrier);
+        System.out.println("");
+
 
 
         String chosenHub;
@@ -101,12 +123,14 @@ public class CreateAlarmCommand implements Command {
         createNodeAlarm(carrier, chosenHub, chosenNode);
     }
 
+
     private void createHubAlarm(String carrier, String chosenHub) {
 
         Alarm hubAlarm;
         hubAlarm = createAlarm();
 
         Network.carrierMap.get(carrier).hubs.get(chosenHub).hubAlarms.add(hubAlarm);
+
 
     }
 
@@ -116,7 +140,7 @@ public class CreateAlarmCommand implements Command {
         Alarm nodeAlarm;
         nodeAlarm = createAlarm();
 
-        Network.carrierMap.get(carrier).hubs.get(chosenHub).hubAlarms.add(nodeAlarm);
+        Network.carrierMap.get(carrier).hubs.get(chosenHub).nodes.get(chosenNode).nodeAlarms.add(nodeAlarm);
 
     }
 
@@ -172,8 +196,6 @@ public class CreateAlarmCommand implements Command {
         }
 
         Date date = new Date();
-
-
 
         return new Alarm(alarmType, alarmRemedy, date);
 

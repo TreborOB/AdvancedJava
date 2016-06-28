@@ -19,6 +19,12 @@ public class StatusOfHubCommand implements Command{
 
         String carrier;
 
+        System.out.println("");
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
+
         do {
             System.out.println("");
             System.out.print("Please enter the carrier name: ");
@@ -55,6 +61,12 @@ public class StatusOfHubCommand implements Command{
            Hub hub;
            String availableUnavailable;
 
+           System.out.println("");
+           ListAllHubsCommand listHubs = new ListAllHubsCommand();
+           listHubs.listAllHubs(carrier);
+           System.out.println("");
+
+
            do {
                System.out.println("");
                System.out.print("Please enter the hub name: ");
@@ -82,11 +94,11 @@ public class StatusOfHubCommand implements Command{
                        System.out.println("Hub id: " + hub.getId());
                        System.out.println("Hub status: " + availableUnavailable);
 
-                   }//Unit available
+                   }
            }
+
         }
        }
-
 
 
 
@@ -95,32 +107,49 @@ public class StatusOfHubCommand implements Command{
 
            int hubID;
 
+           ListAllHubsCommand listHubs = new ListAllHubsCommand();
+           listHubs.listAllHubs(carrier);
+           System.out.println("");
+
+
            System.out.println("");
            System.out.print("Please enter the hub id you wish to search for: ");
            hubID = scan.nextInt();
 
            String hubs;
 
+           String unitAvailability = "";
+
            Hub hub;
 
-               {
+
                    for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
                        hubs = entry.getKey();
 
                        for (Map.Entry<String, Hub> entryHub : Network.carrierMap.get(hubs).hubs.entrySet()) {
 
 
+                           for(int i = 0; i < Network.carrierMap.get(carrier).hubs.get(entryHub.getKey()).getHubAlarms().size(); i++){
+
+                               if(Network.carrierMap.get(carrier).hubs.get(entryHub.getKey()).getHubAlarms().get(i).getAlarmType().equalsIgnoreCase("available")){
+                                   unitAvailability = "Available";
+                               }else{
+                                   unitAvailability = "Unavailable";
+                               }
+                           }
+
                            if (entryHub.getValue().getId() == hubID) {
                                hub = entryHub.getValue();
                                System.out.println("");
                                System.out.println("Hub name: " + hub.getName());
                                System.out.println("Hub id: " + hub.getId());
+                               System.out.println("Hub status: " + unitAvailability);
+
 
                            }
+
                        }
                    }
-
-               }
 
            }
 }

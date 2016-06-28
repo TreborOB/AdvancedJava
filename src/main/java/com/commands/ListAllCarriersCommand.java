@@ -12,6 +12,8 @@ public class ListAllCarriersCommand implements Command{
     public void execute(){
 
         System.out.println("");
+        System.out.println("List carriers");
+        System.out.println("--------------");
         listAllCarriers();
         System.out.println("");
 

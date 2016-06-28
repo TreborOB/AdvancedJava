@@ -20,16 +20,31 @@ public class RenameNodeCommand implements Command{
 
 
         System.out.println("");
-        System.out.print("Rename Nodes");
-        System.out.println("");
+        System.out.println("Rename Node");
+        System.out.println("------------");
 
+
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+
+
+        System.out.println("");
         System.out.print("Enter a carrier: ");
         carrier = scan.nextLine();
         System.out.println("");
 
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrier);
+        System.out.println("");
+
+
         System.out.print("Enter a hub: ");
         hub = scan.nextLine();
         System.out.println("");
+
+        ListAllNodesCommand listAllNodes = new ListAllNodesCommand();
+        listAllNodes.listAllNodes(carrier, hub);
 
         System.out.print("Which node would you like to rename?: ");
         node = scan.nextLine();
@@ -44,13 +59,12 @@ public class RenameNodeCommand implements Command{
 
 
 
-
-    public void renameNode(String carrier, String hub, String node, String newName){
+    public void renameNode(String carrier, String hub, String node, String newNodeName){
 
 
         Node n = Network.carrierMap.get(carrier).hubs.get(hub).nodes.remove(node);
 
-        Network.carrierMap.get(carrier).hubs.get(hub).nodes.put(newName, n);
+        Network.carrierMap.get(carrier).hubs.get(hub).nodes.put(newNodeName, n);
 
     }
 }

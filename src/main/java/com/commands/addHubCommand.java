@@ -17,7 +17,12 @@ public class AddHubCommand implements Command{
 
 
         System.out.println("");
-        System.out.println();
+        System.out.println("Carriers");
+        System.out.println("---------");
+
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
 
 
         String parentCarrier;
@@ -27,6 +32,12 @@ public class AddHubCommand implements Command{
             }while (!Network.carrierMap.containsKey(parentCarrier));
 
             System.out.println("");
+
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(parentCarrier);
+        System.out.println("");
+
 
 
         String hubName;
@@ -88,12 +99,6 @@ public class AddHubCommand implements Command{
 
         return idCheck;
     }
-
-
-
-
-
-
 
 
     }

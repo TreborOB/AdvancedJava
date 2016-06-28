@@ -12,6 +12,10 @@ public class ClearAlarmCommand implements Command{
 
     public void execute(){
 
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
         String carrierName;
 
         do {
@@ -48,6 +52,10 @@ public class ClearAlarmCommand implements Command{
 
 
         String hubName;
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrierName);
+        System.out.println("");
 
         do {
             System.out.println("");
@@ -151,7 +159,7 @@ public class ClearAlarmCommand implements Command{
 
     private void clearAllNodeAlarms(String carrierName, String hubName, String nodeName){
 
-        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).hubAlarms.clear();
+        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.clear();
     }
 
 
@@ -160,18 +168,19 @@ public class ClearAlarmCommand implements Command{
 
         String specificAlarmNode = specificAlarmToRemove();
 
+        if(Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.isEmpty()){
 
-        for(int i = 0; i < Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.size(); i++)
-        {
-            System.out.println("");
-            if(Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).hubAlarms.get(i).getAlarmType().equalsIgnoreCase(specificAlarmNode)){
-                System.out.print(specificAlarmNode + " alarm removed");
-        }
+                   System.out.println("No alarms available");
+        }else{
 
-        }
+            for (int i = 0; i < Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.size(); i++) {
+                System.out.println("");
+                if (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.get(i).getAlarmType().equalsIgnoreCase(specificAlarmNode)) {
+                    System.out.print(specificAlarmNode + " alarm removed");
+                }
+            }
+        }}
 
-
-    }
 
 
 

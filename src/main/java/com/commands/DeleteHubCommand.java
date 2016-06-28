@@ -15,6 +15,10 @@ public class DeleteHubCommand implements Command{
 
         System.out.println("");
 
+        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
+        listCarriers.listAllCarriers();
+        System.out.println("");
+
        String carrier;
         do {
             System.out.print("Enter a carrier: ");
@@ -22,6 +26,14 @@ public class DeleteHubCommand implements Command{
         }while(!Network.carrierMap.containsKey(carrier));
 
         System.out.println("");
+
+
+
+        ListAllHubsCommand listHubs = new ListAllHubsCommand();
+        listHubs.listAllHubs(carrier);
+        System.out.println("");
+
+
 
         String hubToDelete;
        do{
