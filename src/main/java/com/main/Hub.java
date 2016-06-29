@@ -10,7 +10,7 @@ public class Hub{
 
 
     private String name;
-    private int id;
+    private String id;
 
     public List<Alarm> hubAlarms = new ArrayList<>();
     public HashMap<String, Node> nodes = new HashMap<>();
@@ -19,7 +19,7 @@ public class Hub{
     public Hub(){
     }
 
-    public Hub(String name, int id){
+    public Hub(String name, String id){
         this.name = name;
         this.id = id;
 
@@ -34,11 +34,11 @@ public class Hub{
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,8 +50,6 @@ public class Hub{
         this.hubAlarms = hubAlarms;
     }
 
-    public int returnHubAlarmSize(){
-        return hubAlarms.size();
-    }
+
 }
 

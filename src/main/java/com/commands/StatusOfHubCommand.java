@@ -19,139 +19,53 @@ public class StatusOfHubCommand implements Command{
 
         String carrier;
 
-        System.out.println("");
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
-
+        ListElements.listCarriers();
 
         do {
-            System.out.println("");
             System.out.print("Please enter the carrier name: ");
             carrier = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrier);
         }while(!Network.carrierMap.containsKey(carrier));
 
 
         String nameOrID;
 
          System.out.println("");
-         System.out.print("Do you wish to search by the hub name or id?: ");
+         System.out.print("Enter the name or ID of the hub you wish to search for: ");
          nameOrID = scan.nextLine();
 
+        searchByNameOrID(carrier, nameOrID);
 
-        if(nameOrID.equalsIgnoreCase("name")){
-
-              searchByName(carrier);
-        }else if(nameOrID.equalsIgnoreCase("id")){
-
-               searchByID(carrier);
-
-        }else {
-            System.out.println("");
-            System.out.print("Invalid selection");
-        }
     }
 
 
 
 
-       private void searchByName(String carrier){
+       private void searchByNameOrID(String carrier, String nameOrID){
 
            String hubName;
            Hub hub;
-           String availableUnavailable;
-
-           System.out.println("");
-           ListAllHubsCommand listHubs = new ListAllHubsCommand();
-           listHubs.listAllHubs(carrier);
-           System.out.println("");
-
-
-           do {
-               System.out.println("");
-               System.out.print("Please enter the hub name: ");
-               hubName = scan.nextLine();
-           }while(!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
-
-
-
-           for(int i = 0; i < Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.size(); i++) {
-               System.out.println("");
-
-               if (Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.get(i).getAlarmType().equalsIgnoreCase("Unit unavailable")) {
-                    availableUnavailable = "Unit unavailable";
-               } else {
-                    availableUnavailable = "Unit available";
-
-               }
-
-               for (Map.Entry<String, Hub> entry: Network.carrierMap.get(carrier).hubs.entrySet()) {
-                   if(entry.getValue().getName().equals(hubName)) {
-
-                       hub = entry.getValue();
-                       System.out.println("");
-                       System.out.println("Hub name: " + hub.getName());
-                       System.out.println("Hub id: " + hub.getId());
-                       System.out.println("Hub status: " + availableUnavailable);
-
-                   }
-           }
-
-        }
-       }
-
-
-
-       private void searchByID(String carrier) {
-
-
-           int hubID;
-
-           ListAllHubsCommand listHubs = new ListAllHubsCommand();
-           listHubs.listAllHubs(carrier);
-           System.out.println("");
-
-
-           System.out.println("");
-           System.out.print("Please enter the hub id you wish to search for: ");
-           hubID = scan.nextInt();
-
            String hubs;
 
            String unitAvailability = "";
 
-           Hub hub;
+           for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
+               hubs = entry.getKey();
 
+               for (Map.Entry<String, Hub> entryHub : Network.carrierMap.get(hubs).hubs.entrySet()) {
 
-                   for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
-                       hubs = entry.getKey();
+                   if (entryHub.getKey().equalsIgnoreCase(nameOrID) || entryHub.getValue().getId().equalsIgnoreCase(nameOrID)) {
+                       System.out.println("");
 
-                       for (Map.Entry<String, Hub> entryHub : Network.carrierMap.get(hubs).hubs.entrySet()) {
+                       hub = entryHub.getValue();
+                       System.out.println(hub.getName());
+                       System.out.println(hub.getId());
+                       System.out.println(unitAvailability);
 
-
-                           for(int i = 0; i < Network.carrierMap.get(carrier).hubs.get(entryHub.getKey()).getHubAlarms().size(); i++){
-
-                               if(Network.carrierMap.get(carrier).hubs.get(entryHub.getKey()).getHubAlarms().get(i).getAlarmType().equalsIgnoreCase("available")){
-                                   unitAvailability = "Available";
-                               }else{
-                                   unitAvailability = "Unavailable";
-                               }
-                           }
-
-                           if (entryHub.getValue().getId() == hubID) {
-                               hub = entryHub.getValue();
-                               System.out.println("");
-                               System.out.println("Hub name: " + hub.getName());
-                               System.out.println("Hub id: " + hub.getId());
-                               System.out.println("Hub status: " + unitAvailability);
-
-
-                           }
-
-                       }
                    }
-
+               }
            }
+       }
 }
 
 

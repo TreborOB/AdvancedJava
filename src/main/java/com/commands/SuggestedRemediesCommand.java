@@ -15,14 +15,15 @@ public class SuggestedRemediesCommand implements Command{
 
         System.out.println("");
 
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
+        ListElements.listCarriers();
 
         String carrierName;
         do {
             System.out.print("Choose a carrier: ");
-            carrierName = scan.nextLine();
+            carrierName = scan.nextLine();if(!Network.carrierMap.containsKey(carrierName)){
+                System.out.println("No such carrier");
+            }
+
         } while (!Network.carrierMap.containsKey(carrierName));
 
 
@@ -56,9 +57,15 @@ public class SuggestedRemediesCommand implements Command{
            String hubName;
            Hub hub = new Hub();
 
+
+           ListElements.listHubs(carrierName);
+
            do {
                System.out.print("Choose a hub: ");
                hubName = scan.nextLine();
+               if(!Network.carrierMap.get(carrierName).hubs.containsKey(hub)){
+                   System.out.println("No such hub");
+               }
            } while (!Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
 
 
@@ -79,7 +86,9 @@ public class SuggestedRemediesCommand implements Command{
            System.out.println("");
 
            String hubName;
-           Hub hub = new Hub();
+
+
+           ListElements.listHubs(carrierName);
 
            do {
                System.out.print("Choose a hub: ");
@@ -88,6 +97,9 @@ public class SuggestedRemediesCommand implements Command{
 
 
            String nodeName;
+
+
+           ListElements.listNodes(carrierName, hubName);
 
            do {
                System.out.println("");
@@ -103,13 +115,5 @@ public class SuggestedRemediesCommand implements Command{
                                   "Remedy: " + Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.get(i).getAlarmRemedy());
            }
 
-
-
        }
-
-
-
-
-
-
 }

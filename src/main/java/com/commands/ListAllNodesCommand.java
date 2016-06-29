@@ -16,21 +16,32 @@ public class ListAllNodesCommand implements Command {
 
 
         System.out.println("");
-        System.out.print("List All Nodes");
-        System.out.println("");
+        System.out.println("List All Nodes");
+        System.out.println("-------------");
 
         String parentCarrier;
         String parentHub;
 
+
+        ListElements.listCarriers();
+
         do {
             System.out.print("Choose a carrier: ");
             parentCarrier = scan.nextLine();
+            if(!Network.carrierMap.containsKey(parentCarrier)){
+                System.out.println("No such carrier");
+            }
         } while (!Network.carrierMap.containsKey(parentCarrier));
 
+
+        ListElements.listHubs(parentCarrier);
 
         do {
             System.out.println("Which hubs nodes would you like to view?");
             parentHub = scan.nextLine();
+            if(!Network.carrierMap.get(parentCarrier).hubs.containsKey(parentHub)){
+                System.out.println("No such hub");
+            }
         } while (!Network.carrierMap.get(parentCarrier).hubs.containsKey(parentHub));
 
 

@@ -19,30 +19,32 @@ public class StatusOfCarrierCommand implements Command{
 
         String carrier;
 
+
+        ListElements.listCarriers();
+
         do {
-            System.out.println("");
             System.out.print("Please enter the carrier name: ");
             carrier = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrier);
         }while(!Network.carrierMap.containsKey(carrier));
-
 
         carrierStatus(carrier);
 
     }
 
 
-
-
-    public void carrierStatus(String carrier) {
+    private void carrierStatus(String carrier) {
 
 
         String hubs;
         String nodes;
+        System.out.println("");
+
 
         if (Network.carrierMap.size() == 0) {
             System.out.println("The network is empty");
         }
-        {
+        else{
             for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
                 hubs = entry.getKey();
 
@@ -59,10 +61,7 @@ public class StatusOfCarrierCommand implements Command{
                             System.out.println("Node alarms: " + entryNode.getValue().nodeAlarms.size());
 
                         }
-
                     }
-
-                    System.out.println("");
                 }
             }
         }

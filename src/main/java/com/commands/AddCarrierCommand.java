@@ -14,32 +14,37 @@ public class AddCarrierCommand implements Command{
 
     public void execute(){
 
-
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-
         System.out.println("");
         System.out.println("Current carriers");
         System.out.println("----------------");
-        listCarriers.listAllCarriers();
-        System.out.println("");
+
+
+        ListElements.listCarriers();
 
         String carrierName;
 
         do {
             System.out.print("Enter the new carriers name: ");
             carrierName = scan.nextLine();
+            if(Network.carrierMap.containsKey(carrierName)){
+                System.out.println("Carrier with that name already exists, please choose another");
+            }
         }while(Network.carrierMap.containsKey(carrierName));
 
             System.out.println("");
 
             addCarrier(carrierName);
+
+
+
         }
 
 
-     private void addCarrier(String carrierName){
-           Carrier c = new Carrier(carrierName);
-           Network.carrierMap.put(c.getName(), c);
-       }
+         private void addCarrier(String carrierName){
+             Carrier c = new Carrier(carrierName);
+             Network.carrierMap.put(c.getName(), c);
+             System.out.print(carrierName + " added");
+     }
 
 
     }

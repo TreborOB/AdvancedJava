@@ -16,16 +16,15 @@ public class ListAllHubsCommand implements Command{
 
     public void execute(){
 
-        System.out.println("");
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
-
+        ListElements.listCarriers();
 
         String parentCarrier;
         do {
             System.out.print("Which carriers hubs would you like to view?: ");
             parentCarrier = scan.nextLine();
+            if(!Network.carrierMap.containsKey(parentCarrier)){
+                System.out.println("No such carrier");
+            }
         }while(!Network.carrierMap.containsKey(parentCarrier));
 
         System.out.println("");

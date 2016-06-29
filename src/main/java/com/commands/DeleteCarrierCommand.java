@@ -1,7 +1,6 @@
 package com.commands;
 
 
-import com.main.Carrier;
 import com.main.Network;
 
 import java.util.Scanner;
@@ -9,32 +8,28 @@ import java.util.Scanner;
 public class DeleteCarrierCommand implements Command {
 
     Scanner scan = new Scanner(System.in);
-    Carrier c = new Carrier();
-
-    private String carrierToDelete;
 
     public void execute(){
 
-        System.out.println("");
 
+        ListElements.listCarriers();
 
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
-
+        String carrierName;
         do {
             System.out.print("Enter the name of the carrier you would like to delete: ");
-            carrierToDelete = scan.nextLine();
-        } while(!Network.carrierMap.containsKey(carrierToDelete));
+            carrierName = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrierName);
+        } while(!Network.carrierMap.containsKey(carrierName));
 
 
-        deleteCarrier(carrierToDelete);
+        deleteCarrier(carrierName);
     }
 
 
 
-    public void deleteCarrier(String carrierToDelete){
+    private void deleteCarrier(String carrierToDelete){
 
         Network.carrierMap.remove(carrierToDelete);
+        System.out.print(carrierToDelete + " deleted");
     }
 }

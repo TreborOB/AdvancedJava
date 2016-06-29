@@ -10,41 +10,38 @@ public class RenameHubCommand implements Command{
 
 
     Scanner scan = new Scanner(System.in);
-    String carrier;
-    String hub;
-
 
     public void execute(){
 
 
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
-
+        ListElements.listCarriers();
+        String carrier;
 
         do {
         System.out.print("Enter a carrier: ");
         carrier = scan.nextLine();
+         SearchForElementName.searchForCarrier(carrier);
         System.out.println("");
         }while(!Network.carrierMap.containsKey(carrier));
 
 
-        ListAllHubsCommand listHubs = new ListAllHubsCommand();
-        listHubs.listAllHubs(carrier);
-        System.out.println("");
+        ListElements.listHubs(carrier);
 
+        String hub;
 
         do{
         System.out.print("Enter the name of the hub you want to rename: ");
         hub = scan.nextLine();
-        System.out.println("");
+            SearchForElementName.searchForHub(carrier, hub);
         } while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
+        String newHubName;
 
-
-        System.out.print("Enter a new name for the hub: ");
-        String newHubName =  scan.nextLine();
-        System.out.println("");
+       do {
+           System.out.print("Enter a new name for the hub: ");
+            newHubName = scan.nextLine();
+             System.out.println("");
+       }while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
         renameHub(carrier, hub, newHubName);
 
@@ -52,9 +49,7 @@ public class RenameHubCommand implements Command{
     }
 
 
-
-        public void renameHub(String carrier, String hub, String newHubName){
-
+        private void renameHub(String carrier, String hub, String newHubName){
 
             Hub b = Network.carrierMap.get(carrier).hubs.remove(hub);
 

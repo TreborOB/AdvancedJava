@@ -19,54 +19,50 @@ public class DeleteNodeCommand implements Command{
         System.out.println("");
 
 
-        System.out.println("");
+        ListElements.listCarriers();
 
-
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
 
         String carrier;
         do {
             System.out.print("Enter a carrier: ");
             carrier = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrier);
         } while(!Network.carrierMap.containsKey(carrier));
 
         System.out.println("");
 
 
-
-        ListAllHubsCommand listHubs = new ListAllHubsCommand();
-        listHubs.listAllHubs(carrier);
-        System.out.println("");
+        ListElements.listHubs(carrier);
 
 
-
-        String hub;
+        String hubName;
         do{
         System.out.print("Enter a hub: ");
-        hub = scan.nextLine();
-        System.out.println("");
-        } while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
+        hubName = scan.nextLine();
+            SearchForElementName.searchForHub(carrier, hubName);
+        } while(!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
 
+
+        ListElements.listNodes(carrier, hubName);
 
         String nodeToDelete;
         do {
             System.out.print("Which node would you like to delete?: ");
             nodeToDelete = scan.nextLine();
-        }while(!Network.carrierMap.get(carrier).hubs.get(hub).nodes.containsKey(nodeToDelete));
+            SearchForElementName.searchForNode(carrier, hubName, nodeToDelete);
+        }while(!Network.carrierMap.get(carrier).hubs.get(hubName).nodes.containsKey(nodeToDelete));
 
 
         System.out.println("");
 
 
-        deleteNode(carrier, hub, nodeToDelete);
+        deleteNode(carrier, hubName, nodeToDelete);
 
     }
 
 
 
-    public void deleteNode(String carrier, String hub, String nodeToDelete){
+    private void deleteNode(String carrier, String hub, String nodeToDelete){
 
         Network.carrierMap.get(carrier).hubs.get(hub).nodes.remove(nodeToDelete);
 

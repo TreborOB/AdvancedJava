@@ -51,7 +51,6 @@ public class StatusOfNetworkCommand implements Command{
                             System.out.println("Node alarms: " + entryNode.getValue().nodeAlarms.size());
 
                         }
-
                     }
 
                     System.out.println("");

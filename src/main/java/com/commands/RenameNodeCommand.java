@@ -9,11 +9,6 @@ import java.util.Scanner;
 public class RenameNodeCommand implements Command{
 
     Scanner scan = new Scanner(System.in);
-    private String carrier;
-    private String hub;
-    private String node;
-    private String newName;
-
 
 
     public void execute(){
@@ -24,43 +19,55 @@ public class RenameNodeCommand implements Command{
         System.out.println("------------");
 
 
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
+        ListElements.listCarriers();
 
-
-        System.out.println("");
+        String carrier;
+        do{
         System.out.print("Enter a carrier: ");
         carrier = scan.nextLine();
+        SearchForElementName.searchForCarrier(carrier);
+        }while(!Network.carrierMap.containsKey(carrier));
         System.out.println("");
 
+        ListElements.listHubs(carrier);
 
-        ListAllHubsCommand listHubs = new ListAllHubsCommand();
-        listHubs.listAllHubs(carrier);
-        System.out.println("");
+        String hubName;
+        do {
+            System.out.print("Enter a hub: ");
+            hubName = scan.nextLine();
+            SearchForElementName.searchForHub(carrier, hubName);
+        }while(!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
 
 
-        System.out.print("Enter a hub: ");
-        hub = scan.nextLine();
-        System.out.println("");
+        ListElements.listNodes(carrier, hubName);
 
-        ListAllNodesCommand listAllNodes = new ListAllNodesCommand();
-        listAllNodes.listAllNodes(carrier, hub);
+        String node;
 
+        do{
         System.out.print("Which node would you like to rename?: ");
         node = scan.nextLine();
-
-        System.out.println(""); System.out.print("Enter a new name for the node: ");
-        newName = scan.nextLine();
-        System.out.println("");
+        SearchForElementName.searchForNode(carrier, hubName, node);
+        }while(!Network.carrierMap.get(carrier).hubs.get(hubName).nodes.containsKey(node));
 
 
-        renameNode(carrier, hub, node, newName);
+        String newNodeName;
+
+        do {
+            System.out.println("");
+            System.out.print("Enter a new name for the node: ");
+            newNodeName = scan.nextLine();
+            if(!Network.carrierMap.get(carrier).hubs.get(hubName).nodes.containsKey(node)) {
+                System.out.print("A node with this name already exists within the system");
+            }
+            System.out.println("");
+        }while(!Network.carrierMap.get(carrier).hubs.get(hubName).nodes.containsKey(node));
+
+
+        renameNode(carrier, hubName, node, newNodeName);
     }
 
 
-
-    public void renameNode(String carrier, String hub, String node, String newNodeName){
-
+    private void renameNode(String carrier, String hub, String node, String newNodeName){
 
         Node n = Network.carrierMap.get(carrier).hubs.get(hub).nodes.remove(node);
 

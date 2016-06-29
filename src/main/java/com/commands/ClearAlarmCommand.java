@@ -12,9 +12,8 @@ public class ClearAlarmCommand implements Command{
 
     public void execute(){
 
-        ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
-        listCarriers.listAllCarriers();
-        System.out.println("");
+        ListElements.listCarriers();
+
 
         String carrierName;
 
@@ -22,6 +21,7 @@ public class ClearAlarmCommand implements Command{
             System.out.println("");
             System.out.print("Please choose a carrier: ");
             carrierName = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrierName);
         } while (!Network.carrierMap.containsKey(carrierName));
 
         System.out.println("");
@@ -53,14 +53,13 @@ public class ClearAlarmCommand implements Command{
 
         String hubName;
 
-        ListAllHubsCommand listHubs = new ListAllHubsCommand();
-        listHubs.listAllHubs(carrierName);
+        ListElements.listHubs(carrierName);
         System.out.println("");
 
         do {
-            System.out.println("");
             System.out.print("Please choose a hub: ");
             hubName = scan.nextLine();
+            SearchForElementName.searchForHub(carrierName, hubName);
         } while (!Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
 
 
@@ -89,15 +88,21 @@ public class ClearAlarmCommand implements Command{
     private void clearNodeAlarm(String carrierName){
 
         String hubName;
+        ListElements.listHubs(carrierName);
+        System.out.println("");
+
 
         do {
-            System.out.println("");
             System.out.print("Please choose a hub: ");
             hubName = scan.nextLine();
+            SearchForElementName.searchForHub(carrierName, hubName);
         } while (!Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
 
 
         String nodeName;
+
+
+        ListElements.listNodes(carrierName, hubName);
 
 
         do {
@@ -125,18 +130,13 @@ public class ClearAlarmCommand implements Command{
             System.out.print("Invalid selection");
         }
 
-
-
     }
-
-
 
 
     private void clearAllHubAlarms(String carrierName, String hubName){
 
         Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.clear();
     }
-
 
 
     private void clearSpecificHubAlarms(String carrierName, String hubName){
@@ -156,10 +156,11 @@ public class ClearAlarmCommand implements Command{
 
 
 
-
     private void clearAllNodeAlarms(String carrierName, String hubName, String nodeName){
 
         Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.clear();
+
+        System.out.println("Alarms cleared");
     }
 
 
