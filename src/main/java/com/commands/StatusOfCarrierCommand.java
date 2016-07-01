@@ -9,7 +9,7 @@ import com.main.Node;
 import java.util.Map;
 import java.util.Scanner;
 
-public class StatusOfCarrierCommand implements Command{
+public class StatusOfCarrierCommand implements Command {
 
 
     private Scanner scan = new Scanner(System.in);
@@ -26,25 +26,23 @@ public class StatusOfCarrierCommand implements Command{
             System.out.print("Please enter the carrier name: ");
             carrier = scan.nextLine();
             SearchForElementName.searchForCarrier(carrier);
-        }while(!Network.carrierMap.containsKey(carrier));
+        } while (!Network.carrierMap.containsKey(carrier));
 
         carrierStatus(carrier);
 
     }
 
 
-    private void carrierStatus(String carrier) {
-
+    //Displays an overview of the specified carrier
+    public void carrierStatus(String carrier) {
 
         String hubs;
         String nodes;
         System.out.println("");
 
-
         if (Network.carrierMap.size() == 0) {
             System.out.println("The network is empty");
-        }
-        else{
+        } else {
             for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
                 hubs = entry.getKey();
 

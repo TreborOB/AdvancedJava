@@ -2,8 +2,10 @@ package com.main;
 
 import com.commands.*;
 
-
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
 
@@ -89,8 +91,7 @@ public class Main {
             System.out.println("3. Hub menu");
             System.out.println("4. Node menu");
             System.out.println("5. Alarm menu");
-            System.out.println("6. Json");
-            System.out.println("");
+            System.out.println("6. Json\n");
             System.out.print("Please make a selection (1-6): ");
 
 
@@ -117,74 +118,71 @@ public class Main {
                     main.jsonMenu();
                     break;
             }
-        }while(mainMenuChoice != "7");
+        } while (mainMenuChoice != "7");
     }
 
 
-
-    private void networkMenu(){
+    private void networkMenu() {
 
         System.out.println("");
         System.out.println("Network menu");
         System.out.println("-------------");
         System.out.println("1. List Network");
         System.out.println("2. Network Status");
-        System.out.println("3. Exit");
-        System.out.println("");
+        System.out.println("3. Exit\n");
         System.out.print("Please make a selection (1-3): ");
 
         String networkChoice = scan.nextLine();
 
-            switch (networkChoice) {
-                case "1":
-                    commands.get("listNetwork").execute();
-                    break;
-                case "2":
-                    commands.get("networkStatus").execute();
-                    break;
-            }
+        switch (networkChoice) {
+            case "1":
+                commands.get("listNetwork").execute();
+                break;
+            case "2":
+                commands.get("networkStatus").execute();
+                break;
+        }
     }
 
 
-    private void carrierMenu(){
+    private void carrierMenu() {
 
         String carrierChoice;
 
 
-            System.out.println("");
-            System.out.println("Carrier menu");
-            System.out.println("------------ ");
-            System.out.println("1. Add Carrier");
-            System.out.println("2. Delete Carrier");
-            System.out.println("3. Rename Carrier");
-            System.out.println("4. List Carriers");
-            System.out.println("5. Carrier Status");
-            System.out.println("6. Exit");
-            System.out.println("");
-            System.out.print("Please make a selection (1-6): ");
-             carrierChoice = scan.nextLine();
+        System.out.println("");
+        System.out.println("Carrier menu");
+        System.out.println("------------ ");
+        System.out.println("1. Add Carrier");
+        System.out.println("2. Delete Carrier");
+        System.out.println("3. Rename Carrier");
+        System.out.println("4. List Carriers");
+        System.out.println("5. Carrier Status");
+        System.out.println("6. Exit\n");
+        System.out.print("Please make a selection (1-6): ");
+        carrierChoice = scan.nextLine();
 
-            switch (carrierChoice) {
-                case "1":
-                    commands.get("addCarrier").execute();
-                    break;
-                case "2":
-                    commands.get("deleteCarrier").execute();
-                    break;
-                case "3":
-                    commands.get("renameCarrier").execute();
-                    break;
-                case "4":
-                    commands.get("listCarriers").execute();
-                    break;
-                case "5":
-                    commands.get("carrierStatus").execute();
-                    break;
-            }
+        switch (carrierChoice) {
+            case "1":
+                commands.get("addCarrier").execute();
+                break;
+            case "2":
+                commands.get("deleteCarrier").execute();
+                break;
+            case "3":
+                commands.get("renameCarrier").execute();
+                break;
+            case "4":
+                commands.get("listCarriers").execute();
+                break;
+            case "5":
+                commands.get("carrierStatus").execute();
+                break;
+        }
     }
 
 
-    private void hubMenu(){
+    private void hubMenu() {
         System.out.println("");
         System.out.println("Hub menu");
         System.out.println("---------");
@@ -193,12 +191,11 @@ public class Main {
         System.out.println("3. Rename Hub");
         System.out.println("4. List Hubs");
         System.out.println("5. Hub Status");
-        System.out.println("6. Exit");
-        System.out.println("");
+        System.out.println("6. Exit\n");
         System.out.print("Please make a selection (1-6): ");
         String hubChoice = scan.nextLine();
 
-        switch (hubChoice){
+        switch (hubChoice) {
             case "1":
                 commands.get("addHub").execute();
                 break;
@@ -220,7 +217,7 @@ public class Main {
 
     }
 
-    private void nodeMenu(){
+    private void nodeMenu() {
         System.out.println("");
         System.out.println("Node menu");
         System.out.println("----------");
@@ -229,12 +226,11 @@ public class Main {
         System.out.println("3. Rename Node");
         System.out.println("4. List Nodes");
         System.out.println("5. Node Status");
-        System.out.println("6. Exit");
-        System.out.println("");
+        System.out.println("6. Exit\n");
         System.out.print("Please make a selection (1-6): ");
         String nodeChoice = scan.nextLine();
 
-        switch (nodeChoice){
+        switch (nodeChoice) {
             case "1":
                 commands.get("addNode").execute();
                 break;
@@ -253,22 +249,20 @@ public class Main {
         }
 
 
-
     }
 
-    private void alarmMenu(){
+    private void alarmMenu() {
         System.out.println("");
         System.out.println("Alarm menu");
         System.out.println("-----------");
         System.out.println("1. Create Alarm");
         System.out.println("2. Clear Alarm/s");
         System.out.println("3. View Remedies");
-        System.out.println("4. Exit");
-        System.out.println("");
+        System.out.println("4. Exit\n");
         System.out.print("Please make a selection (1-4): ");
         String alarmChoice = scan.nextLine();
 
-        switch (alarmChoice){
+        switch (alarmChoice) {
             case "1":
                 commands.get("createAlarm").execute();
                 break;
@@ -282,18 +276,17 @@ public class Main {
     }
 
 
-    private void jsonMenu(){
+    private void jsonMenu() {
         System.out.println("");
         System.out.println("Json menu");
         System.out.println("----------");
         System.out.println("1. Import");
         System.out.println("2. Export");
-        System.out.println("3. Exit");
-        System.out.println("");
+        System.out.println("3. Exit\n");
         System.out.print("Please make a selection (1-3): ");
         String jsonChoice = scan.nextLine();
 
-        switch (jsonChoice){
+        switch (jsonChoice) {
             case "1":
                 commands.get("import").execute();
                 break;
@@ -304,7 +297,7 @@ public class Main {
     }
 
 
-
+    //Populates the Network with data for demo purposes
     private void populateValues() {
 
         Carrier c1 = new Carrier("Vodafone");
@@ -322,9 +315,9 @@ public class Main {
 
         Alarm alarm1 = new Alarm("Power outage", "Power outage remedy", date);
         Alarm alarm2 = new Alarm("Dark fibre", "Dark fibre remedy", date);
-        Alarm alarm3 = new Alarm("Unit unavailable", "Unit unavailable remedy", date);
+        Alarm alarm3 = new Alarm("Dark fibre", "Dark fibre remedy", date);
         Alarm alarm4 = new Alarm("Optical loss", "Optical loss remedy", date);
-        Alarm alarm5 = new Alarm("Unit unavailable", "Unit unavailable remedy", date);
+        Alarm alarm5 = new Alarm("Power outage", "Power outage remedy", date);
         Alarm alarm6 = new Alarm("Optical loss", "Optical loss remedy", date);
 
 

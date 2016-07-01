@@ -9,10 +9,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class ExportToJson implements Command{
+public class ExportToJson implements Command {
 
 
-    public void execute(){
+    public void execute() {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String network = gson.toJson(Network.carrierMap);
@@ -20,10 +20,10 @@ public class ExportToJson implements Command{
 
     }
 
-    private void exportToFile(String network){
+    private void exportToFile(String network) {
         try {
 
-            File file=new File("/Users/robertobrien/Desktop/Network.json");
+            File file = new File("/Users/robertobrien/Desktop/Network.json");
             FileWriter fileWriter = new FileWriter(file);
             System.out.println("");
             System.out.println("Writing network to file");

@@ -1,15 +1,17 @@
 package com.commands;
 
 
-import com.main.*;
+import com.main.Carrier;
+import com.main.Network;
+import com.main.Node;
 
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddNodeCommand implements Command{
+public class AddNodeCommand implements Command {
 
 
-    private Scanner sc = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     public void execute() {
 
@@ -21,39 +23,26 @@ public class AddNodeCommand implements Command{
 
         ListElements.listCarriers();
 
-
         String carrierName;
         do {
-            System.out.print("Which carrier would you like to associate the node with?: ");
-            carrierName = sc.nextLine();
-            SearchForElementName.searchForCarrier(carrierName);
+            System.out.print("Enter the carriers name: ");
+            carrierName = scan.nextLine();
+
+            chosenCarrier(carrierName);
+
         } while (!Network.carrierMap.containsKey(carrierName));
-
-
-        System.out.println("");
 
 
         ListElements.listHubs(carrierName);
 
-
         String hubName;
         do {
-            System.out.print("Which hub would you like to associate the node with?: ");
-            hubName = sc.nextLine();
-            SearchForElementName.searchForHub(carrierName, hubName);
+            System.out.print("Enter the hubs name: ");
+            hubName = scan.nextLine();
+
+            chosenHub(carrierName, hubName);
+
         } while (!Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
-
-
-        System.out.println("");
-
-        String nodeName;
-        do {
-            System.out.print("Enter the name of the node: ");
-            nodeName = sc.nextLine();
-            if(Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.containsKey(nodeName)){
-                System.out.println(nodeName + " already exists");
-            }
-        } while (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.containsKey(nodeName));
 
 
         System.out.println("");
@@ -61,22 +50,54 @@ public class AddNodeCommand implements Command{
 
         ListElements.listNodes(carrierName, hubName);
 
+        String nodeName = chosenNode(carrierName, hubName);
+        System.out.println("");
+
+
         String nodeID;
         do {
-            System.out.print("Enter an id for the node (the id must be an int value): ");
-            nodeID = sc.nextLine();
-        }while (!checkID(carrierName, hubName, nodeID)) ;
+            System.out.print("Enter an id for the node: ");
+            nodeID = scan.nextLine();
+        } while (!checkID(carrierName, hubName, nodeID));
 
 
-           addNode(carrierName, hubName, nodeName, nodeID);
+        addNode(carrierName, hubName, nodeName, nodeID);
 
+    }
+
+
+    public String chosenCarrier(String carrierName) {
+        if (!Network.carrierMap.containsKey(carrierName)) {
+            System.out.println("No such carrier, please choose another\n");
         }
+        return carrierName;
+    }
 
 
+    public String chosenHub(String carrierName, String hubName) {
+        if (!Network.carrierMap.get(carrierName).hubs.containsKey(hubName)) {
+            System.out.println("No such hub exists, please choose another\n");
+        }
+        return hubName;
+    }
 
 
+    public String chosenNode(String carrierName, String hubName) {
+        String nodeName;
+        do {
+            System.out.print("Enter the name of the node: \n");
+            nodeName = scan.nextLine();
+            if (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.containsKey(nodeName)) {
+                System.out.println(nodeName + " already exists");
+            }
+        } while (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.containsKey(nodeName));
 
-    private void addNode(String carrierName, String hubName, String nodeName, String nodeID) {
+        return nodeName;
+    }
+
+
+    //Adds new node
+    public void addNode(String carrierName, String hubName, String nodeName, String nodeID) {
 
         Carrier c = Network.carrierMap.get(carrierName);
 
@@ -84,15 +105,13 @@ public class AddNodeCommand implements Command{
 
         c.hubs.get(hubName).nodes.put(node.getName(), node);
 
-
-        System.out.println("Node added");
+        System.out.println("Node " + node.getName() + " with an ID of " + node.getId() + " added");
 
     }
 
 
-
-
-    private boolean checkID(String carrierName, String hubName, String nodeID) {
+    //Checks to see of ID is unique
+    public boolean checkID(String carrierName, String hubName, String nodeID) {
 
         boolean idCheck = true;
 

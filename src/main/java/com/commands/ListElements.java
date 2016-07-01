@@ -4,7 +4,7 @@ package com.commands;
 public class ListElements {
 
 
-    public static void listCarriers(){
+    public static void listCarriers() {
 
         System.out.println("");
         ListAllCarriersCommand listCarriers = new ListAllCarriersCommand();
@@ -13,7 +13,7 @@ public class ListElements {
     }
 
 
-    public static void listHubs(String parentCarrier){
+    public static void listHubs(String parentCarrier) {
 
         System.out.println("");
         ListAllHubsCommand listHubs = new ListAllHubsCommand();
@@ -22,11 +22,11 @@ public class ListElements {
     }
 
 
-    public static void listNodes(String parentCarrier, String hubName){
+    public static void listNodes(String parentCarrier, String hubName) {
 
         System.out.println("");
-        ListAllNodesCommand listnodes = new ListAllNodesCommand();
-        listnodes.listAllNodes(parentCarrier, hubName);
+        ListAllNodesCommand listNodes = new ListAllNodesCommand();
+        listNodes.listAllNodes(parentCarrier, hubName);
         System.out.println("");
     }
 

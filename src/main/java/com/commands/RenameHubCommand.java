@@ -6,42 +6,42 @@ import com.main.Network;
 
 import java.util.Scanner;
 
-public class RenameHubCommand implements Command{
+public class RenameHubCommand implements Command {
 
 
     Scanner scan = new Scanner(System.in);
 
-    public void execute(){
+    public void execute() {
 
 
         ListElements.listCarriers();
         String carrier;
 
         do {
-        System.out.print("Enter a carrier: ");
-        carrier = scan.nextLine();
-         SearchForElementName.searchForCarrier(carrier);
-        System.out.println("");
-        }while(!Network.carrierMap.containsKey(carrier));
+            System.out.print("Enter a carrier: ");
+            carrier = scan.nextLine();
+            SearchForElementName.searchForCarrier(carrier);
+            System.out.println("");
+        } while (!Network.carrierMap.containsKey(carrier));
 
 
         ListElements.listHubs(carrier);
 
         String hub;
 
-        do{
-        System.out.print("Enter the name of the hub you want to rename: ");
-        hub = scan.nextLine();
+        do {
+            System.out.print("Enter the name of the hub you want to rename: ");
+            hub = scan.nextLine();
             SearchForElementName.searchForHub(carrier, hub);
-        } while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
+        } while (!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
         String newHubName;
 
-       do {
-           System.out.print("Enter a new name for the hub: ");
+        do {
+            System.out.print("Enter a new name for the hub: ");
             newHubName = scan.nextLine();
-             System.out.println("");
-       }while(!Network.carrierMap.get(carrier).hubs.containsKey(hub));
+            System.out.println("");
+        } while (!Network.carrierMap.get(carrier).hubs.containsKey(hub));
 
         renameHub(carrier, hub, newHubName);
 
@@ -49,13 +49,15 @@ public class RenameHubCommand implements Command{
     }
 
 
-        private void renameHub(String carrier, String hub, String newHubName){
+    //Renames the specified hub
+    public void renameHub(String carrier, String hub, String newHubName) {
 
-            Hub b = Network.carrierMap.get(carrier).hubs.remove(hub);
+        Hub b = Network.carrierMap.get(carrier).hubs.remove(hub);
+        b.setName(newHubName);
 
-            Network.carrierMap.get(carrier).hubs.put(newHubName, b);
+        Network.carrierMap.get(carrier).hubs.put(newHubName, b);
 
-        }
+    }
 }
 
 

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class Hub{
+public class Hub {
 
 
     private String name;
@@ -16,10 +16,10 @@ public class Hub{
     public HashMap<String, Node> nodes = new HashMap<>();
 
 
-    public Hub(){
+    public Hub() {
     }
 
-    public Hub(String name, String id){
+    public Hub(String name, String id) {
         this.name = name;
         this.id = id;
 
@@ -38,18 +38,9 @@ public class Hub{
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public List<Alarm> getHubAlarms() {
         return hubAlarms;
     }
-
-    public void setHubAlarms(List<Alarm> hubAlarms) {
-        this.hubAlarms = hubAlarms;
-    }
-
 
 }
 

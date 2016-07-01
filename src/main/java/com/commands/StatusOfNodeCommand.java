@@ -1,7 +1,8 @@
 package com.commands;
 
 
-import com.main.*;
+import com.main.Network;
+import com.main.Node;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -14,9 +15,43 @@ public class StatusOfNodeCommand implements Command {
 
     public void execute() {
 
-
         ListElements.listCarriers();
 
+        String carrier = chosenCarrier();
+
+        ListElements.listHubs(carrier);
+
+        String hub = chosenHub(carrier);
+
+        String availability = searchAvailability(carrier, hub);
+
+        if (availability.equals("Unit unavailable")) {
+            System.out.println("");
+            System.out.print("Parent hub is unavailable thus all nodes are unavailable");
+            System.out.println("");
+
+        } else {
+            searchByNameOrID(carrier, hub);
+        }
+    }
+
+
+    public String chosenHub(String carrier) {
+
+        String hubName;
+
+        do {
+            System.out.println("");
+            System.out.print("Please enter the hub name: ");
+            hubName = scan.nextLine();
+            SearchForElementName.searchForHub(carrier, hubName);
+        } while (!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
+
+        return hubName;
+    }
+
+
+    public String chosenCarrier() {
 
         String carrier;
 
@@ -26,42 +61,16 @@ public class StatusOfNodeCommand implements Command {
             SearchForElementName.searchForCarrier(carrier);
         } while (!Network.carrierMap.containsKey(carrier));
 
-
-
-        String hubName;
-
-        ListElements.listHubs(carrier);
-
-        do {
-            System.out.println("");
-            System.out.print("Please enter the hub name: ");
-            hubName = scan.nextLine();
-            SearchForElementName.searchForHub(carrier, hubName);
-        } while (!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
-
-
-
-        String availability = searchAvailability(carrier, hubName);
-
-        if(availability.equals("Unit unavailable"))
-        {
-            System.out.println("");
-            System.out.print("Parent hub is unavailable thus all nodes are unavailable");
-            System.out.println("");
-
-        }else{
-            searchByNameOrID(carrier, hubName);
-        }
-
+        return carrier;
     }
 
 
-    private void searchByNameOrID(String carrier, String hubName) {
+    //Allows the user to search nodes by either name or unique idea
+    public void searchByNameOrID(String carrier, String hubName) {
 
         String nodeName;
         Node node;
         String availableUnavailable;
-
 
         ListElements.listNodes(carrier, hubName);
 
@@ -72,11 +81,10 @@ public class StatusOfNodeCommand implements Command {
         } while (!Network.carrierMap.get(carrier).hubs.get(hubName).nodes.containsKey(nodeName));
 
 
-        if(Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.isEmpty())
-        {
+        if (Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.isEmpty()) {
             System.out.println("");
-            System.out.println("There are no active alarms for " + hashCode());
-        }else {
+            System.out.println("There are no active alarms for this node");
+        } else {
 
 
             for (int i = 0; i < Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.size(); i++) {
@@ -97,8 +105,8 @@ public class StatusOfNodeCommand implements Command {
                         System.out.println("node name: " + node.getName());
                         System.out.println("node id: " + node.getId());
                         System.out.println("node status: " + availableUnavailable);
-
                     }
+
                 }
 
             }
@@ -106,10 +114,8 @@ public class StatusOfNodeCommand implements Command {
     }
 
 
-
-
-
-    private String searchAvailability(String carrier, String hubName) {
+    //searches to see if the specified now is available/unavailable
+    public String searchAvailability(String carrier, String hubName) {
 
         String unitAvailability = "";
 

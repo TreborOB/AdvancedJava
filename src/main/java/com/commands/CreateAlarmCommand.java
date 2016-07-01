@@ -24,52 +24,51 @@ public class CreateAlarmCommand implements Command {
 
 
         String carrierName;
-
         do {
-            System.out.println("");
-            System.out.print("Please choose a carrier: ");
+            System.out.print("Enter the carriers name: ");
             carrierName = scan.nextLine();
-            SearchForElementName.searchForCarrier(carrierName);
+
+            chosenCarrier(carrierName);
+
         } while (!Network.carrierMap.containsKey(carrierName));
-
         System.out.println("");
 
 
-        System.out.print("Would you like to create an alarm on a hub or node?: ");
-        String alarmOnHubOrNode = scan.nextLine();
-        System.out.println("");
-
-
-        if (alarmOnHubOrNode.equalsIgnoreCase("Hub")) {
-            createAlarmOnHub(carrierName);
-
-        } else if (alarmOnHubOrNode.equalsIgnoreCase("Node")) {
-            createAlarmOnNode(carrierName);
-        }
+        hubOrNode(carrierName);
 
     }
 
 
-    private void createAlarmOnHub(String carrier) {
+    public void createAlarmOnHub(String carrier) {
         System.out.println("");
         System.out.println("Create alarm on hub");
-        System.out.println("-------------");
+        System.out.println("--------------------");
 
         ListElements.listHubs(carrier);
 
-        String chosenHub;
+        String hubName;
         do {
-            System.out.print("Choose a hub: ");
-            chosenHub = scan.nextLine();
-            SearchForElementName.searchForHub(carrier, chosenHub);
-        } while (!Network.carrierMap.get(carrier).hubs.containsKey(chosenHub));
+            System.out.print("Enter the hubs name: ");
+            hubName = scan.nextLine();
 
-        createHubAlarm(carrier, chosenHub);
+            chosenHub(hubName);
+
+        } while (!Network.carrierMap.get(carrier).hubs.containsKey(hubName));
+
+        createHubAlarm(carrier, hubName);
 
     }
 
 
-    private void createAlarmOnNode(String carrier) {
+    public String chosenHub(String hubName) {
+        if (!Network.carrierMap.containsKey(hubName)) {
+            System.out.println("No such hub exists, please choose another\n");
+        }
+        return hubName;
+    }
+
+
+    public void createAlarmOnNode(String carrier) {
         System.out.println("");
         System.out.println("Alarm on node");
 
@@ -112,76 +111,122 @@ public class CreateAlarmCommand implements Command {
     }
 
 
-    private void createHubAlarm(String carrier, String chosenHub) {
+    public void createHubAlarm(String carrier, String chosenHub) {
 
         Alarm hubAlarm;
 
         do {
             hubAlarm = createAlarm();
-        }while(hubAlarm.getAlarmType().equalsIgnoreCase("Default"));
+        } while (hubAlarm.getAlarmType().equalsIgnoreCase("Default"));
 
         Network.carrierMap.get(carrier).hubs.get(chosenHub).hubAlarms.add(hubAlarm);
+
+
+        System.out.println("Alarm Created");
+        System.out.println("--------------");
+        System.out.println("");
+        System.out.println("Hub: " + chosenHub);
+        System.out.println("Alarm type: " + hubAlarm.getAlarmType());
+        System.out.println(hubAlarm.getAlarmReceivedDate());
+
     }
 
 
-    private void createNodeAlarm(String carrier, String chosenHub, String chosenNode) {
+    public void createNodeAlarm(String carrier, String chosenHub, String chosenNode) {
 
         Alarm nodeAlarm;
-        nodeAlarm = createAlarm();
+        do {
+            nodeAlarm = createAlarm();
+        } while (nodeAlarm.getAlarmType().equalsIgnoreCase("Default"));
 
         Network.carrierMap.get(carrier).hubs.get(chosenHub).nodes.get(chosenNode).nodeAlarms.add(nodeAlarm);
 
+        System.out.println("Alarm Created");
+        System.out.println("--------------");
+        System.out.println("");
+        System.out.println("Node: " + chosenHub);
+        System.out.println("Alarm type: " + nodeAlarm.getAlarmType());
+        System.out.println(nodeAlarm.getAlarmReceivedDate());
+
     }
 
 
-    private Alarm createAlarm() {
+    public void hubOrNode(String carrierName) {
 
-            String chosenAlarm;
-            String alarmType;
-            String alarmRemedy;
+        System.out.print("Would you like to create an alarm on a hub or node?: ");
+        String alarmOnHubOrNode = scan.nextLine();
+        System.out.println("");
 
-            System.out.println("");
-            System.out.println("Please choose an alarm type (1-4): ");
-            System.out.println("1. Unit unavailable: ");
-            System.out.println("2. Optical loss: ");
-            System.out.println("3. Dark fibre: ");
-            System.out.println("4. Power outage: ");
 
-            chosenAlarm = scan.nextLine();
+        if (alarmOnHubOrNode.equalsIgnoreCase("Hub")) {
+            createAlarmOnHub(carrierName);
+
+        } else if (alarmOnHubOrNode.equalsIgnoreCase("Node")) {
+            createAlarmOnNode(carrierName);
+        }
+
+
+    }
+
+
+    public String chosenCarrier(String carrierName) {
+        if (!Network.carrierMap.containsKey(carrierName)) {
+            System.out.println("No such carrier, please choose another\n");
+        }
+        return carrierName;
+    }
+
+
+    //Allows the user to choosen an alarm type to create
+    public Alarm createAlarm() {
+
+        String chosenAlarm;
+        String alarmType;
+        String alarmRemedy;
+
+        System.out.println("");
+        System.out.println("Please choose an alarm type (1-4): ");
+        System.out.println("1. Unit unavailable: ");
+        System.out.println("2. Optical loss: ");
+        System.out.println("3. Dark fibre: ");
+        System.out.println("4. Power outage: \n");
+        System.out.print("Choose an alarm type (1-4): \n");
+
+        chosenAlarm = scan.nextLine();
 
         switch (chosenAlarm) {
 
-                case "1":
-                    alarmType = "Unit unavailable";
-                    alarmRemedy = "Unit unavailable remedy";
+            case "1":
+                alarmType = "Unit unavailable";
+                alarmRemedy = "Unit unavailable remedy";
 
 
-                    break;
+                break;
 
-                case "2":
-                    alarmType = "Optical loss";
-                    alarmRemedy = "Optical loss remedy";
-
-
-                    break;
-
-                case "3":
-                    alarmType = "Dark fibre";
-                    alarmRemedy = "Dark fibre remedy";
+            case "2":
+                alarmType = "Optical loss";
+                alarmRemedy = "Optical loss remedy";
 
 
-                    break;
+                break;
 
-                case "4":
-                    alarmType = "Power outage";
-                    alarmRemedy = "Power outage remedy";
+            case "3":
+                alarmType = "Dark fibre";
+                alarmRemedy = "Dark fibre remedy";
 
-                    break;
 
-                default:
-                    alarmType = "Default";
-                    alarmRemedy = "Default remedy";
-            }
+                break;
+
+            case "4":
+                alarmType = "Power outage";
+                alarmRemedy = "Power outage remedy";
+
+                break;
+
+            default:
+                alarmType = "Default";
+                alarmRemedy = "Default remedy";
+        }
 
         Date date = new Date();
 

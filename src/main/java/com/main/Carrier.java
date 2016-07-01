@@ -3,17 +3,17 @@ package com.main;
 
 import java.util.HashMap;
 
-public class Carrier{
+public class Carrier {
 
 
     private String name;
     public HashMap<String, Hub> hubs = new HashMap<>();
 
-    public Carrier(){
+    public Carrier() {
 
     }
 
-    public Carrier(String name){
+    public Carrier(String name) {
         this.name = name;
 
     }

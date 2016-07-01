@@ -9,27 +9,37 @@ public class DeleteCarrierCommand implements Command {
 
     Scanner scan = new Scanner(System.in);
 
-    public void execute(){
+    public void execute() {
 
 
         ListElements.listCarriers();
 
         String carrierName;
         do {
-            System.out.print("Enter the name of the carrier you would like to delete: ");
+            System.out.print("Enter the carriers name: ");
             carrierName = scan.nextLine();
-            SearchForElementName.searchForCarrier(carrierName);
-        } while(!Network.carrierMap.containsKey(carrierName));
+
+            chosenCarrier(carrierName);
+
+        } while (!Network.carrierMap.containsKey(carrierName));
 
 
         deleteCarrier(carrierName);
     }
 
 
+    public String chosenCarrier(String carrierName) {
+        if (!Network.carrierMap.containsKey(carrierName)) {
+            System.out.println("No such carrier, please choose another\n");
+        }
+        return carrierName;
+    }
 
-    private void deleteCarrier(String carrierToDelete){
+
+    //Delete the specified carrier
+    public void deleteCarrier(String carrierToDelete) {
 
         Network.carrierMap.remove(carrierToDelete);
-        System.out.print(carrierToDelete + " deleted");
+        System.out.println(carrierToDelete + " deleted");
     }
 }

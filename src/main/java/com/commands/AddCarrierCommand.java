@@ -6,15 +6,14 @@ import com.main.Network;
 
 import java.util.Scanner;
 
-public class AddCarrierCommand implements Command{
+public class AddCarrierCommand implements Command {
 
     private Scanner scan = new Scanner(System.in);
 
 
+    public void execute() {
 
-    public void execute(){
 
-        System.out.println("");
         System.out.println("Current carriers");
         System.out.println("----------------");
 
@@ -22,30 +21,35 @@ public class AddCarrierCommand implements Command{
         ListElements.listCarriers();
 
         String carrierName;
-
         do {
             System.out.print("Enter the new carriers name: ");
             carrierName = scan.nextLine();
-            if(Network.carrierMap.containsKey(carrierName)){
-                System.out.println("Carrier with that name already exists, please choose another");
-            }
-        }while(Network.carrierMap.containsKey(carrierName));
 
-            System.out.println("");
+            chosenCarrier(carrierName);
 
-            addCarrier(carrierName);
+        } while (Network.carrierMap.containsKey(carrierName));
 
+        System.out.println("");
 
-
-        }
-
-
-         private void addCarrier(String carrierName){
-             Carrier c = new Carrier(carrierName);
-             Network.carrierMap.put(c.getName(), c);
-             System.out.print(carrierName + " added");
-     }
-
-
+        addCarrier(carrierName);
     }
+
+
+    public String chosenCarrier(String carrierName) {
+        if (Network.carrierMap.containsKey(carrierName)) {
+            System.out.println("Carrier with that name already exists, please choose another\n");
+        }
+        return carrierName;
+    }
+
+
+    //Adds new carrier
+    public void addCarrier(String carrierName) {
+        Carrier c = new Carrier(carrierName);
+        Network.carrierMap.put(c.getName(), c);
+        System.out.print("Carrier " + carrierName + " added\n");
+    }
+
+
+}
 

@@ -8,12 +8,12 @@ import com.main.Network;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddHubCommand implements Command{
+public class AddHubCommand implements Command {
 
     Scanner scan = new Scanner(System.in);
 
 
-    public void execute(){
+    public void execute() {
 
 
         System.out.println("");
@@ -25,62 +25,48 @@ public class AddHubCommand implements Command{
 
 
         String carrierName;
-            do {
-                System.out.print("Which carrier would you like to associate the hub with?: ");
-                carrierName = scan.nextLine();
-                SearchForElementName.searchForCarrier(carrierName);
-            }while (!Network.carrierMap.containsKey(carrierName));
+        do {
+            System.out.print("Enter the carriers name: ");
+            carrierName = scan.nextLine();
 
-            System.out.println("");
+            chosenCarrier(carrierName);
 
+        } while (!Network.carrierMap.containsKey(carrierName));
 
         ListElements.listHubs(carrierName);
 
-
         String hubName;
-          do {
-              System.out.print("Enter the hub name: ");
-              hubName = scan.nextLine();
-              if(Network.carrierMap.get(carrierName).hubs.containsKey(hubName)){
-                  System.out.println(hubName + " already exists within the system");
-              }
-           }while(Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
-
-
-
-            System.out.println("");
-
-
-        String hubID;
-
         do {
-            System.out.print("Enter an id for the hub: ");
-            hubID = scan.nextLine();
-        }while(!checkID(carrierName, hubID));
-            System.out.println("");
+            System.out.print("Enter the new hubs name: ");
+            hubName = scan.nextLine();
 
-            addHub(carrierName, hubName, hubID);
-          }
+            chosenHub(carrierName, hubName);
 
+        } while (Network.carrierMap.get(carrierName).hubs.containsKey(hubName));
 
 
+        System.out.println("");
 
-    private void addHub(String parentCarrier, String hubName, String hubID){
+        chosenID(carrierName, hubName);
+
+    }
+
+
+    //Adds new hub
+    public void addHub(String parentCarrier, String hubName, String hubID) {
 
         Carrier c = Network.carrierMap.get(parentCarrier);
-
-        //Check if hub exists
 
         Hub hub = new Hub(hubName, hubID);
 
         c.hubs.put(hub.getName(), hub);
 
-        //hub.nodes.values();
+        System.out.println("Hub " + hub.getName() + " added");
     }
 
 
-
-    private boolean checkID(String parentCarrier, String hubID) {
+    //Checks to see of ID is unique
+    public boolean checkID(String parentCarrier, String hubID) {
 
         boolean idCheck = true;
 
@@ -99,4 +85,34 @@ public class AddHubCommand implements Command{
     }
 
 
+    public String chosenCarrier(String carrierName) {
+
+
+        if (!Network.carrierMap.containsKey(carrierName)) {
+            System.out.println("No such carrier, please choose another\n");
+        }
+        return carrierName;
     }
+
+
+    public String chosenHub(String carrier, String hubName) {
+        if (Network.carrierMap.get(carrier).hubs.containsKey(hubName)) {
+            System.out.println("A hub with that name already exists, please choose another\n");
+        }
+        return hubName;
+    }
+
+
+    public void chosenID(String carrierName, String hubName) {
+
+        String hubID;
+        do {
+            System.out.print("Enter an id for the hub: ");
+            hubID = scan.nextLine();
+        } while (!checkID(carrierName, hubID));
+        System.out.println("");
+
+        addHub(carrierName, hubName, hubID);
+    }
+}
+
