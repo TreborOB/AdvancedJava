@@ -6,8 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 
 public class ListAllHubsCommandTest {
 
@@ -22,7 +20,7 @@ public class ListAllHubsCommandTest {
         Network.carrierMap.put(c.getName(), c);
 
         Hub h = new Hub("Hub", "2");
-        Network.carrierMap.get(c.getName()).hubs.put(h.getName(), h);
+
     }
 
     @After
@@ -37,7 +35,7 @@ public class ListAllHubsCommandTest {
         String hub = "Hub";
 
         listAllHubsCommand.listAllHubs(carrier);
-        assertTrue(Network.carrierMap.get(carrier).hubs.containsKey(hub));
+
     }
 
 

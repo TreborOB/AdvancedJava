@@ -3,7 +3,8 @@ import com.main.Network;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertTrue;
 
 public class AddCarrierCommandTest {
 
@@ -16,33 +17,19 @@ public class AddCarrierCommandTest {
 
 
     @Test
-    public void addCarrierTest() {
+    public void carrier() {
 
+    }
+
+
+    @Test
+    public void addCarrier() {
         String carrierName = "Carrier";
         addCarrierCommand.addCarrier(carrierName);
-
         assertTrue(Network.carrierMap.containsKey(carrierName));
     }
 
 
-    @Test
-    public void addCarrierDuplicate() {
-
-        String carrierName = "Carrier";
-        addCarrierCommand.addCarrier(carrierName);
-        addCarrierCommand.addCarrier(carrierName);
-
-        assertTrue(Network.carrierMap.size() == 1);
-    }
-
-    @Test
-    public void chosenCarrierTest() {
-
-        String carrier = "Carrier";
-        String response = addCarrierCommand.chosenCarrier(carrier);
-        assertEquals(response, "Carrier");
-
-    }
 
 
 }

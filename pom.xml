@@ -15,6 +15,15 @@
             <version>2.6</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>1.0-groovy-2.4</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+
 
 </project>
