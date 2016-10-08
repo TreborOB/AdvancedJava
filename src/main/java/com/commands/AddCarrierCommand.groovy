@@ -16,9 +16,8 @@ class AddCarrierCommand extends Base implements Command {
         carrier()
     }
 
-
     /**
-     * Creates an alarm on a hub using the createAlarmOnHub method
+     * Prompts the user to enter the new carriers name
      */
     def carrier() {
         def carrierName = input("Enter the new carriers name: ")
@@ -27,12 +26,15 @@ class AddCarrierCommand extends Base implements Command {
     }
 
     /**
-     * Creates an alarm on a hub using the createAlarmOnHub method
+     * Adds carrier to the network
+     *
+     * @param carrierName
      */
     def addCarrier(String carrierName) {
         def c = new Carrier()
-        Network.carrierMap.put(carrierName, c)
-        println "$carrierName added"
-    }
-}
+        carrierName ? (Network.carrierMap.put(carrierName, c).println("Carrier $carrierName added")): print('No carrier entered')
 
+
+    }
+
+}

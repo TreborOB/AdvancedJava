@@ -1,7 +1,7 @@
 package com.commands
 
-
-import com.main.*
+import com.main.Base
+import com.main.Network
 
 
 /**
@@ -14,34 +14,29 @@ class StatusOfNetworkCommand extends Base implements Command {
         viewAlarmStatusOfNetwork()
     }
 
-
+    /**
+     * Prints out the number of alarms on each carrier
+     *
+     */
     def viewAlarmStatusOfNetwork() {
 
-        println ''
+        if(!Network.carrierMap){
+            println 'Network is empty'
+        }else {
+            Network.carrierMap.each { k1, v1 ->
+                println "${k1}"
+                println '--------'
 
-        String hubs
-        String nodes
+                Network.carrierMap.get(k1).hubs.each { k2, v2 ->
+                    println "No of alarms on $k2: " +  Network.carrierMap.get(k1).hubs.get(k2).hubAlarms.size()
 
-        if (Network.carrierMap.size() == 0) {
-            println 'The network is empty'
-        } else {
-            for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
-                hubs = entry.getKey()
-                println 'Carrier name: ' + entry.getValue().getName()
-
-
-                for (Map.Entry<String, Hub> entryHub : Network.carrierMap.get(hubs).hubs.entrySet()) {
-                    nodes = entryHub.getKey()
-                    println 'Hub alarms: ' + entryHub.getValue().hubAlarms.size()
-
-                    for (Map.Entry<String, Node> entryNode : Network.carrierMap.get(hubs).hubs.get(nodes).nodes.entrySet()) {
-                        println 'Node alarms: ' + entryNode.getValue().nodeAlarms.size()
+                    Network.carrierMap.get(k1).hubs.get(k2).nodes.each { k3, v3 ->
+                        println "No of alarms on $k3: " + Network.carrierMap.get(k1).hubs.get(k2).nodes.get(k3).nodeAlarms.size()
+                        println ''
 
                     }
                 }
-                System.out.println("")
             }
         }
-        System.out.println("")
     }
 }

@@ -14,6 +14,10 @@ class ListAllNodesCommand extends Base implements Command {
         nodes()
     }
 
+    /**
+     * Prompts the user to select to a carrier
+     *
+     */
     public nodes() {
 
         listCarriers()
@@ -22,7 +26,11 @@ class ListAllNodesCommand extends Base implements Command {
 
     }
 
-
+    /**
+     * Prompts the user to select a hub
+     *
+     * @param carrierName
+     */
     def hub(String carrierName) {
 
         listHubs(carrierName)
@@ -30,13 +38,12 @@ class ListAllNodesCommand extends Base implements Command {
         doesHubExist(carrierName, hubName) ? listAllNodes(carrierName, hubName) : notExists(hubName)
     }
 
-
+    /**
+     * Lists all nodes for the selects hub
+     *
+     * @param carrierName, hubName
+     */
     def listAllNodes(String carrierName, String hubName) {
-        println ''
-        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.each { k, v ->
-            println "${k}"
-            println ''
-
-        }
+        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.each { k, v -> println "\n${k}"}
     }
 }

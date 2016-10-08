@@ -8,7 +8,7 @@ import groovy.transform.EqualsAndHashCode
  */
 
 
-@EqualsAndHashCode
+@EqualsAndHashCode(includeFields=true)
 class Alarm {
 
     String alarmType

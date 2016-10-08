@@ -6,18 +6,19 @@ import groovy.transform.EqualsAndHashCode
  * Created by robertobrien on 14/09/2016.
  */
 
-@EqualsAndHashCode
+@EqualsAndHashCode(includeFields=true)
 class Carrier {
 
 
     String name
     def hubs = [:]
 
-    Carrier(){
+    Carrier() {
     }
 
     Carrier(name) {
         this.name = name
     }
+
 }
 

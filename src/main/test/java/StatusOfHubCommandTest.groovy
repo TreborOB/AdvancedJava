@@ -1,12 +1,11 @@
-import com.commands.StatusOfHubCommand;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
+import com.commands.StatusOfHubCommand
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class StatusOfHubCommandTest {
 
-    private StatusOfHubCommand statusOfHubCommand;
+    StatusOfHubCommand statusOfHubCommand;
 
     @Before
     public void setup() {

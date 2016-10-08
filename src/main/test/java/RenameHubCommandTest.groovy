@@ -1,12 +1,12 @@
-import com.commands.RenameHubCommand;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import com.commands.RenameHubCommand
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class RenameHubCommandTest {
 
 
-    private RenameHubCommand renameHubCommand;
+    RenameHubCommand renameHubCommand;
 
     @Before
     public void setup() {

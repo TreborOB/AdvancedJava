@@ -1,11 +1,11 @@
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class SuggestedRemediesCommandTest {
 
 
-    private SuggestedRemediesCommandTest suggestedRemediesCommandTest;
+    SuggestedRemediesCommandTest suggestedRemediesCommandTest;
 
     @Before
     public void setup() {

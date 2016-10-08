@@ -14,14 +14,18 @@ import java.lang.reflect.Type
  */
 class ImportFromJson implements Command {
 
+
+    /**
+     * Reads in a network from the path location in json format
+     *
+     */
     def execute() {
 
-        try {
+        try{
             JsonReader reader = new JsonReader(new FileReader('/Users/robertobrien/Desktop/Network.json'))
             Gson gson = new Gson()
 
-            Type type = new TypeToken<Map<String, Carrier>>() {
-            }.getType()
+            Type type = new TypeToken<Map<String, Carrier>>() {}.getType()
             Network.carrierMap = gson.fromJson(reader, type)
 
             println ''
@@ -30,7 +34,6 @@ class ImportFromJson implements Command {
         } catch (FileNotFoundException fnf) {
             println "File not found: + $fnf"
         }
-
 
     }
 }

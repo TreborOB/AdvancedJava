@@ -16,6 +16,10 @@ public class DeleteNodeCommand extends Base implements Command {
     }
 
 
+    /**
+     * Prompts the user to select a carrier
+     *
+     */
     def node() {
 
         listCarriers()
@@ -23,7 +27,11 @@ public class DeleteNodeCommand extends Base implements Command {
         doesCarrierExist(carrierName) ? hub(carrierName) : notExists(carrierName)
     }
 
-
+    /**
+     * Prompts the user to select to a hub
+     *
+     * @param carrierName
+     */
     def hub(String carrierName) {
 
         listHubs(carrierName)
@@ -31,7 +39,12 @@ public class DeleteNodeCommand extends Base implements Command {
         doesHubExist(carrierName, hubName) ? nodeNext(carrierName, hubName) : notExists(hubName)
     }
 
-
+    /**
+     * Prompts the user to select which node to delete
+     *
+     * @param carrierName, hubName
+     * @return
+     */
     def nodeNext(String carrierName, String hubName) {
 
         listNodes(carrierName, hubName)
@@ -39,9 +52,13 @@ public class DeleteNodeCommand extends Base implements Command {
         doesNodeExist(carrierName, hubName, nodeName) ? deleteNode(carrierName, hubName, nodeName) : notExists(carrierName)
     }
 
-
-    def deleteNode(String carrier, String hub, String nodeToDelete) {
-        Network.carrierMap.get(carrier).hubs.get(hub).nodes.remove(nodeToDelete)
+    /**
+     * Deletes the specified node from the network
+     *
+     * @param carrierName, hubName, nodeToDelete
+     */
+    def deleteNode(String carrier, String hubName, String nodeToDelete) {
+        Network.carrierMap.get(carrier).hubs.get(hubName).nodes.remove(nodeToDelete)
         println "$nodeToDelete deleted"
 
     }

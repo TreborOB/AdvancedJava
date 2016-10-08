@@ -6,9 +6,9 @@ import groovy.transform.EqualsAndHashCode;
  * Created by robertobrien on 14/09/2016.
  */
 
-@EqualsAndHashCode
+@EqualsAndHashCode(includeFields=true)
 class Network {
 
-    public static def Map carrierMap = [:]
+    static def carrierMap = [:]
 }
 

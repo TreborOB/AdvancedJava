@@ -14,7 +14,10 @@ class RenameHubCommand extends Base implements Command {
         rename()
     }
 
-
+    /**
+     * Prompts the user to select a carrier
+     *
+     */
     def rename() {
 
         listCarriers()
@@ -22,7 +25,11 @@ class RenameHubCommand extends Base implements Command {
         doesCarrierExist(carrierName) ? renameHub(carrierName) : notExists(carrierName)
     }
 
-
+    /**
+     * Prompts the user to select a hub
+     *
+     * @param carrierName
+     */
     def renameHub(String carrierName) {
 
         listHubs(carrierName)
@@ -31,18 +38,30 @@ class RenameHubCommand extends Base implements Command {
 
     }
 
-
+    /**
+     * Prompts the user to select a new name for the hub
+     *
+     * @param carrierName, hubName
+     */
     def newName(String carrierName, String hubName) {
 
         def newHubName = input('Enter a new name for the hub: ')
-        doesHubExist(carrierName, hubName) ? exists(newHubName) : renameHub(carrierName, hubName, newHubName)
+        doesHubExist(carrierName, hubName)  ? renameHub(carrierName, hubName, newHubName) : exists(newHubName)
     }
 
+
+    /**
+     * Renames the selected hub
+     *
+     * @param carrierName, hub, newHubName
+     */
     def renameHub(String carrier, String hub, String newHubName) {
 
         def b = Network.carrierMap.get(carrier).hubs.remove(hub)
         b.setName(newHubName)
-        Network.carrierMap.get(carrier).hubs.put(newHubName, b)
+
+        newHubName ? Network.carrierMap.get(carrier).hubs.put(newHubName.print("$hub rename to $newHubName"), b)
+                   : println('No new hub entered')
 
     }
 }

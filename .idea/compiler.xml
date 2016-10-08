@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="AdvancedJava" />
+        <module name="GroovyAssessment" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AdvancedJava" target="1.5" />
+      <module name="GroovyAssessment" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

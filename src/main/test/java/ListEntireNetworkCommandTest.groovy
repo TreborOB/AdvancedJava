@@ -1,8 +1,7 @@
-import com.commands.ListEntireNetworkCommand;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
+import com.commands.ListEntireNetworkCommand
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class ListEntireNetworkCommandTest {
 

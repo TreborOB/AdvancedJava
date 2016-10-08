@@ -1,11 +1,11 @@
-import com.commands.StatusOfNodeCommand;
-import org.junit.After;
-import org.junit.Before;
+import com.commands.StatusOfNodeCommand
+import org.junit.After
+import org.junit.Before
 
 public class StatusOfNodeCommandTest {
 
 
-    private StatusOfNodeCommand statusOfNodeCommand;
+    StatusOfNodeCommand statusOfNodeCommand;
 
     @Before
     public void setup() {

@@ -11,30 +11,27 @@ import groovy.transform.EqualsAndHashCode
  */
 
 
-@EqualsAndHashCode
+@EqualsAndHashCode(includeFields=true)
 class Base {
 
 
     def listCarriers() {
-        println ''
+
         ListAllCarriersCommand listCarriers = new ListAllCarriersCommand()
         listCarriers.listAllCarriers()
-        println ''
     }
 
-
     def listHubs(String parentCarrier) {
-        println ''
+
         ListAllHubsCommand listHubs = new ListAllHubsCommand()
         listHubs.listAllHubs(parentCarrier)
-        println ''
+
     }
 
     def listNodes(String parentCarrier, String hubName) {
-        println ''
+
         ListAllNodesCommand listNodes = new ListAllNodesCommand()
         listNodes.listAllNodes(parentCarrier, hubName)
-        println ''
     }
 
 
@@ -54,43 +51,34 @@ class Base {
 
     def doesHubIDExist(String carrierName, String id) {
 
-        boolean idCheck = true
+        def idCheck = true
         for (Map.Entry<String, Hub> entry : Network.carrierMap.get(carrierName).hubs.entrySet()) {
-            idCheck = !entry.getValue().getId().equals(id)
-        }
+            idCheck = entry.getValue().getId() != id}
         return idCheck
     }
 
 
     def doesNodeIdExist(String carrierName, String hub, String Id) {
 
-        boolean idCheck = true
-
-        for (Map.Entry<String, Node> entry : Network.carrierMap.get(carrierName).hubs.get(hub).nodes.entrySet()) {
-
-            idCheck = !entry.getValue().getId().equals(Id)
-        }
-        return idCheck
+            def idCheck = true
+            for (Map.Entry<String, Node> entry : Network.carrierMap.get(carrierName).hubs.get(hub).nodes.entrySet()) {
+                idCheck = entry.getValue().getId() != Id}
+            return idCheck
     }
 
 
     def exists(String existsAlready) {
-
-        println ''
         println "$existsAlready already exists"
     }
 
 
-    def notExists(String notExistsAlready) {
+    def notExists(String notExists) {
 
-        println ''
-        println "$notExistsAlready does not exists wihtin the system"
+        println "$notExists does not exist within the system"
     }
 
     static def input = { prompt ->
         print prompt
         System.in.newReader().readLine()
     }
-
-
 }

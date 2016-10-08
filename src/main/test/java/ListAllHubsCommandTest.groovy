@@ -1,16 +1,15 @@
-import com.commands.ListAllHubsCommand;
-import com.main.Carrier;
-import com.main.Hub;
-import com.main.Network;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
+import com.commands.ListAllHubsCommand
+import com.main.Carrier
+import com.main.Hub
+import com.main.Network
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class ListAllHubsCommandTest {
 
 
-    private ListAllHubsCommand listAllHubsCommand;
+    ListAllHubsCommand listAllHubsCommand;
 
     @Before
     public void setup() {

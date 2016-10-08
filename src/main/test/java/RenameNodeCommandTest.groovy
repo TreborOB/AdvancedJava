@@ -1,12 +1,12 @@
-import com.commands.RenameNodeCommand;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import com.commands.RenameNodeCommand
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class RenameNodeCommandTest {
 
 
-    private RenameNodeCommand renameNodeCommand;
+    RenameNodeCommand renameNodeCommand;
 
     @Before
     public void setup() {

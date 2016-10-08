@@ -1,10 +1,7 @@
 package com.commands
 
-
 import com.main.Base
 import com.main.Network
-import com.main.Node
-
 
 /**
  * Created by robertobrien on 14/09/2016.
@@ -16,6 +13,10 @@ def class StatusOfNodeCommand extends Base implements Command {
         carrier()
     }
 
+    /**
+     * Prompts the user to select to a carrier
+     *
+     */
     def carrier() {
 
         listCarriers()
@@ -23,70 +24,62 @@ def class StatusOfNodeCommand extends Base implements Command {
         doesCarrierExist(carrierName) ? chosenHub(carrierName) : notExists(carrierName)
     }
 
+    /**
+     * Prompts the user to select a hub
+     *
+     * @param carrierName
+     */
     def chosenHub(String carrierName) {
 
         listHubs(carrierName)
         println ''
         def hubName = input('Please enter the hub name: ')
-        doesHubExist(carrierName, hubName) ? searchAvailability(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? searchHubAvailability(carrierName, hubName) : notExists(hubName)
 
     }
 
+    /**
+     * Checks to see if the parent hub is unit available/unavailable as if the parent hub is available then all associated nodes are unavailable
+     *
+     * @param carrierName, hubName
+     */
+    def searchHubAvailability(String carrierName, String hubName) {
 
-    def searchAvailability(String carrier, String hubName) {
-
-        String unitAvailability = ""
-
-        for (int i in Network.carrierMap.get(carrier).hubs.get(hubName).getHubAlarms().size() - 1) {
-            if (Network.carrierMap.get(carrier).hubs.get(hubName).getHubAlarms().get(i).getAlarmType().equalsIgnoreCase("Unit unavailable")) {
-                print 'Parent hub is unavailable thus all its children are unavailable'
-            } else {
-                searchByNameOrID(carrier, hubName)
-            }
+        def unit = 'Unit Unavailable'
+        if(Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.alarmType.inject(false){ acc, value -> acc || unit.contains(value)}){
+            println 'Hub is UNAVAILABLE thus all associated nodes are unavailable'
+        }else{
+            searchNode(carrierName, hubName)
+            println 'Hub is AVAILABLE'
+            return false
         }
-        return unitAvailability
     }
 
-
-    def searchByNameOrID(String carrierName, String hubName) {
-
+    /**
+     * Prompts the user to select a node
+     *
+     * @param carrierName, hubName
+     */
+    def searchNode(String carrierName, String hubName){
         listNodes(carrierName, hubName)
-        def nodeName = input('Please enter the name or id the node you would like to search for: ')
-        doesNodeExist(carrierName, hubName, nodeName) || doesNodeIdExist(carrierName, hubName, nodeName) ? check(carrierName, hubName, nodeName) : notExists(hubName)
-
+        def nodeName = input('Please choose a node: ')
+        doesNodeExist(carrierName, hubName, nodeName) ? nodeAvailabilty(carrierName, hubName, nodeName) : notExists(hubName)
     }
 
 
-    def check(String carrierName, String hubName, String nodeName) {
-
-        Node node
-        String availableUnavailable
-
-        if (Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.isEmpty()) {
-            println 'There are no active alarms for this node'
-        } else {
-
-            for (int i in Network.carrierMap.get(carrierName).hubs.get(hubName).hubAlarms.size()-1) {
-                println ''
-
-                if (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.get(i).getAlarmType().equalsIgnoreCase("Unit unavailable")) {
-                    availableUnavailable = "Unit unavailable"
-                } else {
-                    availableUnavailable = "Unit available"
-                }
-
-                for (Map.Entry<String, Node> entry : Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.entrySet()) {
-                    if (entry.getValue().getName().equals(nodeName)) {
-
-                        node = entry.getValue()
-                        println ''
-                        println 'node name: ' + node.getName()
-                        println 'node id: ' + node.getId()
-                        println 'node status: ' + availableUnavailable
-                    }
-                }
-                        break;
-            }
+    /**
+     * Checks to see if the selected node is unit available/unavailable
+     *
+     * @param carrierName
+     * @return
+     */
+    def nodeAvailabilty(String carrierName, String hubName, String nodeName){
+        def unit = 'Unit Unavailable'
+        if(Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.alarmType.inject(false){ acc, value -> acc || unit.contains(value)}){
+            println 'Node is UNAVAILABLE'
+        }else{
+            println 'Hub is AVAILABLE'
         }
+
     }
 }

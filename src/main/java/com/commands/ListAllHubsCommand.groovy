@@ -13,25 +13,26 @@ public class ListAllHubsCommand extends Base implements Command {
         hub()
     }
 
+    /**
+     * Prompts the user to select a carrier
+     *
+     */
     def hub() {
-
         listCarriers()
-
         def carrierName = input('Enter the carriers name: ')
+        doesCarrierExist(carrierName) ? listAllHubs(carrierName) : print('no such carrier\n')
 
-        if (doesCarrierExist(carrierName)) {
-            listAllHubs(carrierName)
-        } else {
-            print 'no such carrier'
-        }
     }
 
+    /**
+     * Lists all hubs associated with the selected carrier
+     *
+     * @param carrierName
+     */
     def listAllHubs(String carrierName) {
 
-        println ''
-        Network.carrierMap.get(carrierName).hubs.each { k2, v2 ->
-            println "${k2}"
-            println ''
+        Network.carrierMap.get(carrierName).hubs.each {
+            k, v -> println "\n${k}"
         }
     }
 }

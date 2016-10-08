@@ -13,6 +13,11 @@ public class RenameCarrierCommand extends Base implements Command {
         rename()
     }
 
+
+    /**
+     * Prompts the user to select a carrier
+     *
+     */
     def rename() {
 
         listCarriers()
@@ -21,19 +26,25 @@ public class RenameCarrierCommand extends Base implements Command {
     }
 
 
+    /**
+     * Prompts the user to select to a new name for the carrier
+     *
+     * @param carrierName
+    */
     def newName(String carrierName) {
 
         def newName = input('Enter a new name for the carrier: ')
         doesCarrierExist(carrierName) ? renameCarrier(carrierName, newName) : exists(newName)
     }
 
-
+    /**
+     * Renames the selected carrier
+     *
+     * @param carrierName, newCarrierName
+     */
     def renameCarrier(String carrier, String newCarrierName) {
 
         def c = Network.carrierMap.remove(carrier)
-        c.setName(newCarrierName)
-        Network.carrierMap.put(newCarrierName, c)
-        println ''
-        println 'Carrier renamed'
+        newCarrierName ? Network.carrierMap.put(newCarrierName, c).println("$carrier renamed to $newCarrierName"): println('No new carrier entered')
     }
 }

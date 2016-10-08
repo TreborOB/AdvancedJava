@@ -1,19 +1,19 @@
-import com.commands.RenameCarrierCommand;
-import com.main.Carrier;
-import com.main.Network;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import com.commands.RenameCarrierCommand
+import com.main.Carrier
+import com.main.Network
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue
 
 public class RenameCarrierCommandTest {
 
 
-    private RenameCarrierCommand renameCarrierCommand;
+    RenameCarrierCommand renameCarrierCommand;
 
     @Before
-    public void setup() {
+    void setup() {
         renameCarrierCommand = new RenameCarrierCommand();
 
         Carrier c = new Carrier("Carrier");

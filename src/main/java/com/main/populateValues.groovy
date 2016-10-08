@@ -20,10 +20,9 @@ class PopulateValues {
         Node n2 = new Node("Node2", "2")
         Node n3 = new Node("Node3", "3")
 
-
         def date = new Date()
 
-        Alarm alarm1 = new Alarm("Power outa", "Power outage remedy", date)
+        Alarm alarm1 = new Alarm("Power outage", "Power outage remedy", date)
         Alarm alarm2 = new Alarm("Dark fibre", "Dark fibre remedy", date)
         Alarm alarm3 = new Alarm("Dark fibre", "Dark fibre remedy", date)
         Alarm alarm4 = new Alarm("Unit Unavailable", "Unit Unavailable remedy", date)
@@ -55,7 +54,6 @@ class PopulateValues {
         n3.nodeAlarms.add(alarm5)
         n3.nodeAlarms.add(alarm6)
 
-
         Network.carrierMap.put(c1.getName(), c1)
         Network.carrierMap.put(c2.getName(), c2)
         Network.carrierMap.put(c3.getName(), c3)
@@ -64,9 +62,9 @@ class PopulateValues {
         Network.carrierMap.get(c2.hubs.put(h2.getName(), h2))
         Network.carrierMap.get(c3.hubs.put(h3.getName(), h3))
 
-        Network.carrierMap.get(c1.hubs.get(h1.nodes.put(h1.getName(), h1)))
-        Network.carrierMap.get(c2.hubs.get(h2.nodes.put(h2.getName(), h2)))
-        Network.carrierMap.get(c3.hubs.get(h3.nodes.put(h3.getName(), h3)))
+        Network.carrierMap.get(c1.hubs.get(h1.nodes.put(n1.getName(), n1)))
+        Network.carrierMap.get(c2.hubs.get(h2.nodes.put(n2.getName(), n2)))
+        Network.carrierMap.get(c3.hubs.get(h3.nodes.put(n3.getName(), n3)))
 
     }
 

@@ -6,7 +6,7 @@ import com.commands.*
 /**
  * Created by robertobrien on 14/09/2016.
  */
-public class Main extends Base {
+public class Main extends Base{
 
     static def commands = [:]
 
@@ -15,8 +15,8 @@ public class Main extends Base {
         new Main().menus()
     }
 
-
     void menus() {
+
 
         Command listEntireNetwork = new ListEntireNetworkCommand()
         Command statusOfNetwork = new StatusOfNetworkCommand()
@@ -80,7 +80,7 @@ public class Main extends Base {
 
         String mainMenuChoice = ''
 
-        while (!mainMenuChoice.equals('7')) {
+        while (mainMenuChoice != '7') {
             println ''
             println 'DAS Network Manager'
             println '--------------------'
@@ -95,24 +95,12 @@ public class Main extends Base {
 
             switch (mainMenuChoice) {
 
-                case '1':
-                    networkMenu()
-                    break
-                case '2':
-                    carrierMenu()
-                    break
-                case '3':
-                    hubMenu()
-                    break
-                case '4':
-                    nodeMenu()
-                    break
-                case '5':
-                    alarmMenu()
-                    break
-                case '6':
-                    jsonMenu()
-                    break
+                case '1': networkMenu();break
+                case '2': carrierMenu();break
+                case '3': hubMenu();break
+                case '4': nodeMenu();break
+                case '5': alarmMenu();break
+                case '6': jsonMenu();break
                 default: 'Invalid selection'
             }
         }
@@ -131,14 +119,9 @@ public class Main extends Base {
 
 
         switch (networkChoice) {
-            case '1':
-                commands.get('listNetwork').execute()
-                break
-            case '2':
-                commands.get('networkStatus').execute()
-                break
-            default:
-                println 'Main Menu\n'
+            case '1': commands.get('listNetwork').execute();break
+            case '2': commands.get('networkStatus').execute();break
+            default: println 'Main Menu\n'
         }
     }
 
@@ -157,23 +140,12 @@ public class Main extends Base {
         def carrierChoice = input('Please make a selection (1-6): ')
 
         switch (carrierChoice) {
-            case '1':
-                commands.get('addCarrier').execute()
-                break
-            case '2':
-                commands.get('deleteCarrier').execute()
-                break
-            case '3':
-                commands.get('renameCarrier').execute()
-                break
-            case '4':
-                commands.get('listCarriers').execute()
-                break
-            case '5':
-                commands.get('carrierStatus').execute()
-                break
-            default:
-                println 'Main Menu\n'
+            case '1': commands.get('addCarrier').execute() ;break
+            case '2': commands.get('deleteCarrier').execute();break
+            case '3': commands.get('renameCarrier').execute();break
+            case '4': commands.get('listCarriers').execute();break
+            case '5': commands.get('carrierStatus').execute();break
+            default: println 'Main Menu\n'
         }
     }
 
@@ -194,22 +166,12 @@ public class Main extends Base {
 
         switch (hubChoice) {
             case '1':
-                commands.get('addHub').execute()
-                break
-            case '2':
-                commands.get('deleteHub').execute()
-                break
-            case '3':
-                commands.get('renameHub').execute()
-                break
-            case '4':
-                commands.get('listHubs').execute()
-                break
-            case '5':
-                commands.get('hubStatus').execute()
-                break
-            default:
-                println 'Main Menu\n'
+                commands.get('addHub').execute();break
+            case '2': commands.get('deleteHub').execute();break
+            case '3': commands.get('renameHub').execute();break
+            case '4': commands.get('listHubs').execute();break
+            case '5': commands.get('hubStatus').execute();break
+            default: println 'Main Menu\n'
 
         }
 
@@ -230,23 +192,12 @@ public class Main extends Base {
         def nodeChoice = input('Please make a selection (1-6): ')
 
         switch (nodeChoice) {
-            case '1':
-                commands.get('addNode').execute()
-                break
-            case '2':
-                commands.get('deleteNode').execute()
-                break
-            case '3':
-                commands.get('renameNode').execute()
-                break
-            case '4':
-                commands.get('listNodes').execute()
-                break
-            case '5':
-                commands.get('nodeStatus').execute()
-                break
-            default:
-                println 'Main Menu\n'
+            case '1': commands.get('addNode').execute();break
+            case '2': commands.get('deleteNode').execute();break
+            case '3': commands.get('renameNode').execute();break
+            case '4': commands.get('listNodes').execute();break
+            case '5': commands.get('nodeStatus').execute();break
+            default: println 'Main Menu\n'
         }
 
 
@@ -263,17 +214,10 @@ public class Main extends Base {
         def alarmChoice = input('Please make a selection (1-4): ')
 
         switch (alarmChoice) {
-            case '1':
-                commands.get('createAlarm').execute()
-                break
-            case '2':
-                commands.get('clearAlarm').execute()
-                break
-            case '3':
-                commands.get('remedies').execute()
-                break
-            default:
-                println 'Main Menu\n'
+            case '1': commands.get('createAlarm').execute();break
+            case '2': commands.get('clearAlarm').execute();break
+            case '3': commands.get('remedies').execute();break
+            default: println 'Main Menu\n'
 
         }
     }
@@ -286,17 +230,12 @@ public class Main extends Base {
         println '1. Import'
         println '2. Export'
         println '3. Exit\n'
-        def jsonChoice = ('Please make a selection (1-3): ')
+        def jsonChoice = input('Please make a selection (1-3): ')
 
         switch (jsonChoice) {
-            case '1':
-                commands.get('import').execute()
-                break
-            case '2':
-                commands.get('export').execute()
-                break
-            default:
-                println 'Main Menu\n'
+            case '1': commands.get('import').execute();break
+            case '2': commands.get('export').execute();break
+            default: println 'Main Menu\n'
         }
     }
 }

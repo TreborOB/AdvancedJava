@@ -1,12 +1,12 @@
-import com.commands.DeleteHubCommand;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import com.commands.DeleteHubCommand
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
 public class DeleteHubCommandTest {
 
 
-    private DeleteHubCommand deleteHubCommand;
+    DeleteHubCommand deleteHubCommand;
 
     @Before
     public void setup() {

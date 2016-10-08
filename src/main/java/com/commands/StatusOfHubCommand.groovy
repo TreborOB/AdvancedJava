@@ -1,11 +1,7 @@
 package com.commands
 
-
 import com.main.Base
-import com.main.Carrier
-import com.main.Hub
 import com.main.Network
-
 
 /**
  * Created by robertobrien on 14/09/2016.
@@ -17,15 +13,21 @@ public class StatusOfHubCommand extends Base implements Command {
         status()
     }
 
-
+    /**
+     * Prompts the user to select a carrier
+     *
+     */
     def status() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
         doesCarrierExist(carrierName) ? searchByNameOrID(carrierName) : notExists(carrierName)
-
     }
 
-
+    /**
+     * Prompts the user to select a hub using either the name or id
+     *
+     * @param carrierName
+     */
     def searchByNameOrID(String carrierName) {
 
         listHubs(carrierName)
@@ -33,27 +35,16 @@ public class StatusOfHubCommand extends Base implements Command {
         doesHubExist(carrierName, nameOrID) || doesHubIDExist(carrierName, nameOrID) ? search(carrierName, nameOrID) : notExists(carrierName)
     }
 
-
+    /**
+     * Prints out the status of the selected hub (if the hub has a unit unavailable then the hub itself is unavailable)
+     *
+     * @param carrierName, nameOrId
+     */
     def search(String carrierName, String nameOrID) {
 
-        Hub hub
-        String hubs
-
-        for (Map.Entry<String, Carrier> entry : Network.carrierMap.entrySet()) {
-            hubs = entry.getKey()
-
-            for (Map.Entry<String, Hub> entryHub : Network.carrierMap.get(hubs).hubs.entrySet()) {
-
-                if (entryHub.getKey().equalsIgnoreCase(nameOrID) || entryHub.getValue().getId().equalsIgnoreCase(nameOrID)) {
-                    System.out.println("")
-
-                    hub = entryHub.getValue()
-                    println 'Name: ' + hub.getName()
-                    println 'Id: ' + hub.getId()
-                    println 'Alarm count: ' + hub.getHubAlarms().size()
-
-                }
-            }
-        }
+      def unit = 'Unit Unavailable'
+      if(Network.carrierMap.get(carrierName).hubs.get(nameOrID).hubAlarms.alarmType.inject(false){ acc, value -> acc || unit.contains(value)}){
+          println 'Hub is UNAVAILABLE'
+      }
     }
 }

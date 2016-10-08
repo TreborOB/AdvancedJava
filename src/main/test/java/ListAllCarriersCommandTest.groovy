@@ -1,16 +1,16 @@
-import com.commands.ListAllCarriersCommand;
-import com.main.Carrier;
-import com.main.Network;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import com.commands.ListAllCarriersCommand
+import com.main.Carrier
+import com.main.Network
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertFalse
 
 public class ListAllCarriersCommandTest {
 
 
-    private ListAllCarriersCommand listAllCarriersCommand;
+    ListAllCarriersCommand listAllCarriersCommand;
 
     @Before
     public void setup() {

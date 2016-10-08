@@ -15,17 +15,25 @@ public class DeleteCarrierCommand extends Base implements Command {
         delete()
     }
 
+
+    /**
+     * Prompts the user to select to a carrier to delete
+     *
+     */
     def delete() {
 
         listCarriers()
-
         def carrierName = input('Enter the carriers name: ')
-
         doesCarrierExist(carrierName) ? deleteCarrier(carrierName) : notExists(carrierName)
     }
 
-    def deleteCarrier(String carrierToDelete) {
 
+    /**
+     * Deletes the specified carrier from the network
+     *
+     * @param carrierToDelete
+     */
+    def deleteCarrier(String carrierToDelete) {
         Network.carrierMap.remove(carrierToDelete)
         println "$carrierToDelete added"
     }
