@@ -1,11 +1,14 @@
 package com.main
 
-
 /**
  * Created by robertobrien on 14/09/2016.
  */
 class PopulateValues {
 
+    /**
+     * Populates the network with pre-defined elements for testing purposes
+     *
+     */
     void defaultValues() {
 
         Carrier c1 = new Carrier("Vodafone")
