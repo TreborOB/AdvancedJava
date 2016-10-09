@@ -10,19 +10,17 @@ import com.main.Node
 class AddNodeCommand extends Base implements Command {
 
 
-    def execute() {
-        node()
-    }
-
     /**
      * Prompts the user to enter the carriers name
      *
      */
-    def node() {
+    def execute() {
         listCarriers()
         def carrierName = input("Enter the carriers name: ")
-        doesCarrierExist(carrierName) ? nextHub(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? nextHub(carrierName)
+                : notExists(carrierName)
     }
+
 
     /**
      * Prompts the user to enter the new hubs name
@@ -32,43 +30,43 @@ class AddNodeCommand extends Base implements Command {
     def nextHub(String carrierName) {
         listHubs(carrierName)
         def hubName = input("Enter the hubs name: ")
-        doesHubExist(carrierName, hubName) ? node(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? node(carrierName, hubName)
+                : notExists(hubName)
 
     }
-
 
     /**
      * Prompts the user to enter the new nodes name
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def node(String carrierName, String hubName) {
         listNodes(carrierName, hubName)
         def nodeName = input("Enter the nodes name: ")
-        doesNodeExist(carrierName, hubName, nodeName) ? exists(nodeName) : nodeID(carrierName, hubName, nodeName)
+        doesNodeExist(carrierName, hubName, nodeName) ? exists(nodeName)
+                : nodeID(carrierName, hubName, nodeName)
 
     }
-
 
     /**
      * Prompts the user to enter the new nodes ID
      *
-     * @param carrierName, hubName, nodeName
+     * @param carrierName , hubName, nodeName
      */
     def nodeID(String carrierName, String hubName, String nodeName) {
         def nodeID = input("Enter id for the node: ")
-        doesNodeIdExist(carrierName, hubName, nodeID) ? addNode(carrierName, hubName, nodeName, nodeID) : exists(nodeID)
+        doesNodeIdExist(carrierName, hubName, nodeID) ? addNode(carrierName, hubName, nodeName, nodeID)
+                : exists(nodeID)
     }
-
 
     /**
      * Adds the node to the network
      *
-     * @param carrierName, hubName, nodeName, nodeID
+     * @param carrierName , hubName, nodeName, nodeID
      */
     def addNode(String carrierName, String hubName, String nodeName, String nodeID) {
         Node node = new Node(nodeName, nodeID)
-        nodeName ? (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.put(node.getName().
-                    println("Node $nodeName with an ID of $nodeID added"), node)) : println('No node entered')
+        nodeName ? (Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.put(node.getName().println("Node $nodeName with an ID of $nodeID added"), node))
+                : println('No node entered')
     }
 }

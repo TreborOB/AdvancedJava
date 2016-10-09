@@ -9,46 +9,40 @@ import com.main.Network
  */
 class StatusOfCarrierCommand extends Base implements Command {
 
-
-    def execute() {
-        status()
-    }
-
     /**
      * Prompts the user to select to a carrier
      *
      */
-    public status() {
+    def execute() {
 
         listCarriers()
         def carrierName = input('Please enter the carrier name: ')
-        doesCarrierExist(carrierName) ? carrierStatus() : notExists(carrierName)
+        doesCarrierExist(carrierName) ? carrierStatus()
+                : notExists(carrierName)
     }
 
     /**
-     * Prints out the number of alarms currently on each carriers network
+     * Prints out the type of alarms currently on each carriers network
      *
      */
     def carrierStatus() {
 
-        if(!Network.carrierMap){
+        if (!Network.carrierMap) {
             println 'Network is empty'
-        }else {
-            Network.carrierMap.each{ k1, v1 ->
+        } else {
+            Network.carrierMap.each { k1, v1 ->
                 println "${k1}"
-                println '--------'
+                println "--------"
 
                 Network.carrierMap.get(k1).hubs.each { k2, v2 ->
-                    println "No of alarms on $k2: " + Network.carrierMap.get(k1).hubs.get(k2).hubAlarms.size()
+                    println "No. of alarms on $k2: " + Network.carrierMap.get(k1).hubs.get(k2).hubAlarms.alarmType""
 
                     Network.carrierMap.get(k1).hubs.get(k2).nodes.each { k3, v3 ->
-                        println "No of alarms on $k3: " + Network.carrierMap.get(k1).hubs.get(k2).nodes.get(k3).nodeAlarms.size()
-                        println ''
+                        println "No. of alarms on $k3: " + Network.carrierMap.get(k1).hubs.get(k2).nodes.get(k3).nodeAlarms.alarmType + '\n'
 
                     }
                 }
             }
         }
-
     }
 }

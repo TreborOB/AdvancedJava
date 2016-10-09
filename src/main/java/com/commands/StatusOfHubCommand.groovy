@@ -8,16 +8,11 @@ import com.main.Network
  */
 public class StatusOfHubCommand extends Base implements Command {
 
-
-    def execute() {
-        status()
-    }
-
     /**
      * Prompts the user to select a carrier
      *
      */
-    def status() {
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
         doesCarrierExist(carrierName) ? searchByNameOrID(carrierName) : notExists(carrierName)
@@ -32,19 +27,20 @@ public class StatusOfHubCommand extends Base implements Command {
 
         listHubs(carrierName)
         def nameOrID = input('Enter the name or ID of the hub you wish to search for: ')
-        doesHubExist(carrierName, nameOrID) || doesHubIDExist(carrierName, nameOrID) ? search(carrierName, nameOrID) : notExists(carrierName)
+        doesHubExist(carrierName, nameOrID) || doesHubIDExist(carrierName, nameOrID) ? search(carrierName, nameOrID)
+                : notExists(carrierName)
     }
 
     /**
      * Prints out the status of the selected hub (if the hub has a unit unavailable then the hub itself is unavailable)
      *
-     * @param carrierName, nameOrId
+     * @param carrierName , nameOrId
      */
     def search(String carrierName, String nameOrID) {
 
-      def unit = 'Unit Unavailable'
-      if(Network.carrierMap.get(carrierName).hubs.get(nameOrID).hubAlarms.alarmType.inject(false){ acc, value -> acc || unit.contains(value)}){
-          println 'Hub is UNAVAILABLE'
-      }
+        def unit = 'Unit Unavailable'
+        if (Network.carrierMap.get(carrierName).hubs.get(nameOrID).hubAlarms.alarmType.inject(false) { acc, value -> acc || unit.contains(value) }) {
+            println 'Hub is UNAVAILABLE'
+        }
     }
 }

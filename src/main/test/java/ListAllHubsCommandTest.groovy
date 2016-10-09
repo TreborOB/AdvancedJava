@@ -1,6 +1,5 @@
 import com.commands.ListAllHubsCommand
 import com.main.Carrier
-import com.main.Hub
 import com.main.Network
 import org.junit.After
 import org.junit.Before
@@ -18,7 +17,6 @@ public class ListAllHubsCommandTest {
         Carrier c = new Carrier("Carrier");
         Network.carrierMap.put(c.getName(), c);
 
-        Hub h = new Hub("Hub", "2");
 
     }
 
@@ -31,8 +29,6 @@ public class ListAllHubsCommandTest {
     public void listAllHubsTest() {
 
         String carrier = "Carrier";
-        String hub = "Hub";
-
         listAllHubsCommand.listAllHubs(carrier);
 
     }

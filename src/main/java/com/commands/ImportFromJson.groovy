@@ -14,14 +14,12 @@ import java.lang.reflect.Type
  */
 class ImportFromJson implements Command {
 
-
     /**
      * Reads in a network from the path location in json format
      *
      */
     def execute() {
-
-        try{
+        try {
             JsonReader reader = new JsonReader(new FileReader('/Users/robertobrien/Desktop/Network.json'))
             Gson gson = new Gson()
 

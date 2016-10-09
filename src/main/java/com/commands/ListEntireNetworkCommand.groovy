@@ -4,8 +4,6 @@ import com.main.Base
 import com.main.Network
 
 
-
-
 /**
  * Created by robertobrien on 14/09/2016.
  */
@@ -13,18 +11,10 @@ class ListEntireNetworkCommand extends Base implements Command {
 
 
     def execute() {
-        listNetwork()
-    }
 
-    /**
-     * Lists the entire network - carriers, hubs and nodes
-     *
-     */
-    def listNetwork() {
-
-        if(!Network.carrierMap){
+        if (!Network.carrierMap) {
             println 'Network is empty'
-        }else {
+        } else {
             Network.carrierMap.each { k1, v1 ->
                 println "\n${k1}"
                 println '--------'

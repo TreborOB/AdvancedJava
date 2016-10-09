@@ -6,12 +6,11 @@ import groovy.transform.EqualsAndHashCode
  * Created by robertobrien on 14/09/2016.
  */
 
-@EqualsAndHashCode(includeFields=true)
-class Carrier {
-
+@EqualsAndHashCode(includeFields = true)
+class Carrier{
 
     String name
-    def hubs = [:]
+    def hubs = [:] //A map contained the carriers associated hubs
 
     Carrier() {
     }

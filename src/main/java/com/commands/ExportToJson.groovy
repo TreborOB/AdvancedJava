@@ -10,7 +10,6 @@ import groovy.json.JsonOutput
  */
 class ExportToJson implements Command {
 
-
     /**
      * Exports the network to a new file in json format (change the path to that of your local machine)
      *

@@ -1,39 +1,52 @@
+import com.commands.AddCarrierCommand
 import com.commands.DeleteCarrierCommand
 import com.main.Carrier
 import com.main.Network
+import com.main.PopulateValues
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import org.spockframework.compiler.model.Spec
+import spock.lang.Specification
 
-import static org.junit.Assert.assertFalse
 
-public class DeleteCarrierCommandTest {
+
+public class DeleteCarrierCommandTest extends Specification{
 
     DeleteCarrierCommand deleteCarrierCommand;
 
     @Before
     public void setup() {
         deleteCarrierCommand = new DeleteCarrierCommand();
-
-        Carrier c = new Carrier("Carrier");
-        Network.carrierMap.put(c.getName(), c);
+        PopulateValues pop = new PopulateValues()
+        pop.defaultValues()
     }
 
 
-    @After
+
     public void teardown() {
         deleteCarrierCommand = null;
     }
 
+    public void 'does carrier exist test'() {
+            when:
+            String inputData = 'Carrier';
+            System.setIn(new ByteArrayInputStream(inputData.getBytes()));
+            deleteCarrierCommand.execute()
+            then:
+            !deleteCarrierCommand.doesCarrierExist(inputData)
+        }
 
-    @Test
-    public void deleteCarrierTest() {
 
-        String carrier = "Carrier";
 
-        deleteCarrierCommand.deleteCarrier(carrier);
-        assertFalse(Network.carrierMap.containsKey(carrier));
+    public void 'delete carrier test'() {
+        when:
+        deleteCarrierCommand.deleteCarrier('Three')
+        then:
+        !deleteCarrierCommand.doesCarrierExist('Three')
     }
 
 
 }
+
+

@@ -5,8 +5,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-import static org.junit.Assert.assertFalse
-
 public class StatusOfCarrierCommandTest {
 
     StatusOfCarrierCommand statusOfCarrierCommand;
@@ -28,9 +26,6 @@ public class StatusOfCarrierCommandTest {
     @Test
     public void carrierStatusTest() {
 
-        String carrier = "";
-        statusOfCarrierCommand.carrierStatus();
-        assertFalse(Network.carrierMap.containsKey(carrier));
     }
 
 

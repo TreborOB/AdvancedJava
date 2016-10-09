@@ -1,5 +1,4 @@
 import com.commands.AddHubCommand
-import com.main.Carrier
 import com.main.Network
 import com.main.PopulateValues
 import spock.lang.Specification
@@ -14,11 +13,11 @@ class AddHubCommandTest extends Specification{
         addHubCommand = new AddHubCommand()
     }
 
-    def hub(){
+    def 'Does carrier exist test'(){
         when:
         String inputData = 'Three';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
-        addHubCommand.hub()
+        addHubCommand.execute()
         then:
         addHubCommand.doesCarrierExist(inputData)
         cleanup:
@@ -26,7 +25,7 @@ class AddHubCommandTest extends Specification{
     }
 
 
-    def nextHub(){
+    def 'does hub exist test'(){
         when:
         String inputData = 'Three';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
@@ -36,11 +35,11 @@ class AddHubCommandTest extends Specification{
 
     }
 
-    def hubId(){
+    def 'check if hub id already exists'(){
         assert addHubCommand.doesHubIDExist('Three', '2')
     }
 
-    def addHub(){
+    def 'add hub test'(){
         assert 'Hub2' in Network.carrierMap.get('Three').hubs.name
     }
 

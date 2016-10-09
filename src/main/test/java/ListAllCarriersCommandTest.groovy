@@ -27,7 +27,7 @@ public class ListAllCarriersCommandTest {
 
     @Test
     public void listAllCarriersTest() {
-        listAllCarriersCommand.listAllCarriers();
+        listAllCarriersCommand.execute()
         assertFalse(Network.carrierMap.isEmpty());
     }
 

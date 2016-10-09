@@ -9,18 +9,13 @@ import com.main.Network
  */
 class ListAllCarriersCommand extends Base implements Command {
 
-    def execute() {
-        listAllCarriers()
-    }
-
-
     /**
      * Prints all carriers within the network
      *
      */
-    def listAllCarriers() {
-        !Network.carrierMap ? 'No carriers exist\n': Network.carrierMap.each { k, v -> println "\n${k}" }
-
+    def execute() {
+        !Network.carrierMap ? 'No carriers exist\n'
+                : Network.carrierMap.each { k, v -> println "\n${k}\n" }
     }
-}
 
+}

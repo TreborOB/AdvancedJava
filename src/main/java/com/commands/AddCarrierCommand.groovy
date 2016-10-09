@@ -12,17 +12,14 @@ import com.main.Network
 class AddCarrierCommand extends Base implements Command {
 
 
-    def execute() {
-        carrier()
-    }
-
     /**
      * Prompts the user to enter the new carriers name
      */
-    def carrier() {
+    def execute() {
         def carrierName = input("Enter the new carriers name: ")
         listCarriers()
-        doesCarrierExist(carrierName) ? exists(carrierName) : addCarrier(carrierName)
+        doesCarrierExist(carrierName) ? exists(carrierName)
+                : addCarrier(carrierName)
     }
 
     /**
@@ -32,7 +29,8 @@ class AddCarrierCommand extends Base implements Command {
      */
     def addCarrier(String carrierName) {
         def c = new Carrier()
-        carrierName ? (Network.carrierMap.put(carrierName, c).println("Carrier $carrierName added")): print('No carrier entered')
+        carrierName ? (Network.carrierMap.put(carrierName, c).println("Carrier $carrierName added"))
+                : print('No carrier entered')
 
 
     }

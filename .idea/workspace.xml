@@ -2,44 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58d14d0e-b3dd-465e-b067-4761355bff26" name="Default" comment="Groovy Assessment">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessmentQuestions/carrick_on_suir.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessmentQuestions/old_bridge.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_dep_4_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessmentQuestions/Question17.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessmentQuestions/Question4.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AssessmentQuestions/townDescription.rtf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/AdvancedJava.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_0_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_spockframework_spock_core_1_0_groovy_2_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_spockframework_spock_core_0_7_groovy_2_0.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/DeleteHubCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/DeleteHubCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/DeleteNodeCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/DeleteNodeCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/ListAllNodesCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/ListAllNodesCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/ListEntireNetworkCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/ListEntireNetworkCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/RenameCarrierCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/RenameCarrierCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/RenameHubCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/RenameHubCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/RenameNodeCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/RenameNodeCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/StatusOfHubCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/StatusOfHubCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/StatusOfNodeCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/StatusOfNodeCommandTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/test/java/SuggestedRemediesCommandTest.java" afterPath="$PROJECT_DIR$/src/main/test/java/SuggestedRemediesCommandTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/AddCarrierCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/AddCarrierCommand.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/AddHubCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/AddHubCommand.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/AddNodeCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/AddNodeCommand.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/ClearAlarmCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/ClearAlarmCommand.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/Command.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/Command.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/DeleteCarrierCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/DeleteCarrierCommand.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/commands/DeleteHubCommand.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/commands/DeleteHubCommand.groovy" />
@@ -65,7 +33,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/main/Main.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/main/Main.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/main/Network.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/main/Network.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/main/Node.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/main/Node.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/main/populateValues.groovy" afterPath="$PROJECT_DIR$/src/main/java/com/main/populateValues.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy" afterPath="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy" />
     </list>
     <ignored path="JavaAssesment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,23 +56,26 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/JavaAssesment$ClearAlarmCommandTest.coverage" NAME="ClearAlarmCommandTest Coverage Results" MODIFIED="1475933374960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$DeleteCarrierCommandTest.coverage" NAME="DeleteCarrierCommandTest Coverage Results" MODIFIED="1476034389065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__5_.coverage" NAME="All in AdvancedJava (5) Coverage Results" MODIFIED="1474226480456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/JavaAssesment$AddCarrierCommandTest.coverage" NAME="AddCarrierCommandTest Coverage Results" MODIFIED="1475926383753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$AddCarrierCommandTest.coverage" NAME="AddCarrierCommandTest Coverage Results" MODIFIED="1476034745219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$Main.coverage" NAME="Main Coverage Results" MODIFIED="1475771627927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.main.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__3_.coverage" NAME="All in AdvancedJava (3) Coverage Results" MODIFIED="1474309438234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__3_.coverage" NAME="All in AdvancedJava (3) Coverage Results" MODIFIED="1475971901136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$_default_.coverage" NAME="&lt;default&gt; Coverage Results" MODIFIED="1474225378795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$java_in_AdvancedJava.coverage" NAME="java in AdvancedJava Coverage Results" MODIFIED="1475971573288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__4_.coverage" NAME="All in AdvancedJava (4) Coverage Results" MODIFIED="1474223463710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_main.coverage" NAME="All in main Coverage Results" MODIFIED="1474131924654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__1_.coverage" NAME="All in AdvancedJava (1) Coverage Results" MODIFIED="1475926463378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_main.coverage" NAME="All in main Coverage Results" MODIFIED="1476034331663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__1_.coverage" NAME="All in AdvancedJava (1) Coverage Results" MODIFIED="1476034766961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$com_commands_in_main.coverage" NAME="com.commands in main Coverage Results" MODIFIED="1474129613657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.commands.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__2_.coverage" NAME="All in AdvancedJava (2) Coverage Results" MODIFIED="1474226835336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava__2_.coverage" NAME="All in AdvancedJava (2) Coverage Results" MODIFIED="1476034357644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/JavaAssesment$AddNodeCommandTest.coverage" NAME="AddNodeCommandTest Coverage Results" MODIFIED="1475933972792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava.coverage" NAME="All in AdvancedJava Coverage Results" MODIFIED="1475926420546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/JavaAssesment$com_commands_in_AdvancedJava.coverage" NAME="com.commands in AdvancedJava Coverage Results" MODIFIED="1475933959992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/JavaAssesment$CreateAlarmCommandTest.coverage" NAME="CreateAlarmCommandTest Coverage Results" MODIFIED="1476009846601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$All_in_AdvancedJava.coverage" NAME="All in AdvancedJava Coverage Results" MODIFIED="1476034906174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/JavaAssesment$com_commands_in_AdvancedJava.coverage" NAME="com.commands in AdvancedJava Coverage Results" MODIFIED="1476034501029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.commands.*</FILTER>
     </SUITE>
   </component>
@@ -111,110 +90,7 @@
     <favorites_list name="JavaAssesment" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RenameCarrierCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameCarrierCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListEntireNetworkCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListEntireNetworkCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-              <folding>
-                <element signature="e#22#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RenameHubCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameHubCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RenameNodeCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameNodeCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusOfCarrierCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfCarrierCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusOfHubCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfHubCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="38" column="119" selection-start-line="38" selection-start-column="119" selection-end-line="38" selection-end-column="119" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusOfNetworkCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNetworkCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusOfNodeCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNodeCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="70" column="71" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuggestedRemediesCommand.groovy" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/SuggestedRemediesCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListAllNodesCommand.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllNodesCommand.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -234,57 +110,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AssessmentQuestions/Question16.groovy" />
-        <option value="$PROJECT_DIR$/AssessmentQuestions/Question17.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Node.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/commands/Command.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Network.groovy" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Hub.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Carrier.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Main.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/main/Alarm.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/PopulateValues.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/main/Base.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/DeleteHubCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/DeleteNodeCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/ListAllNodesCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/RenameCarrierCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/RenameHubCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/RenameNodeCommandTest.groovy" />
-        <option value="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/StatusOfHubCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/StatusOfNodeCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/test/java/SuggestedRemediesCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/PopulateValues.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Network.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Node.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/carrierSelection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/CarrierSelection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/CarrierSelection.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/ExportToJson.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Main.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Hub.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Carrier.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/AddCarrierCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/AddHubCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/AddNodeCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/ClearAlarmCommand.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/DeleteCarrierCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/DeleteHubCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/DeleteNodeCommand.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/commands/ExportToJson.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/ImportFromJson.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/commands/ListAllCarriersCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/ListAllHubsCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/ListAllNodesCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/ListEntireNetworkCommand.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/main/Base.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/RenameCarrierCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/RenameHubCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/RenameNodeCommand.groovy" />
-        <option value="$PROJECT_DIR$/src/main/java/com/commands/StatusOfCarrierCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/StatusOfHubCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/StatusOfNetworkCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/StatusOfNodeCommand.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/commands/SuggestedRemediesCommand.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/ListAllCarriersCommand.groovy" />
+        <option value="$PROJECT_DIR$/src/main/java/com/commands/StatusOfCarrierCommand.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy" />
+        <option value="$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy" />
       </list>
     </option>
   </component>
@@ -330,8 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,106 +223,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaAssesment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -470,35 +246,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="All in AdvancedJava (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="AdvancedJava" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ClearAlarmCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in AdvancedJava">
+    <configuration default="false" name="AddCarrierCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AdvancedJava" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="java" />
-      <option name="MAIN_CLASS_NAME" value="ClearAlarmCommandTest" />
+      <option name="MAIN_CLASS_NAME" value="AddCarrierCommandTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -539,13 +294,13 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="AddNodeCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="DeleteCarrierCommandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="AdvancedJava" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="java" />
-      <option name="MAIN_CLASS_NAME" value="AddNodeCommandTest" />
+      <option name="MAIN_CLASS_NAME" value="DeleteCarrierCommandTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -560,24 +315,46 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.main.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="false" name="All in AdvancedJava (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="AdvancedJava" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdvancedJava" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
       <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in AdvancedJava" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="AdvancedJava" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -888,19 +665,19 @@
       <item index="0" class="java.lang.String" itemvalue="Groovy.Main" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in main" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.All in main (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava (3)" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ClearAlarmCommandTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.com.commands in AdvancedJava" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.AddNodeCommandTest" />
-      <item index="7" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.AddCarrierCommandTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.com.commands in AdvancedJava" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.DeleteCarrierCommandTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava (1)" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AddNodeCommandTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.com.commands in AdvancedJava" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ClearAlarmCommandTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava (3)" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in AdvancedJava (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.AddCarrierCommandTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.com.commands in AdvancedJava" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DeleteCarrierCommandTest" />
       </list>
     </recent_temporary>
   </component>
@@ -925,44 +702,58 @@
       <option name="project" value="LOCAL" />
       <updated>1474207869978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Groovy Assessment">
+      <created>1475938670176</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1475938670176</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Groovy Assessment">
+      <created>1476033820439</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1476033820439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddNodeCommandTest - 2016.10.08 at 14h 39m 34s.xml">
-      <configuration name="AddNodeCommandTest" configurationId="JUnit" />
+    <history-entry file="AddCarrierCommandTest - 2016.10.09 at 18h 39m 07s.xml">
+      <configuration name="AddCarrierCommandTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddNodeCommandTest - 2016.10.08 at 14h 43m 36s.xml">
-      <configuration name="AddNodeCommandTest" configurationId="JUnit" />
+    <history-entry file="AddCarrierCommandTest - 2016.10.09 at 18h 39m 14s.xml">
+      <configuration name="AddCarrierCommandTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AddNodeCommandTest - 2016.10.08 at 14h 43m 52s.xml">
-      <configuration name="AddNodeCommandTest" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava - 2016.10.09 at 18h 41m 48s.xml">
+      <configuration name="All in AdvancedJava" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_AdvancedJava_(3) - 2016.10.08 at 14h 23m 29s.xml">
-      <configuration name="All in AdvancedJava (3)" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava - 2016.10.09 at 18h 42m 01s.xml">
+      <configuration name="All in AdvancedJava" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_AdvancedJava_(3) - 2016.10.08 at 14h 23m 59s.xml">
-      <configuration name="All in AdvancedJava (3)" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava - 2016.10.09 at 18h 48m 24s.xml">
+      <configuration name="All in AdvancedJava" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_AdvancedJava_(3) - 2016.10.08 at 14h 24m 13s.xml">
-      <configuration name="All in AdvancedJava (3)" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava - 2016.10.09 at 18h 52m 36s.xml">
+      <configuration name="All in AdvancedJava" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClearAlarmCommandTest - 2016.10.08 at 14h 29m 17s.xml">
-      <configuration name="ClearAlarmCommandTest" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava_(1) - 2016.10.09 at 18h 39m 29s.xml">
+      <configuration name="All in AdvancedJava (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClearAlarmCommandTest - 2016.10.08 at 14h 29m 36s.xml">
-      <configuration name="ClearAlarmCommandTest" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava_(1) - 2016.10.09 at 18h 39m 49s.xml">
+      <configuration name="All in AdvancedJava (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ClearAlarmCommandTest - 2016.10.08 at 14h 31m 38s.xml">
-      <configuration name="ClearAlarmCommandTest" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava_(1) - 2016.10.09 at 18h 40m 04s.xml">
+      <configuration name="All in AdvancedJava (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="com_commands_in_AdvancedJava - 2016.10.08 at 14h 39m 20s.xml">
-      <configuration name="com.commands in AdvancedJava" configurationId="JUnit" />
+    <history-entry file="All_in_AdvancedJava_(1) - 2016.10.09 at 18h 40m 18s.xml">
+      <configuration name="All in AdvancedJava (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="789" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -971,13 +762,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72797674" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39337176" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39193085" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2048611" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24097222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853025" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32554945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -989,9 +782,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853025" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35572687" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2048611" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1015,12 +806,12 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35572687" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39337176" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39193085" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2048611" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2048611" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24097222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32554945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -1060,91 +851,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jakewharton/fliptables/fliptables/1.0.2/fliptables-1.0.2.jar!/com/jakewharton/fliptables/FlipTableConverters.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Node.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.sdkman/candidates/groovy/2.4.1/lib/groovy-2.4.1.jar!/org/codehaus/groovy/runtime/callsite/AbstractCallSite.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Carrier.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Alarm.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Hub.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/java/DeleteHubCommandTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1156,20 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1208,13 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/java/StatusOfHubCommandTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1236,36 +921,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Network.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Node.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/CarrierSelection.groovy" />
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/ListAllHubsCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/StatusOfCarrierCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Base.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Main.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#19#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1740">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Carrier.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Hub.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/main/PopulateValues.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/AddCarrierCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="405">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1280,72 +993,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/AddNodeCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="66" column="52" selection-start-line="66" selection-start-column="52" selection-end-line="66" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/AddHubCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="31" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="129" column="16" selection-start-line="129" selection-start-column="16" selection-end-line="129" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteCarrierCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteHubCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteNodeCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="55" column="50" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ExportToJson.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="1050">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ClearAlarmCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ExportToJson.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ImportFromJson.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" column="63" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="63" />
+        <state relative-caret-position="210">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllHubsCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllNodesCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/ListAllCarriersCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListEntireNetworkCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameCarrierCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameHubCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameNodeCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNodeCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Alarm.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/SuggestedRemediesCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteNodeCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteHubCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/main/Base.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="88" column="11" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1353,98 +1130,118 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllCarriersCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllHubsCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListAllNodesCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameCarrierCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameHubCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/RenameNodeCommand.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfCarrierCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        <state relative-caret-position="411">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNetworkCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfHubCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="38" column="119" selection-start-line="38" selection-start-column="119" selection-end-line="38" selection-end-column="119" />
+        <state relative-caret-position="480">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/ListEntireNetworkCommand.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/CreateAlarmCommand.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        <state relative-caret-position="141">
+          <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/AddHubCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/DeleteCarrierCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/AddCarrierCommand.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddNodeCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/ClearAlarmCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
           <folding>
-            <element signature="e#22#42#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNetworkCommand.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/CreateAlarmCommandTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+        <state relative-caret-position="304">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/DeleteCarrierCommandTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/StatusOfNodeCommand.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddHubCommandTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="70" column="71" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
+        <state relative-caret-position="150">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/commands/SuggestedRemediesCommand.groovy">
+    <entry file="file://$PROJECT_DIR$/src/main/test/java/AddCarrierCommandTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-          <folding />
+        <state relative-caret-position="165">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

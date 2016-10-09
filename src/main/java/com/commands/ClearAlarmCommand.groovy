@@ -8,19 +8,15 @@ import com.main.Network
  */
 class ClearAlarmCommand extends Base implements Command {
 
-
-    def execute() {
-        clearAlarm()
-    }
-
     /**
      * Prompts the user to enter the carriers name
      *
      */
-    def clearAlarm() {
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? alarmOnHubOrNode(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? alarmOnHubOrNode(carrierName)
+                : notExists(carrierName)
     }
 
 
@@ -35,8 +31,8 @@ class ClearAlarmCommand extends Base implements Command {
         def hubOrNode = input('Would you like to clear alarms from a hub (1) or node (2): ')
 
         switch (hubOrNode) {
-            case '1': clearHubAlarm(carrierName);break
-            case '2': clearNodeAlarm(carrierName);break
+            case '1': clearHubAlarm(carrierName); break
+            case '2': clearNodeAlarm(carrierName); break
             default: print 'Invalid selection'
         }
         return hubOrNode
@@ -53,33 +49,32 @@ class ClearAlarmCommand extends Base implements Command {
         println ''
 
         def hubName = input('Please choose a hub: ')
-        doesHubExist(carrierName, hubName) ? allOrSpecific(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? allOrSpecific(carrierName, hubName)
+                : notExists(hubName)
 
     }
-
 
     /**
      * Prompts the user to select to clear all of specific alarm types on a hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def allOrSpecific(String carrierName, String hubName) {
 
         def allOrSpecific = input('Would you like to clear all alarms (1) or only specific alarms (2) from the hub?:')
         switch (allOrSpecific) {
-            case '1': clearAllHubAlarms(carrierName, hubName);break
-            case '2': clearSpecificHubAlarms(carrierName, hubName);break
+            case '1': clearAllHubAlarms(carrierName, hubName); break
+            case '2': clearSpecificHubAlarms(carrierName, hubName); break
             default: print 'Invalid selection '
         }
 
 
     }
 
-
     /**
      * Clears all alarms on a hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def clearAllHubAlarms(String carrierName, String hubName) {
 
@@ -87,11 +82,10 @@ class ClearAlarmCommand extends Base implements Command {
         println 'All hub alarms cleared'
     }
 
-
     /**
      * Clears specific alarm types on a hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def clearSpecificHubAlarms(String carrierName, String hubName) {
 
@@ -104,7 +98,6 @@ class ClearAlarmCommand extends Base implements Command {
 
     }
 
-
     /**
      * Prompts the user to select a hub
      *
@@ -115,15 +108,15 @@ class ClearAlarmCommand extends Base implements Command {
         listHubs(carrierName)
         def hubName = input('please choose a hub: ')
 
-        doesHubExist(carrierName, hubName) ? node(carrierName, hubName) :  notExists(hubName)
+        doesHubExist(carrierName, hubName) ? node(carrierName, hubName)
+                : notExists(hubName)
 
     }
-
 
     /**
      * Prompts the user to select to a node
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def node(String carrierName, String hubName) {
 
@@ -134,36 +127,26 @@ class ClearAlarmCommand extends Base implements Command {
         doesNodeIdExist(carrierName, hubName, nodeName) ? allOrSpec(carrierName, hubName, nodeName) : notExists(nodeName)
     }
 
-
     /**
      * Prompts the user to select to clear all of a specific alarm types on a node
      *
-     * @param carrierName, hubName, nodeName
+     * @param carrierName , hubName, nodeName
      */
     def allOrSpec(String carrierName, String hubName, String nodeName) {
 
-        println ''
-
         def allOrSpecific = input('Would you like to clear all alarms (1) or only specific alarms (2) from the node?: ')
 
-
         switch (allOrSpecific) {
-            case '1':
-                clearAllNodeAlarms(carrierName, hubName, nodeName)
-                break
-            case '2':
-                clearSpecificNodeAlarms(carrierName, hubName, nodeName)
-                break
-            default:
-                print 'Invalid selection '
+            case '1': clearAllNodeAlarms(carrierName, hubName, nodeName) ;break
+            case '2': clearSpecificNodeAlarms(carrierName, hubName, nodeName) ;break
+            default: print 'Invalid selection '
         }
     }
-
 
     /**
      * Prompts the user to select to clear an alarm from a hub or node
      *
-     * @param carrierName, hubName, nodeName
+     * @param carrierName , hubName, nodeName
      */
     def clearAllNodeAlarms(String carrierName, String hubName, String nodeName) {
 
@@ -171,22 +154,20 @@ class ClearAlarmCommand extends Base implements Command {
         println 'Alarms cleared'
     }
 
-
     /**
      * Removes a specific alarm type on a node
      *
-     * @param carrierName, hubName, nodeName
+     * @param carrierName , hubName, nodeName
      */
     def clearSpecificNodeAlarms(String carrierName, String hubName, String nodeName) {
 
         String specificAlarmHub = specificAlarmToRemove()
 
-        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.removeAll{
+        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.removeAll {
             (it.alarmType == specificAlarmHub)
         }
         println "Alarm type $specificAlarmHub removed"
     }
-
 
     /**
      * Prompts the user to choosen which specific alarm type is to be removed from the network element
@@ -206,10 +187,10 @@ class ClearAlarmCommand extends Base implements Command {
         String alarmToRemove
 
         switch (choice) {
-            case '1': alarmToRemove = 'Unit unavailable';break
-            case '2': alarmToRemove = 'Optical loss';break
-            case '3': alarmToRemove = 'Dark fibre';break
-            case '4': alarmToRemove = 'Power outage';break
+            case '1': alarmToRemove = 'Unit unavailable'; break
+            case '2': alarmToRemove = 'Optical loss'; break
+            case '3': alarmToRemove = 'Dark Fibre'; break
+            case '4': alarmToRemove = 'Power outage'; break
             default: alarmToRemove = 'No selection'
         }
         return alarmToRemove

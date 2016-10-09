@@ -10,18 +10,14 @@ import com.main.Network
 class AddHubCommand extends Base implements Command {
 
 
-    def execute() {
-        hub()
-    }
-
-
     /**
      * Prompts the user to enter the new carriers name
      */
-    def hub() {
+    def execute() {
         listCarriers()
         def carrierName = input("Enter the carriers name: ")
-        doesCarrierExist(carrierName) ? nextHub(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? nextHub(carrierName)
+                : notExists(carrierName)
     }
 
 
@@ -33,29 +29,32 @@ class AddHubCommand extends Base implements Command {
     def nextHub(String carrierName) {
         listHubs(carrierName)
         def hubName = input("Enter the new hubs: ")
-        doesHubExist(carrierName, hubName) ? exists(hubName) : hubId(carrierName, hubName)
+        doesHubExist(carrierName, hubName) ? exists(hubName)
+                : hubId(carrierName, hubName)
 
     }
 
     /**
      * Prompts the user to enter the new hubs ID
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def hubId(String carrierName, String hubName) {
         def hubID = input("Enter the ID for the hub: ")
-        doesHubIDExist(carrierName, hubName) ? addHub(carrierName, hubName, hubID) : exists('Carrier ' + carrierName + ' already has a hub with that id')
+        doesHubIDExist(carrierName, hubName) ? addHub(carrierName, hubName, hubID)
+                : exists('Carrier ' + carrierName + ' already has a hub with that id')
     }
 
     /**
      * Adds the hub to the network
      *
-     * @param carrierName, hubName, hubID
+     * @param carrierName , hubName, hubID
      */
     def addHub(String carrierName, String hubName, String hubID) {
 
         Hub hub = new Hub(hubName, hubID)
-        hubName ? (Network.carrierMap.get(carrierName).hubs.put(hub.getName(), hub.println("Hub $hubName with an ID of $hubID added"))): println('No hub entered')
+        hubName ? (Network.carrierMap.get(carrierName).hubs.put(hub.getName(), hub.println("Hub $hubName with an ID of $hubID added")))
+                : println('No hub entered')
     }
 
 

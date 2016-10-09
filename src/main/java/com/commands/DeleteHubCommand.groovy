@@ -11,18 +11,15 @@ import com.main.Network
 class DeleteHubCommand extends Base implements Command {
 
 
-    def execute() {
-        delete()
-    }
-
     /**
      * Prompts the user to select a carrier
      *
      */
-    def delete() {
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? hub(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? hub(carrierName)
+                : notExists(carrierName)
     }
 
     /**
@@ -33,13 +30,14 @@ class DeleteHubCommand extends Base implements Command {
     def hub(String carrierName) {
         listHubs(carrierName)
         def hubName = input('Enter the hubs name: ')
-        doesHubExist(carrierName, hubName) ? deleteHub(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? deleteHub(carrierName, hubName)
+                : notExists(hubName)
     }
 
     /**
      * Deletes the specified hub from the network
      *
-     * @param carrierName, hubToDelete
+     * @param carrierName , hubToDelete
      */
     def deleteHub(String carrier, String hubToDelete) {
 

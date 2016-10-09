@@ -10,20 +10,15 @@ import com.main.Network
 class ListAllNodesCommand extends Base implements Command {
 
 
-    def execute() {
-        nodes()
-    }
-
     /**
      * Prompts the user to select to a carrier
      *
      */
-    public nodes() {
-
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? hub(carrierName) : notExists(carrierName)
-
+        doesCarrierExist(carrierName) ? hub(carrierName)
+                : notExists(carrierName)
     }
 
     /**
@@ -35,15 +30,16 @@ class ListAllNodesCommand extends Base implements Command {
 
         listHubs(carrierName)
         def hubName = input('Which hubs nodes would you like to view? ')
-        doesHubExist(carrierName, hubName) ? listAllNodes(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? listAllNodes(carrierName, hubName)
+                : notExists(hubName)
     }
 
     /**
      * Lists all nodes for the selects hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def listAllNodes(String carrierName, String hubName) {
-        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.each { k, v -> println "\n${k}"}
+        Network.carrierMap.get(carrierName).hubs.get(hubName).nodes.each { k, v -> println "\n${k}" }
     }
 }

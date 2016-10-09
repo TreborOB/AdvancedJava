@@ -9,20 +9,17 @@ import com.main.Network
  */
 class RenameHubCommand extends Base implements Command {
 
-    def execute() {
 
-        rename()
-    }
 
     /**
      * Prompts the user to select a carrier
      *
      */
-    def rename() {
-
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? renameHub(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? renameHub(carrierName)
+                : notExists(carrierName)
     }
 
     /**
@@ -34,26 +31,27 @@ class RenameHubCommand extends Base implements Command {
 
         listHubs(carrierName)
         def hubName = input('Enter the name of the hub you want to rename: ')
-        doesHubExist(carrierName, hubName) ? newName(carrierName, hubName) : notExists(hubName)
+        doesHubExist(carrierName, hubName) ? newName(carrierName, hubName)
+                : notExists(hubName)
 
     }
 
     /**
      * Prompts the user to select a new name for the hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def newName(String carrierName, String hubName) {
 
         def newHubName = input('Enter a new name for the hub: ')
-        doesHubExist(carrierName, hubName)  ? renameHub(carrierName, hubName, newHubName) : exists(newHubName)
+        doesHubExist(carrierName, hubName) ? renameHub(carrierName, hubName, newHubName)
+                : exists(newHubName)
     }
-
 
     /**
      * Renames the selected hub
      *
-     * @param carrierName, hub, newHubName
+     * @param carrierName , hub, newHubName
      */
     def renameHub(String carrier, String hub, String newHubName) {
 
@@ -61,7 +59,7 @@ class RenameHubCommand extends Base implements Command {
         b.setName(newHubName)
 
         newHubName ? Network.carrierMap.get(carrier).hubs.put(newHubName.print("$hub rename to $newHubName"), b)
-                   : println('No new hub entered')
+                : println('No new hub entered')
 
     }
 }

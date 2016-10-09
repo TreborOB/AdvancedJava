@@ -10,15 +10,11 @@ import com.main.Network
  */
 class SuggestedRemediesCommand extends Base implements Command {
 
-    def execute() {
-        remedies()
-    }
-
     /**
      * Prints out all the suggested remedies for each network element
      *
      */
-    def remedies() {
+    def execute() {
 
         if (!Network.carrierMap) {
             println 'Network is empty'

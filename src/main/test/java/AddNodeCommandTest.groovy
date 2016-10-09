@@ -15,11 +15,11 @@ class AddNodeCommandTest extends Specification{
         pop.defaultValues()
     }
 
-    def node() {
+    def 'does carrier exist test'() {
         when:
         String inputData = 'Three';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
-        addNodeCommand.node()
+        addNodeCommand.execute()
         then:
         addNodeCommand.doesCarrierExist(inputData)
         cleanup:
@@ -27,7 +27,7 @@ class AddNodeCommandTest extends Specification{
     }
 
 
-    def nextHub() {
+    def 'does hub exist test'() {
         when:
         String inputData = 'Three';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
@@ -37,7 +37,7 @@ class AddNodeCommandTest extends Specification{
     }
 
 
-    def nodeExist() {
+    def 'doest node exist test'() {
         when:
         String inputData = 'node4';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));

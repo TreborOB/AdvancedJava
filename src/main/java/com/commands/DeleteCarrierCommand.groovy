@@ -11,22 +11,17 @@ import com.main.Network
 public class DeleteCarrierCommand extends Base implements Command {
 
 
-    def execute() {
-        delete()
-    }
-
-
     /**
      * Prompts the user to select to a carrier to delete
      *
      */
-    def delete() {
 
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? deleteCarrier(carrierName) : notExists(carrierName)
+        doesCarrierExist(carrierName) ? deleteCarrier(carrierName)
+                : notExists(carrierName)
     }
-
 
     /**
      * Deletes the specified carrier from the network

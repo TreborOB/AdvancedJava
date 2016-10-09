@@ -9,20 +9,17 @@ import com.main.Network
  */
 public class ListAllHubsCommand extends Base implements Command {
 
-    def execute() {
-        hub()
-    }
-
     /**
      * Prompts the user to select a carrier
      *
      */
-    def hub() {
+    def execute() {
         listCarriers()
         def carrierName = input('Enter the carriers name: ')
-        doesCarrierExist(carrierName) ? listAllHubs(carrierName) : print('no such carrier\n')
-
+        doesCarrierExist(carrierName) ? listAllHubs(carrierName)
+                : print('no such carrier\n')
     }
+
 
     /**
      * Lists all hubs associated with the selected carrier

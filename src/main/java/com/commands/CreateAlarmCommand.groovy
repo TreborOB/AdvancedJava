@@ -12,22 +12,16 @@ import com.main.Network
 class CreateAlarmCommand extends Base implements Command {
 
 
-    def execute() {
-        alarmCreation()
-    }
-
-
     /**
      * Prompts the user to select a carrier
      *
      */
-    def alarmCreation() {
+    def execute() {
         listCarriers()
-
         def carrierName = input('Enter the new carriers name: ')
         doesCarrierExist(carrierName) ? hubOrNode(carrierName) : notExists(carrierName)
-
     }
+
 
     /**
      * Prompts the user to select to create an alarm on a hub or node
@@ -40,11 +34,11 @@ class CreateAlarmCommand extends Base implements Command {
         def alarmOnHubOrNode = input('Would you like to create an alarm on a hub (1) or node (2)?: ')
 
         switch (alarmOnHubOrNode) {
-        case '1': createAlarmOnHub(carrierName); break
-        case '2': createAlarmOnNode(carrierName); break
-        default: print 'Invalid selection'}
+            case '1': createAlarmOnHub(carrierName); break
+            case '2': createAlarmOnNode(carrierName); break
+            default: print 'Invalid selection'
+        }
     }
-
 
     /**
      * Prompts the user to select to a hub
@@ -58,13 +52,12 @@ class CreateAlarmCommand extends Base implements Command {
         doesHubExist(carrierName, hubName) ? createHubAlarm(carrierName, hubName) : notExists(hubName)
     }
 
-
     /**
      * Prompts the user to select a hub
      *
      * @param carrierName
      */
-     def createAlarmOnNode(String carrier) {
+    def createAlarmOnNode(String carrier) {
         println 'Alarm on node'
 
         listHubs(carrier)
@@ -73,11 +66,10 @@ class CreateAlarmCommand extends Base implements Command {
 
     }
 
-
     /**
      * Creates an alarm on a hub
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def createHubAlarm(String carrier, String hubName) {
 
@@ -86,31 +78,26 @@ class CreateAlarmCommand extends Base implements Command {
 
         Network.carrierMap.get(carrier).hubs.get(hubName).hubAlarms.add(hubAlarm)
 
-        println 'Alarm Created'
-        println '--------------\n'
-        println "Hub: $hubName"
-        println 'Alarm type: ' + hubAlarm.getAlarmType()
-        println 'Creation Date: ' + hubAlarm.getAlarmReceivedDate()
+        println '\nAlarm Created\n' + '--------------\n' + "Hub: $hubName\n" + 'Alarm type: ' + hubAlarm.getAlarmType()+'\n'+  'Creation Date: ' + hubAlarm.getAlarmReceivedDate()
     }
-
 
     /**
      * Prompts the user to select a node
      *
-     * @param carrierName, hubName
+     * @param carrierName , hubName
      */
     def createNodeAlarm(String carrier, String hubName) {
 
         listNodes(carrier, hubName)
         def nodeName = input('Choose a node: ')
-        doesNodeExist(carrier, hubName, nodeName) ? nodeAlarmCreation(carrier, hubName, nodeName) : notExists('No such node: ' + "$nodeName")
+        doesNodeExist(carrier, hubName, nodeName) ? nodeAlarmCreation(carrier, hubName, nodeName)
+                : notExists('No such node: ' + "$nodeName")
     }
-
 
     /**
      * Creates an alarm on a node
      *
-     * @param carrierName, hubName, nodeName
+     * @param carrierName , hubName, nodeName
      */
     def nodeAlarmCreation(String carrier, String hubName, String nodeName) {
 
@@ -119,10 +106,8 @@ class CreateAlarmCommand extends Base implements Command {
 
         Network.carrierMap.get(carrier).hubs.get(hubName).nodes.get(nodeName).nodeAlarms.add(nodeAlarm)
 
-        println 'Alarm Created\n' + println '--------------\n'
-        println 'Node: ' + nodeName + '\n' + 'Alarm type: ' + nodeAlarm.getAlarmType() + '\n' + 'Creation Date: ' + nodeAlarm.getAlarmReceivedDate()
+        println 'Alarm Created\n--------------\n' +'Node: ' + nodeName + '\n' + 'Alarm type: ' + nodeAlarm.getAlarmType() + '\n' + 'Creation Date: ' + nodeAlarm.getAlarmReceivedDate()
     }
-
 
     /**
      * Prompts the user to choosen which specific alarm type to create
@@ -145,15 +130,15 @@ class CreateAlarmCommand extends Base implements Command {
 
         switch (chosenAlarm) {
             case '1': alarmType = 'Unit unavailable'
-                      alarmRemedy = 'Unit unavailable remedy';break
+                      alarmRemedy = 'Unit unavailable remedy'; break
             case '2': alarmType = 'Optical loss'
-                      alarmRemedy = 'Optical loss remedy';break
+                      alarmRemedy = 'Optical loss remedy'; break
             case '3': alarmType = 'Dark fibre'
-                      alarmRemedy = 'Dark fibre remedy';break
+                      alarmRemedy = 'Dark fibre remedy'; break
             case '4': alarmType = 'Power outage'
-                      alarmRemedy = 'Power outage remedy';break
+                      alarmRemedy = 'Power outage remedy'; break
             default: alarmType = 'Default'
-                     alarmRemedy = 'Default remedy'
+                      alarmRemedy = 'Default remedy'
         }
 
         Date date = new Date()

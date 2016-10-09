@@ -11,11 +11,11 @@ public class AddCarrierCommandTest extends Specification {
         addCarrierCommand = new AddCarrierCommand();
     }
 
-    def carrier(){
+    def 'does carrier exist test'(){
         when:
-        String inputData = "Three";
+        String inputData = 'Three';
         System.setIn(new ByteArrayInputStream(inputData.getBytes()));
-        addCarrierCommand.carrier()
+        addCarrierCommand.execute()
         then:
         addCarrierCommand.doesCarrierExist(inputData)
         cleanup:
@@ -23,13 +23,12 @@ public class AddCarrierCommandTest extends Specification {
     }
 
 
-    def addCarrier(){
+    def 'add carrier test'(){
         when:
-        String carrierName = "Carrier";
+        String carrierName = 'Carrier';
         addCarrierCommand.addCarrier(carrierName);
         then:
         Network.carrierMap.size() == 1
     }
-
 
 }
